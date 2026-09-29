@@ -5,11 +5,11 @@ import express from "express";
 import multer from "multer";
 import { createHash, timingSafeEqual } from "node:crypto";
 import sample from "../public/samples/public-fire-protection.json" with { type: "json" };
-import { guideJsonSchema, normalizeGuide, type Guide } from "../shared/guide.js";
+import { describeError, writeGuide, type Effort, type GenerateEvent } from "../shared/claude.js";
+import type { Guide } from "../shared/guide.js";
 import { toContentBlocks, UnsupportedFileError, type UploadedFile } from "./extract.js";
-import { SYSTEM_PROMPT, userInstructions, type Detail } from "../shared/prompt.js";
+import { userInstructions, type Detail } from "../shared/prompt.js";
 
-type Effort = "low" | "medium" | "high" | "xhigh" | "max";
 
 // The API's request limit is 32 MB; leave headroom for base64 and the prompt.
 const MAX_UPLOAD_BYTES = 30 * 1024 * 1024;
@@ -28,8 +28,7 @@ const UPLOAD_CONTENT_TYPES = [
 ];
 
 type Event =
-  | { type: "stage"; stage: "reading" | "writing" | "finishing" }
-  | { type: "progress"; chars: number; sections: number; flashcards: number; quiz: number }
+  | GenerateEvent
   | { type: "done"; guide: Guide }
   | { type: "error"; message: string };
 
@@ -167,7 +166,14 @@ export function createApp() {
     try {
       const guide = MOCK
         ? await mockGenerate(send, abort.signal)
-        : await generate(blocks, userInstructions(context, detail, names), send, abort.signal);
+        : await writeGuide(client, {
+            model: MODEL,
+            effort: EFFORT,
+            blocks,
+            instructions: userInstructions(context, detail, names),
+            signal: abort.signal,
+            onEvent: send,
+          });
       send({ type: "done", guide });
     } catch (err) {
       if (abort.signal.aborted) return;
@@ -177,62 +183,6 @@ export function createApp() {
       res.end();
     }
   });
-
-  async function generate(
-    blocks: Anthropic.Beta.BetaContentBlockParam[],
-    instructions: string,
-    send: (e: Event) => void,
-    signal: AbortSignal,
-  ): Promise<Guide> {
-    const stream = client.beta.messages.stream(
-      {
-        model: MODEL,
-        max_tokens: 64000,
-        betas: ["server-side-fallback-2026-07-01"],
-        fallbacks: "default",
-        output_config: { effort: EFFORT, format: { type: "json_schema", schema: guideJsonSchema } },
-        system: SYSTEM_PROMPT,
-        messages: [{ role: "user", content: [...blocks, { type: "text", text: instructions }] }],
-      },
-      { signal },
-    );
-
-    let text = "";
-    let lastSent = 0;
-    let started = false;
-    stream.on("text", (delta) => {
-      if (!started) {
-        started = true;
-        send({ type: "stage", stage: "writing" });
-      }
-      text += delta;
-      if (text.length - lastSent > 400) {
-        lastSent = text.length;
-        send({
-          type: "progress",
-          chars: text.length,
-          sections: count(text, '"simplified"'),
-          flashcards: count(text, '"front"'),
-          quiz: count(text, '"answer_index"'),
-        });
-      }
-    });
-
-    const message = await stream.finalMessage();
-    send({ type: "stage", stage: "finishing" });
-
-    if (message.stop_reason === "refusal") {
-      throw new Error("Claude declined to process this material. Try different files.");
-    }
-    if (message.stop_reason === "max_tokens") {
-      throw new Error("The material was too long to finish in one pass. Try uploading fewer pages at a time.");
-    }
-    const json = message.content
-      .filter((b): b is Anthropic.Beta.BetaTextBlock => b.type === "text")
-      .map((b) => b.text)
-      .join("");
-    return normalizeGuide(JSON.parse(json) as Guide);
-  }
 
   app.use((err: unknown, _req: express.Request, res: express.Response, next: express.NextFunction) => {
     if (res.headersSent) return next(err);
@@ -265,22 +215,6 @@ async function downloadBlob(ref: BlobRef, access: "public" | "private"): Promise
 function cleanup(refs: BlobRef[]) {
   if (!refs.length) return;
   deleteBlobs(refs.map((r) => r.url)).catch((err) => console.error("Blob cleanup failed", err));
-}
-
-function count(haystack: string, needle: string) {
-  let n = 0;
-  for (let i = haystack.indexOf(needle); i !== -1; i = haystack.indexOf(needle, i + needle.length)) n++;
-  return n;
-}
-
-function describeError(err: unknown) {
-  if (err instanceof Anthropic.AuthenticationError) return "The server's Anthropic API key was rejected.";
-  if (err instanceof Anthropic.RateLimitError) return "Rate limited by the API. Wait a minute and try again.";
-  if (err instanceof Anthropic.BadRequestError) return `The API rejected the request: ${err.message}`;
-  if (err instanceof Anthropic.APIConnectionError) return "Couldn't reach the Anthropic API.";
-  if (err instanceof Anthropic.APIError) return `API error ${err.status ?? ""}: ${err.message}`;
-  if (err instanceof SyntaxError) return "The generated guide came back malformed. Please try again.";
-  return err instanceof Error ? err.message : "Something went wrong.";
 }
 
 /** Replays the bundled sample so the UI can be exercised without an API key. */

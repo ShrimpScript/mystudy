@@ -397,6 +397,13 @@ kbd {
 }
 .filelist-name { flex: 1; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .filelist .mono { font-size: 12px; }
+.form-note { margin: 0 0 14px; font-size: 14px; color: var(--ink-2); max-width: 36rem; }
+.key-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.key-row .input { flex: 1 1 16rem; min-width: 0; }
+.key-saved { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
+.key-saved .hint { margin: 0; }
+.key-saved .link.small { margin: 0; }
+.model-label { margin-top: 20px; }
 .form-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid var(--rule); }
 .form-actions .hint { margin: 0; }
 

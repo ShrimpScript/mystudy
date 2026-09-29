@@ -9,7 +9,8 @@
     "build": "tsc -p tsconfig.json && vite build",
     "start": "NODE_ENV=production tsx server/index.ts",
     "typecheck": "tsc -p tsconfig.json",
-    "build:claude": "tsc -p tsconfig.json && vite build --mode artifact && node scripts/artifact-page.mjs"
+    "build:claude": "tsc -p tsconfig.json && vite build --mode artifact && node scripts/artifact-page.mjs",
+    "build:pages": "tsc -p tsconfig.json && vite build --mode pages && touch dist-pages/.nojekyll"
   },
   "engines": {
     "node": "22.x"

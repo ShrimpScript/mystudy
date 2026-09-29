@@ -10,7 +10,14 @@ export default defineConfig(({ mode }) =>
         publicDir: false,
         build: { outDir: "dist-artifact", emptyOutDir: true, chunkSizeWarningLimit: 4000 },
       }
-    : {
+    : mode === "pages"
+      ? {
+          // Static build for GitHub Pages: relative paths so it works under /<repo>/.
+          plugins: [react()],
+          base: "./",
+          build: { outDir: "dist-pages", emptyOutDir: true, chunkSizeWarningLimit: 4000 },
+        }
+      : {
         plugins: [react()],
         server: { host: true, proxy: { "/api": "http://localhost:8787" } },
       },

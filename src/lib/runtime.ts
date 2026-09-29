@@ -55,3 +55,6 @@ export interface CollectionRef {
 export interface Db {
   doc(path: string): DocRef;
 }
+
+/** The static GitHub Pages build: no server, Claude is called from the browser with the user's own API key. */
+export const IS_STATIC = import.meta.env.MODE === "pages";

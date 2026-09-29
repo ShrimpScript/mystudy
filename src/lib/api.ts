@@ -1,10 +1,12 @@
 import type { Guide } from "../../shared/guide";
 import { generateLocal } from "./generate-local";
-import { capability, IS_ARTIFACT } from "./runtime";
+import { generateWithKey } from "./generate-key";
+import { capability, IS_ARTIFACT, IS_STATIC } from "./runtime";
 
 export interface Status {
-  /** "claude": runs on claude.ai with the viewer's account; "server": the Node server. */
-  kind: "claude" | "server";
+  /** "claude": runs on claude.ai with the viewer's account; "key": static site using the
+   * user's own API key from the browser; "server": the Node server. */
+  kind: "claude" | "key" | "server";
   ready: boolean;
   passcodeRequired: boolean;
   model: string;
@@ -16,6 +18,18 @@ export interface Status {
 }
 
 export async function getStatus(): Promise<Status | null> {
+  if (IS_STATIC) {
+    return {
+      kind: "key",
+      ready: true,
+      passcodeRequired: false,
+      model: "",
+      mock: false,
+      uploadMode: "direct",
+      blobAccess: "private",
+      maxUploadBytes: 22 * 1024 * 1024, // 32 MB request limit after base64
+    };
+  }
   if (IS_ARTIFACT) {
     const sample = await capability("sample");
     return {
@@ -56,6 +70,8 @@ export interface GenerateRequest {
   passcode: string;
   uploadMode: Status["uploadMode"];
   blobAccess: Status["blobAccess"];
+  apiKey?: string;
+  model?: string;
 }
 
 /**
@@ -69,6 +85,7 @@ export function generateGuide(
   onProgress: (p: GenerateProgress) => void,
 ): { promise: Promise<Guide>; cancel: () => void } {
   if (IS_ARTIFACT) return generateLocal(req, onProgress);
+  if (IS_STATIC) return generateWithKey({ ...req, apiKey: req.apiKey ?? "", model: req.model ?? "claude-opus-5-5" }, onProgress);
   const xhr = new XMLHttpRequest();
   const uploads = new AbortController();
   let cancelled = false;

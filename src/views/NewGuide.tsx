@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ApiKey } from "../components/ApiKey";
 import { Icon } from "../components/Icon";
 import { Segmented } from "../components/Popover";
 import { generateGuide, getStatus, type GenerateProgress, type Status } from "../lib/api";
@@ -59,6 +60,8 @@ export function NewGuide() {
         context,
         detail,
         passcode: prefs.passcode,
+        apiKey: prefs.apiKey,
+        model: prefs.model,
         uploadMode: status?.uploadMode ?? "direct",
         blobAccess: status?.blobAccess ?? "private",
       },
@@ -89,6 +92,7 @@ export function NewGuide() {
 
   const unavailable = status === null || (status && !status.ready);
   const viaClaude = status?.kind === "claude";
+  const needsKey = status?.kind === "key" && !prefs.apiKey;
 
   return (
     <div className="page page-narrow">
@@ -106,6 +110,8 @@ export function NewGuide() {
               : "The server doesn’t have an Anthropic API key yet. Add ANTHROPIC_API_KEY to its environment and restart it. You can still explore the sample guide."}
         </div>
       )}
+
+      {status?.kind === "key" && <ApiKey />}
 
       <section className="form-block">
         <h2 className="form-title">
@@ -245,13 +251,15 @@ export function NewGuide() {
       )}
 
       <div className="form-actions">
-        <button className="btn btn-primary" disabled={!canSubmit || Boolean(unavailable)} onClick={submit}>
+        <button className="btn btn-primary" disabled={!canSubmit || Boolean(unavailable) || needsKey} onClick={submit}>
           Create study guide
         </button>
         <span className="hint">
-          {viaClaude
-            ? "Takes two to four minutes and uses your Claude plan. The first time, claude.ai asks you to allow it."
-            : "Usually takes one to three minutes."}
+          {needsKey
+            ? "Save your API key above first."
+            : viaClaude
+              ? "Takes two to four minutes and uses your Claude plan. The first time, claude.ai asks you to allow it."
+              : "Usually takes one to three minutes. Keep this tab open."}
         </span>
       </div>
     </div>

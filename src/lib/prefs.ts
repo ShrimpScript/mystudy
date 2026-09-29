@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { IS_ARTIFACT } from "./runtime";
 
 export type Theme = "system" | "light" | "dark";
@@ -8,10 +8,13 @@ interface Prefs {
   theme: Theme;
   size: TextSize;
   passcode: string;
+  /** Static build only: the user's Anthropic API key, kept in this browser. */
+  apiKey: string;
+  model: string;
 }
 
 const KEY = "margin:prefs";
-const DEFAULTS: Prefs = { theme: "system", size: "m", passcode: "" };
+const DEFAULTS: Prefs = { theme: "system", size: "m", passcode: "", apiKey: "", model: "claude-opus-5-5" };
 
 function read(): Prefs {
   try {
@@ -33,17 +36,30 @@ function apply(p: Prefs) {
   el.setAttribute("data-size", p.size);
 }
 
-apply(read());
+// One shared copy so every component sees a change at once.
+let current = read();
+apply(current);
+const listeners = new Set<() => void>();
+
+function update(patch: Partial<Prefs>) {
+  current = { ...current, ...patch };
+  apply(current);
+  try {
+    localStorage.setItem(KEY, JSON.stringify(current));
+  } catch {
+    /* storage unavailable: keep for this visit */
+  }
+  listeners.forEach((l) => l());
+}
+
+function subscribe(fn: () => void) {
+  listeners.add(fn);
+  return () => {
+    listeners.delete(fn);
+  };
+}
 
 export function usePrefs() {
-  const [prefs, setPrefs] = useState(read);
-  useEffect(() => {
-    apply(prefs);
-    try {
-      localStorage.setItem(KEY, JSON.stringify(prefs));
-    } catch {
-      /* ignore */
-    }
-  }, [prefs]);
-  return [prefs, (patch: Partial<Prefs>) => setPrefs((p) => ({ ...p, ...patch }))] as const;
+  const prefs = useSyncExternalStore(subscribe, () => current);
+  return [prefs, update] as const;
 }
