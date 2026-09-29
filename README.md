@@ -26,6 +26,12 @@ To open it on your phone while it runs on your computer, use the “Network” U
 
 Try the UI without a key: `MOCK_GENERATION=1 npm run dev` replays the sample guide instead of calling the API.
 
+## Use it now
+
+**https://shrimpscript.github.io/mystudy/** — hosted free on GitHub Pages. Open it, tap **New guide**, and paste an [Anthropic API key](https://console.anthropic.com/settings/keys) once (it stays in that browser and goes only to Anthropic). Each guide costs roughly $0.30–0.80 on Opus 5.5, or about half that on Sonnet 5.5.
+
+To publish changes: `npm run deploy:pages` (builds the static site and pushes it to the `gh-pages` branch).
+
 ## Deploy (use it from anywhere)
 
 ### Vercel
