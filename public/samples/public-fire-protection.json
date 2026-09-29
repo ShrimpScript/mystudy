@@ -1,6 +1,8 @@
 {
   "id": "sample-public-fire-protection",
-  "sourceFiles": ["Chapter 3 Overview — Public Fire Protection.pdf"],
+  "sourceFiles": [
+    "Chapter 3 Overview — Public Fire Protection.pdf"
+  ],
   "context": "Intro to Fire Protection and Emergency Services, 6th ed. — Chapter 3 lecture outline.",
   "guide": {
     "title": "Chapter 3 — Public Fire Protection",
@@ -239,171 +241,992 @@
       }
     ],
     "key_terms": [
-      { "term": "Familia Publica", "definition": "The first recognized firefighting force, in ancient Rome. Made up of slaves with primitive pumps who were slow to respond.", "section_id": "early-firefighting" },
-      { "term": "Corps of Vigiles", "definition": "Rome's publicly funded firefighting force created by Emperor Augustus: 7,000 men in battalions of 1,000 who patrolled, fought fires, and did prevention.", "section_id": "early-firefighting" },
-      { "term": "Conflagration", "definition": "A very large, destructive fire that spreads across many structures, usually fed by combustible buildings close together.", "section_id": "early-firefighting" },
-      { "term": "Bucket brigade", "definition": "Two lines of townspeople passing full buckets toward the fire and empty buckets back to the water source.", "section_id": "early-firefighting" },
-      { "term": "Rattle watch", "definition": "Young men appointed by Peter Stuyvesant to patrol New Amsterdam's streets at night and sound an alarm if they found a fire.", "section_id": "early-firefighting" },
-      { "term": "Mutual fire societies", "definition": "Early volunteer organizations formed to assist the fire department.", "section_id": "early-firefighting" },
-      { "term": "First water", "definition": "The honor of being the first company to get water on a fire; volunteer companies competed, and even fought, for it.", "section_id": "volunteer-to-modern" },
-      { "term": "Bunker gear (turnout clothing)", "definition": "Protective clothing that evolved from long canvas coats and thigh boots to insulated, water-resistant coats and pants.", "section_id": "volunteer-to-modern" },
-      { "term": "SCBA", "definition": "Self-contained breathing apparatus. Invented around 1945, it protects firefighters from toxic gases and low oxygen and made interior attack practical.", "section_id": "volunteer-to-modern" },
-      { "term": "Logging slash", "definition": "Limbs and debris left behind after trees are cut; once dry, a ready fuel bed for fires.", "section_id": "wildland-history" },
-      { "term": "Let-burn policy", "definition": "National park policy to let lightning-caused fires that don't threaten people burn as a natural process of fuel reduction.", "section_id": "wildland-history" },
-      { "term": "Weeks Act (1911)", "definition": "Law that funded the U.S. Forest Service to cooperate with states on fire protection after the Big Blowup.", "section_id": "wildland-history" },
-      { "term": "Two-legged lightning", "definition": "Nickname for human-caused wildland fires, which make up as many as 90% of U.S. wildland fires.", "section_id": "wildland-history" },
-      { "term": "Wildland-urban interface", "definition": "Areas where homes are built in or next to wildland vegetation, where wildland fires threaten structures.", "section_id": "fire-losses" },
-      { "term": "Siphona", "definition": "The first known fire pump (third century BC): two piston cylinders and an air chamber that produced a steady stream.", "section_id": "equipment" },
-      { "term": "Brakes", "definition": "The long hinged handles (up to 15 feet) on hand pumpers that volunteers worked to pump water.", "section_id": "equipment" },
-      { "term": "Gooseneck", "definition": "The large nozzle mounted on top of early hand pumpers.", "section_id": "equipment" },
-      { "term": "Squirrel tail", "definition": "A suction hose permanently attached to the body of a pumper.", "section_id": "equipment" },
-      { "term": "Steamer", "definition": "Steam-powered, horse-drawn pumper needing only a three-person crew; it helped end volunteer departments in large cities.", "section_id": "equipment" },
-      { "term": "Pike pole", "definition": "A ladder-company tool used to pull down ceilings to reach concealed spaces.", "section_id": "equipment" },
-      { "term": "Chemical wagon", "definition": "Late-1800s apparatus that mixed soda-water and acid to make carbon dioxide pressure and force water through hoses.", "section_id": "equipment" },
-      { "term": "Maltese cross", "definition": "Fire service symbol of protection and a badge of honor, from the Knights of St. John on Malta during the Crusades.", "section_id": "symbols" },
-      { "term": "Santa Ana winds", "definition": "Hot, dry winds blowing from the Great Basin across Southern California toward the Pacific, driving large wildland fires.", "section_id": "fire-losses" },
-      { "term": "NFIRS", "definition": "National Fire Incident Reporting System; the data source the NFPA uses to describe the U.S. fire problem.", "section_id": "us-fire-problem" },
-      { "term": "Acceptable risk", "definition": "Risk whose probability is so small, consequences so slight, or benefits so great that people are willing to accept it.", "section_id": "purpose-and-scope" },
-      { "term": "Cost recovery", "definition": "Recovering money spent fighting fires caused by negligence or illegal activity; requires fire, police, and prosecutors to work together.", "section_id": "purpose-and-scope" },
-      { "term": "Policy", "definition": "A general guideline for how things will be done, such as wearing breathing apparatus during overhaul.", "section_id": "planning-and-risk" },
-      { "term": "Procedure", "definition": "A specific instruction for performing a recurring task, such as inventorying apparatus equipment daily.", "section_id": "planning-and-risk" },
-      { "term": "Risk management", "definition": "Identifying and evaluating risks, then selecting and implementing control measures that change their probability or consequences.", "section_id": "planning-and-risk" },
-      { "term": "Emergency services agency", "definition": "The more accurate modern name for a fire department, reflecting its many non-fire roles.", "section_id": "future" }
+      {
+        "term": "Familia Publica",
+        "definition": "The first recognized firefighting force, in ancient Rome. Made up of slaves with primitive pumps who were slow to respond.",
+        "section_id": "early-firefighting",
+        "image_query": ""
+      },
+      {
+        "term": "Corps of Vigiles",
+        "definition": "Rome's publicly funded firefighting force created by Emperor Augustus: 7,000 men in battalions of 1,000 who patrolled, fought fires, and did prevention.",
+        "section_id": "early-firefighting",
+        "image_query": ""
+      },
+      {
+        "term": "Conflagration",
+        "definition": "A very large, destructive fire that spreads across many structures, usually fed by combustible buildings close together.",
+        "section_id": "early-firefighting",
+        "image_query": "Great Chicago Fire 1871"
+      },
+      {
+        "term": "Bucket brigade",
+        "definition": "Two lines of townspeople passing full buckets toward the fire and empty buckets back to the water source.",
+        "section_id": "early-firefighting",
+        "image_query": "bucket brigade fire historical"
+      },
+      {
+        "term": "Rattle watch",
+        "definition": "Young men appointed by Peter Stuyvesant to patrol New Amsterdam's streets at night and sound an alarm if they found a fire.",
+        "section_id": "early-firefighting",
+        "image_query": ""
+      },
+      {
+        "term": "Mutual fire societies",
+        "definition": "Early volunteer organizations formed to assist the fire department.",
+        "section_id": "early-firefighting",
+        "image_query": ""
+      },
+      {
+        "term": "First water",
+        "definition": "The honor of being the first company to get water on a fire; volunteer companies competed, and even fought, for it.",
+        "section_id": "volunteer-to-modern",
+        "image_query": ""
+      },
+      {
+        "term": "Bunker gear (turnout clothing)",
+        "definition": "Protective clothing that evolved from long canvas coats and thigh boots to insulated, water-resistant coats and pants.",
+        "section_id": "volunteer-to-modern",
+        "image_query": "firefighter turnout gear"
+      },
+      {
+        "term": "SCBA",
+        "definition": "Self-contained breathing apparatus. Invented around 1945, it protects firefighters from toxic gases and low oxygen and made interior attack practical.",
+        "section_id": "volunteer-to-modern",
+        "image_query": "self-contained breathing apparatus firefighter"
+      },
+      {
+        "term": "Logging slash",
+        "definition": "Limbs and debris left behind after trees are cut; once dry, a ready fuel bed for fires.",
+        "section_id": "wildland-history",
+        "image_query": "logging slash"
+      },
+      {
+        "term": "Let-burn policy",
+        "definition": "National park policy to let lightning-caused fires that don't threaten people burn as a natural process of fuel reduction.",
+        "section_id": "wildland-history",
+        "image_query": ""
+      },
+      {
+        "term": "Weeks Act (1911)",
+        "definition": "Law that funded the U.S. Forest Service to cooperate with states on fire protection after the Big Blowup.",
+        "section_id": "wildland-history",
+        "image_query": ""
+      },
+      {
+        "term": "Two-legged lightning",
+        "definition": "Nickname for human-caused wildland fires, which make up as many as 90% of U.S. wildland fires.",
+        "section_id": "wildland-history",
+        "image_query": ""
+      },
+      {
+        "term": "Wildland-urban interface",
+        "definition": "Areas where homes are built in or next to wildland vegetation, where wildland fires threaten structures.",
+        "section_id": "fire-losses",
+        "image_query": "wildland urban interface wildfire homes"
+      },
+      {
+        "term": "Siphona",
+        "definition": "The first known fire pump (third century BC): two piston cylinders and an air chamber that produced a steady stream.",
+        "section_id": "equipment",
+        "image_query": "Ctesibius force pump"
+      },
+      {
+        "term": "Brakes",
+        "definition": "The long hinged handles (up to 15 feet) on hand pumpers that volunteers worked to pump water.",
+        "section_id": "equipment",
+        "image_query": "hand pumper fire engine"
+      },
+      {
+        "term": "Gooseneck",
+        "definition": "The large nozzle mounted on top of early hand pumpers.",
+        "section_id": "equipment",
+        "image_query": "hand pumper fire engine gooseneck"
+      },
+      {
+        "term": "Squirrel tail",
+        "definition": "A suction hose permanently attached to the body of a pumper.",
+        "section_id": "equipment",
+        "image_query": ""
+      },
+      {
+        "term": "Steamer",
+        "definition": "Steam-powered, horse-drawn pumper needing only a three-person crew; it helped end volunteer departments in large cities.",
+        "section_id": "equipment",
+        "image_query": "steam fire engine"
+      },
+      {
+        "term": "Pike pole",
+        "definition": "A ladder-company tool used to pull down ceilings to reach concealed spaces.",
+        "section_id": "equipment",
+        "image_query": "pike pole firefighting tool"
+      },
+      {
+        "term": "Chemical wagon",
+        "definition": "Late-1800s apparatus that mixed soda-water and acid to make carbon dioxide pressure and force water through hoses.",
+        "section_id": "equipment",
+        "image_query": "chemical fire engine wagon"
+      },
+      {
+        "term": "Maltese cross",
+        "definition": "Fire service symbol of protection and a badge of honor, from the Knights of St. John on Malta during the Crusades.",
+        "section_id": "symbols",
+        "image_query": "Maltese cross firefighter emblem"
+      },
+      {
+        "term": "Santa Ana winds",
+        "definition": "Hot, dry winds blowing from the Great Basin across Southern California toward the Pacific, driving large wildland fires.",
+        "section_id": "fire-losses",
+        "image_query": ""
+      },
+      {
+        "term": "NFIRS",
+        "definition": "National Fire Incident Reporting System; the data source the NFPA uses to describe the U.S. fire problem.",
+        "section_id": "us-fire-problem",
+        "image_query": ""
+      },
+      {
+        "term": "Acceptable risk",
+        "definition": "Risk whose probability is so small, consequences so slight, or benefits so great that people are willing to accept it.",
+        "section_id": "purpose-and-scope",
+        "image_query": ""
+      },
+      {
+        "term": "Cost recovery",
+        "definition": "Recovering money spent fighting fires caused by negligence or illegal activity; requires fire, police, and prosecutors to work together.",
+        "section_id": "purpose-and-scope",
+        "image_query": ""
+      },
+      {
+        "term": "Policy",
+        "definition": "A general guideline for how things will be done, such as wearing breathing apparatus during overhaul.",
+        "section_id": "planning-and-risk",
+        "image_query": ""
+      },
+      {
+        "term": "Procedure",
+        "definition": "A specific instruction for performing a recurring task, such as inventorying apparatus equipment daily.",
+        "section_id": "planning-and-risk",
+        "image_query": ""
+      },
+      {
+        "term": "Risk management",
+        "definition": "Identifying and evaluating risks, then selecting and implementing control measures that change their probability or consequences.",
+        "section_id": "planning-and-risk",
+        "image_query": ""
+      },
+      {
+        "term": "Emergency services agency",
+        "definition": "The more accurate modern name for a fire department, reflecting its many non-fire roles.",
+        "section_id": "future",
+        "image_query": ""
+      }
     ],
     "numbers_to_know": [
-      { "value": "200,000–400,000 yrs", "meaning": "When people are believed to have learned to use fire", "section_id": "fire-and-humanity" },
-      { "value": "7,000", "meaning": "Men in Rome's Corps of Vigiles (battalions of 1,000)", "section_id": "early-firefighting" },
-      { "value": "1608", "meaning": "Jamestown conflagration, one year after its 1607 founding", "section_id": "early-firefighting" },
-      { "value": "1666", "meaning": "Great Fire of London; about two-thirds of the city destroyed", "section_id": "early-firefighting" },
-      { "value": "1679", "meaning": "Boston: first publicly funded, paid fire department in America", "section_id": "early-firefighting" },
-      { "value": "1736", "meaning": "Franklin's Union Volunteer Fire Company, Philadelphia", "section_id": "early-firefighting" },
-      { "value": "1853", "meaning": "Cincinnati: first fully paid fire department", "section_id": "volunteer-to-modern" },
-      { "value": "~1945", "meaning": "Modern SCBA invented", "section_id": "volunteer-to-modern" },
-      { "value": "70%", "meaning": "Share of incidents that are medical aid in some departments", "section_id": "volunteer-to-modern" },
-      { "value": "1,500+", "meaning": "Deaths in the 1871 Peshtigo fire", "section_id": "wildland-history" },
-      { "value": "3 million acres", "meaning": "Burned in two days in the 1910 Big Blowup", "section_id": "wildland-history" },
-      { "value": "90%", "meaning": "Share of U.S. wildland fires caused by humans", "section_id": "wildland-history" },
-      { "value": "402 vs 45 acres", "meaning": "Average size of lightning-caused vs human-caused wildland fires", "section_id": "wildland-history" },
-      { "value": "13.1 per million", "meaning": "U.S. fire death rate", "section_id": "us-fire-problem" },
-      { "value": "~4,000 / yr", "meaning": "Civilian fire deaths in the U.S. (plus ~22,000 injuries)", "section_id": "us-fire-problem" },
-      { "value": "~100 / yr", "meaning": "Firefighters killed on duty (plus ~87,000 injured)", "section_id": "us-fire-problem" },
-      { "value": "1.9 million", "meaning": "Fires reported per year", "section_id": "us-fire-problem" },
-      { "value": "82%", "meaning": "Civilian fire deaths that occur in the home", "section_id": "us-fire-problem" },
-      { "value": "74%", "meaning": "Drop in home fire death rate with residential sprinklers", "section_id": "us-fire-problem" },
-      { "value": "Every 17 sec", "meaning": "How often the U.S. fire service responds to a fire", "section_id": "us-fire-problem" },
-      { "value": "26%", "meaning": "Home fires starting in the kitchen, the top area of origin", "section_id": "us-fire-problem" },
-      { "value": "343", "meaning": "Firefighters killed on September 11, 2001", "section_id": "fire-losses" },
-      { "value": "250 → 2,700", "meaning": "Homes lost to wildland fire per year, 1960s vs now", "section_id": "fire-losses" },
-      { "value": "Up to 90%", "meaning": "Share of a career department's budget spent on personnel", "section_id": "planning-and-risk" }
+      {
+        "value": "200,000–400,000 yrs",
+        "meaning": "When people are believed to have learned to use fire",
+        "section_id": "fire-and-humanity"
+      },
+      {
+        "value": "7,000",
+        "meaning": "Men in Rome's Corps of Vigiles (battalions of 1,000)",
+        "section_id": "early-firefighting"
+      },
+      {
+        "value": "1608",
+        "meaning": "Jamestown conflagration, one year after its 1607 founding",
+        "section_id": "early-firefighting"
+      },
+      {
+        "value": "1666",
+        "meaning": "Great Fire of London; about two-thirds of the city destroyed",
+        "section_id": "early-firefighting"
+      },
+      {
+        "value": "1679",
+        "meaning": "Boston: first publicly funded, paid fire department in America",
+        "section_id": "early-firefighting"
+      },
+      {
+        "value": "1736",
+        "meaning": "Franklin's Union Volunteer Fire Company, Philadelphia",
+        "section_id": "early-firefighting"
+      },
+      {
+        "value": "1853",
+        "meaning": "Cincinnati: first fully paid fire department",
+        "section_id": "volunteer-to-modern"
+      },
+      {
+        "value": "~1945",
+        "meaning": "Modern SCBA invented",
+        "section_id": "volunteer-to-modern"
+      },
+      {
+        "value": "70%",
+        "meaning": "Share of incidents that are medical aid in some departments",
+        "section_id": "volunteer-to-modern"
+      },
+      {
+        "value": "1,500+",
+        "meaning": "Deaths in the 1871 Peshtigo fire",
+        "section_id": "wildland-history"
+      },
+      {
+        "value": "3 million acres",
+        "meaning": "Burned in two days in the 1910 Big Blowup",
+        "section_id": "wildland-history"
+      },
+      {
+        "value": "90%",
+        "meaning": "Share of U.S. wildland fires caused by humans",
+        "section_id": "wildland-history"
+      },
+      {
+        "value": "402 vs 45 acres",
+        "meaning": "Average size of lightning-caused vs human-caused wildland fires",
+        "section_id": "wildland-history"
+      },
+      {
+        "value": "13.1 per million",
+        "meaning": "U.S. fire death rate",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "value": "~4,000 / yr",
+        "meaning": "Civilian fire deaths in the U.S. (plus ~22,000 injuries)",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "value": "~100 / yr",
+        "meaning": "Firefighters killed on duty (plus ~87,000 injured)",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "value": "1.9 million",
+        "meaning": "Fires reported per year",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "value": "82%",
+        "meaning": "Civilian fire deaths that occur in the home",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "value": "74%",
+        "meaning": "Drop in home fire death rate with residential sprinklers",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "value": "Every 17 sec",
+        "meaning": "How often the U.S. fire service responds to a fire",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "value": "26%",
+        "meaning": "Home fires starting in the kitchen, the top area of origin",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "value": "343",
+        "meaning": "Firefighters killed on September 11, 2001",
+        "section_id": "fire-losses"
+      },
+      {
+        "value": "250 → 2,700",
+        "meaning": "Homes lost to wildland fire per year, 1960s vs now",
+        "section_id": "fire-losses"
+      },
+      {
+        "value": "Up to 90%",
+        "meaning": "Share of a career department's budget spent on personnel",
+        "section_id": "planning-and-risk"
+      }
     ],
     "lists_to_memorize": [
-      { "title": "Four goals of fire protection", "items": ["Prevent fire from starting", "Prevent loss of life if fire does start", "Confine fire to its place of origin", "Extinguish fire once it starts"], "memory_aid": "Prevent, Protect, Confine, Extinguish — the order a fire would unfold.", "section_id": "planning-and-risk" },
-      { "title": "Four steps of community risk reduction", "items": ["Preparation", "Mitigation", "Response", "Recovery"], "memory_aid": "\"Please Make Room, Rescue\" — P-M-R-R.", "section_id": "planning-and-risk" },
-      { "title": "Three risk control measures", "items": ["Administrative (policies, SOPs, training)", "Engineering (equipment design, ventilation)", "Personnel protection (protective equipment)"], "memory_aid": "A-E-P: Always Engineer Protection.", "section_id": "planning-and-risk" },
-      { "title": "NFPA 1500 risk management plan components", "items": ["Risk identification", "Risk evaluation", "Risk control techniques", "Program evaluation and review"], "memory_aid": "Identify, Evaluate, Control, Review.", "section_id": "planning-and-risk" },
-      { "title": "Three categories of fire department risk", "items": ["Community risk", "Organizational risk", "Operational risk"], "memory_aid": "", "section_id": "purpose-and-scope" },
-      { "title": "Common denominators of conflagrations", "items": ["Combustible construction", "Narrow streets", "Ineffective building codes"], "memory_aid": "", "section_id": "fire-losses" },
-      { "title": "Services of the modern fire department", "items": ["Fire prevention", "Public safety education", "Fire suppression", "Medical aid", "Rescue services", "Hazardous materials response"], "memory_aid": "", "section_id": "volunteer-to-modern" },
-      { "title": "London building reforms after 1666", "items": ["Wider streets", "Green spaces", "Building setbacks", "Noncombustible materials"], "memory_aid": "", "section_id": "early-firefighting" },
-      { "title": "Top five areas of fire origin in homes", "items": ["Kitchen (26%)", "Bedroom (13%)", "Living room/den (8%)", "Chimney (8%)", "Laundry area (5%)"], "memory_aid": "", "section_id": "us-fire-problem" }
+      {
+        "title": "Four goals of fire protection",
+        "items": [
+          "Prevent fire from starting",
+          "Prevent loss of life if fire does start",
+          "Confine fire to its place of origin",
+          "Extinguish fire once it starts"
+        ],
+        "memory_aid": "Prevent, Protect, Confine, Extinguish — the order a fire would unfold.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "title": "Four steps of community risk reduction",
+        "items": [
+          "Preparation",
+          "Mitigation",
+          "Response",
+          "Recovery"
+        ],
+        "memory_aid": "\"Please Make Room, Rescue\" — P-M-R-R.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "title": "Three risk control measures",
+        "items": [
+          "Administrative (policies, SOPs, training)",
+          "Engineering (equipment design, ventilation)",
+          "Personnel protection (protective equipment)"
+        ],
+        "memory_aid": "A-E-P: Always Engineer Protection.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "title": "NFPA 1500 risk management plan components",
+        "items": [
+          "Risk identification",
+          "Risk evaluation",
+          "Risk control techniques",
+          "Program evaluation and review"
+        ],
+        "memory_aid": "Identify, Evaluate, Control, Review.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "title": "Three categories of fire department risk",
+        "items": [
+          "Community risk",
+          "Organizational risk",
+          "Operational risk"
+        ],
+        "memory_aid": "",
+        "section_id": "purpose-and-scope"
+      },
+      {
+        "title": "Common denominators of conflagrations",
+        "items": [
+          "Combustible construction",
+          "Narrow streets",
+          "Ineffective building codes"
+        ],
+        "memory_aid": "",
+        "section_id": "fire-losses"
+      },
+      {
+        "title": "Services of the modern fire department",
+        "items": [
+          "Fire prevention",
+          "Public safety education",
+          "Fire suppression",
+          "Medical aid",
+          "Rescue services",
+          "Hazardous materials response"
+        ],
+        "memory_aid": "",
+        "section_id": "volunteer-to-modern"
+      },
+      {
+        "title": "London building reforms after 1666",
+        "items": [
+          "Wider streets",
+          "Green spaces",
+          "Building setbacks",
+          "Noncombustible materials"
+        ],
+        "memory_aid": "",
+        "section_id": "early-firefighting"
+      },
+      {
+        "title": "Top five areas of fire origin in homes",
+        "items": [
+          "Kitchen (26%)",
+          "Bedroom (13%)",
+          "Living room/den (8%)",
+          "Chimney (8%)",
+          "Laundry area (5%)"
+        ],
+        "memory_aid": "",
+        "section_id": "us-fire-problem"
+      }
     ],
     "timeline": [
-      { "when": "3rd century BC", "event": "Siphona, the first known fire pump, is invented." },
-      { "when": "Ancient Rome", "event": "Familia Publica, then Augustus's Corps of Vigiles." },
-      { "when": "1607–1608", "event": "Jamestown is founded, then nearly destroyed by fire." },
-      { "when": "1647", "event": "Stuyvesant's chimney code, fire wardens, and rattle watch in New Amsterdam." },
-      { "when": "1666", "event": "Great Fire of London; building codes and fire insurance follow." },
-      { "when": "1679", "event": "Boston forms the first publicly funded, paid fire department." },
-      { "when": "1736", "event": "Franklin organizes the Union Volunteer Fire Company in Philadelphia." },
-      { "when": "1814", "event": "British burn Washington, D.C. during the War of 1812." },
-      { "when": "1853", "event": "Cincinnati forms the first fully paid fire department." },
-      { "when": "1869", "event": "Transcontinental railroad completed." },
-      { "when": "~1870", "event": "Aerial ladder apparatus developed." },
-      { "when": "1871", "event": "Great Chicago Fire and Peshtigo fire." },
-      { "when": "1904", "event": "Baltimore conflagration exposes incompatible hose threads." },
-      { "when": "1910", "event": "The Big Blowup in Idaho and Montana." },
-      { "when": "1911", "event": "Weeks Act funds federal–state fire cooperation." },
-      { "when": "1925", "event": "First National Fire Prevention Week." },
-      { "when": "~1945", "event": "Modern SCBA invented." },
-      { "when": "1988", "event": "Yellowstone fires reshape let-burn policy." },
-      { "when": "2001", "event": "September 11 attacks; 343 firefighters killed." },
-      { "when": "2018", "event": "Camp Fire destroys Paradise, California; 85 killed." }
+      {
+        "when": "3rd century BC",
+        "event": "Siphona, the first known fire pump, is invented."
+      },
+      {
+        "when": "Ancient Rome",
+        "event": "Familia Publica, then Augustus's Corps of Vigiles."
+      },
+      {
+        "when": "1607–1608",
+        "event": "Jamestown is founded, then nearly destroyed by fire."
+      },
+      {
+        "when": "1647",
+        "event": "Stuyvesant's chimney code, fire wardens, and rattle watch in New Amsterdam."
+      },
+      {
+        "when": "1666",
+        "event": "Great Fire of London; building codes and fire insurance follow."
+      },
+      {
+        "when": "1679",
+        "event": "Boston forms the first publicly funded, paid fire department."
+      },
+      {
+        "when": "1736",
+        "event": "Franklin organizes the Union Volunteer Fire Company in Philadelphia."
+      },
+      {
+        "when": "1814",
+        "event": "British burn Washington, D.C. during the War of 1812."
+      },
+      {
+        "when": "1853",
+        "event": "Cincinnati forms the first fully paid fire department."
+      },
+      {
+        "when": "1869",
+        "event": "Transcontinental railroad completed."
+      },
+      {
+        "when": "~1870",
+        "event": "Aerial ladder apparatus developed."
+      },
+      {
+        "when": "1871",
+        "event": "Great Chicago Fire and Peshtigo fire."
+      },
+      {
+        "when": "1904",
+        "event": "Baltimore conflagration exposes incompatible hose threads."
+      },
+      {
+        "when": "1910",
+        "event": "The Big Blowup in Idaho and Montana."
+      },
+      {
+        "when": "1911",
+        "event": "Weeks Act funds federal–state fire cooperation."
+      },
+      {
+        "when": "1925",
+        "event": "First National Fire Prevention Week."
+      },
+      {
+        "when": "~1945",
+        "event": "Modern SCBA invented."
+      },
+      {
+        "when": "1988",
+        "event": "Yellowstone fires reshape let-burn policy."
+      },
+      {
+        "when": "2001",
+        "event": "September 11 attacks; 343 firefighters killed."
+      },
+      {
+        "when": "2018",
+        "event": "Camp Fire destroys Paradise, California; 85 killed."
+      }
     ],
     "exam_focus": [
-      { "point": "The main purpose of the fire service is to manage community risk.", "why": "Stated directly and repeated in the summary; a likely definition question.", "section_id": "purpose-and-scope" },
-      { "point": "The four goals of fire protection, in order.", "why": "A classic enumerated list.", "section_id": "planning-and-risk" },
-      { "point": "The four steps of community risk reduction: preparation, mitigation, response, recovery.", "why": "Numbered explicitly in the chapter summary.", "section_id": "planning-and-risk" },
-      { "point": "Firsts: Boston 1679 (paid, public), Franklin 1736 (volunteer), Cincinnati 1853 (fully paid).", "why": "Dates and 'firsts' are easy to test and easy to mix up.", "section_id": "early-firefighting" },
-      { "point": "Leading causes: cooking (home fires), smoking (deaths), heating (second), arson (commercial).", "why": "Statistics sections almost always produce exam items.", "section_id": "us-fire-problem" },
-      { "point": "Peshtigo 1871 was the deadliest wildland fire; the Big Blowup and Yellowstone changed policy.", "why": "The chapter singles these fires out for their significance.", "section_id": "wildland-history" },
-      { "point": "Baltimore 1904 led to standardized hose threads.", "why": "A clear cause-and-effect link.", "section_id": "fire-losses" },
-      { "point": "NFPA 1710 (career), 1720 (volunteer), and 1500 (safety program and risk plan).", "why": "Standard numbers are frequently tested.", "section_id": "planning-and-risk" },
-      { "point": "Three risk control measures: administrative, engineering, personnel protection.", "why": "Enumerated list with definitions.", "section_id": "planning-and-risk" },
-      { "point": "Origin and meaning of the Maltese cross and the Dalmatian.", "why": "Summary bullets call out both symbols.", "section_id": "symbols" }
+      {
+        "point": "The main purpose of the fire service is to manage community risk.",
+        "why": "Stated directly and repeated in the summary; a likely definition question.",
+        "section_id": "purpose-and-scope"
+      },
+      {
+        "point": "The four goals of fire protection, in order.",
+        "why": "A classic enumerated list.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "point": "The four steps of community risk reduction: preparation, mitigation, response, recovery.",
+        "why": "Numbered explicitly in the chapter summary.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "point": "Firsts: Boston 1679 (paid, public), Franklin 1736 (volunteer), Cincinnati 1853 (fully paid).",
+        "why": "Dates and 'firsts' are easy to test and easy to mix up.",
+        "section_id": "early-firefighting"
+      },
+      {
+        "point": "Leading causes: cooking (home fires), smoking (deaths), heating (second), arson (commercial).",
+        "why": "Statistics sections almost always produce exam items.",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "point": "Peshtigo 1871 was the deadliest wildland fire; the Big Blowup and Yellowstone changed policy.",
+        "why": "The chapter singles these fires out for their significance.",
+        "section_id": "wildland-history"
+      },
+      {
+        "point": "Baltimore 1904 led to standardized hose threads.",
+        "why": "A clear cause-and-effect link.",
+        "section_id": "fire-losses"
+      },
+      {
+        "point": "NFPA 1710 (career), 1720 (volunteer), and 1500 (safety program and risk plan).",
+        "why": "Standard numbers are frequently tested.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "point": "Three risk control measures: administrative, engineering, personnel protection.",
+        "why": "Enumerated list with definitions.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "point": "Origin and meaning of the Maltese cross and the Dalmatian.",
+        "why": "Summary bullets call out both symbols.",
+        "section_id": "symbols"
+      }
     ],
     "flashcards": [
-      { "front": "What was the first recognized firefighting force, and where was it?", "back": "The Familia Publica, in ancient Rome.", "section_id": "early-firefighting" },
-      { "front": "Who formed the Corps of Vigiles, and how large was it?", "back": "Emperor Augustus; 7,000 men in battalions of 1,000.", "section_id": "early-firefighting" },
-      { "front": "Why did Jamestown nearly fail in 1608?", "back": "A conflagration: highly combustible materials and closely spaced structures.", "section_id": "early-firefighting" },
-      { "front": "What three measures did Peter Stuyvesant implement in 1647?", "back": "Banned wood or plaster chimneys, appointed four fire wardens, and created the rattle watch.", "section_id": "early-firefighting" },
-      { "front": "What did London change after the Great Fire of 1666?", "back": "Wider streets, green spaces, building setbacks, noncombustible materials, and fire insurance companies.", "section_id": "early-firefighting" },
-      { "front": "Which city had the first publicly funded, paid fire department in America, and when?", "back": "Boston, 1679.", "section_id": "early-firefighting" },
-      { "front": "Who organized the Union Volunteer Fire Company, and when?", "back": "Benjamin Franklin, Philadelphia, 1736.", "section_id": "early-firefighting" },
-      { "front": "Which insurance-brigade limitation made them different from a public service?", "back": "They only fought fires at the properties their company insured.", "section_id": "early-firefighting" },
-      { "front": "First city with a fully paid fire department?", "back": "Cincinnati, 1853.", "section_id": "volunteer-to-modern" },
-      { "front": "What pushed large cities to replace volunteer companies with paid departments?", "back": "Fighting and rowdiness among competing companies, plus the steamer needing fewer people.", "section_id": "volunteer-to-modern" },
-      { "front": "Why does the traditional fire helmet have a long back brim?", "back": "To keep embers and hot water from going down the firefighter's neck.", "section_id": "volunteer-to-modern" },
-      { "front": "When was the modern SCBA invented, and what did it enable?", "back": "Around 1945; it enhanced the ability to perform interior attack.", "section_id": "volunteer-to-modern" },
-      { "front": "What was the weakness of canister gas masks?", "back": "They filtered smoke particles but not toxic gases or low oxygen.", "section_id": "volunteer-to-modern" },
-      { "front": "Name three reasons Native Americans set fires.", "back": "To herd buffalo, renew vegetation, and clear undergrowth from the forest floor.", "section_id": "wildland-history" },
-      { "front": "Deadliest wildland fire in U.S. history?", "back": "Peshtigo, Wisconsin, 1871: more than 1,500 killed.", "section_id": "wildland-history" },
-      { "front": "What two fires most changed national wildland fire policy?", "back": "The Big Blowup (1910) and the Yellowstone fires (1988).", "section_id": "wildland-history" },
-      { "front": "What was the '10 a.m. policy'?", "back": "After the Big Blowup, every wildland fire was to be out by 10 a.m. the next day.", "section_id": "wildland-history" },
-      { "front": "What did the Weeks Act (1911) do?", "back": "Funded the Forest Service to cooperate with states in fire protection.", "section_id": "wildland-history" },
-      { "front": "What equipment is banned on congressionally designated wilderness land?", "back": "Motorized equipment such as chainsaws, portable pumps, and bulldozers.", "section_id": "wildland-history" },
-      { "front": "What percentage of U.S. wildland fires are human-caused?", "back": "As many as 90 percent.", "section_id": "wildland-history" },
-      { "front": "What was the siphona?", "back": "The first known fire pump (third century BC), using two pistons and an air chamber.", "section_id": "equipment" },
-      { "front": "What are 'brakes' on a hand pumper?", "back": "The long handles (up to 15 feet) volunteers used to pump water.", "section_id": "equipment" },
-      { "front": "What innovation gave birth to the interior attack?", "back": "Extending a hose from the gooseneck so crews could apply water directly to the seat of the fire.", "section_id": "equipment" },
-      { "front": "What is a squirrel tail?", "back": "A suction hose permanently attached to the pumper.", "section_id": "equipment" },
-      { "front": "Three advantages of the steamer?", "back": "Only a three-person crew, could pump as long as there was coal, didn't need volunteers on the brakes.", "section_id": "equipment" },
-      { "front": "How did the chemical wagon create pressure?", "back": "Mixing soda-water with acid produced carbon dioxide gas.", "section_id": "equipment" },
-      { "front": "Where does the name 'Maltese cross' come from?", "back": "The Knights of St. John, headquartered on Malta, honored for bravery during the Crusades.", "section_id": "symbols" },
-      { "front": "Why were Dalmatians kept in firehouses?", "back": "To guard horse-drawn vehicles and keep the horses calm.", "section_id": "symbols" },
-      { "front": "What did the 1904 Baltimore fire lead to?", "back": "Standardized hose threads for firefighting equipment.", "section_id": "fire-losses" },
-      { "front": "When was the first National Fire Prevention Week, and who proclaimed it?", "back": "October 4–10, 1925, by President Calvin Coolidge.", "section_id": "fire-losses" },
-      { "front": "Three common denominators of historic conflagrations?", "back": "Combustible construction, narrow streets, ineffective building codes.", "section_id": "fire-losses" },
-      { "front": "What causes Santa Ana winds?", "back": "High pressure over the Great Basin and low pressure off the Southern California coast.", "section_id": "fire-losses" },
-      { "front": "Leading cause of home fires and injuries?", "back": "Cooking.", "section_id": "us-fire-problem" },
-      { "front": "Leading cause of fire deaths?", "back": "Careless smoking.", "section_id": "us-fire-problem" },
-      { "front": "Leading cause of deaths, injuries, and dollar loss in commercial properties?", "back": "Arson.", "section_id": "us-fire-problem" },
-      { "front": "What is the U.S. fire death rate?", "back": "13.1 per million population.", "section_id": "us-fire-problem" },
-      { "front": "By how much do residential sprinklers cut the home fire death rate?", "back": "74 percent.", "section_id": "us-fire-problem" },
-      { "front": "What is the main purpose of the fire service?", "back": "To manage community risk.", "section_id": "purpose-and-scope" },
-      { "front": "Define acceptable risk.", "back": "Risk whose probability is so small, consequences so slight, or benefits so great that people are willing to accept it.", "section_id": "purpose-and-scope" },
-      { "front": "What are the three categories of fire department risk?", "back": "Community, organizational, and operational risk.", "section_id": "purpose-and-scope" },
-      { "front": "What are the four goals of fire protection?", "back": "Prevent fire from starting; prevent loss of life; confine fire to its origin; extinguish it.", "section_id": "planning-and-risk" },
-      { "front": "Policy vs. procedure?", "back": "A policy is a general guideline; a procedure is a specific instruction for a recurring task.", "section_id": "planning-and-risk" },
-      { "front": "NFPA 1710 vs. NFPA 1720?", "back": "1710 covers career fire departments; 1720 covers volunteer departments.", "section_id": "planning-and-risk" },
-      { "front": "What are the three risk control measures?", "back": "Administrative, engineering, and personnel protection.", "section_id": "planning-and-risk" },
-      { "front": "What are the four steps of community risk reduction?", "back": "Preparation, mitigation, response, recovery.", "section_id": "planning-and-risk" },
-      { "front": "What name better describes the modern fire department?", "back": "Emergency services agency.", "section_id": "future" }
+      {
+        "front": "What was the first recognized firefighting force, and where was it?",
+        "back": "The Familia Publica, in ancient Rome.",
+        "section_id": "early-firefighting",
+        "figure_id": ""
+      },
+      {
+        "front": "Who formed the Corps of Vigiles, and how large was it?",
+        "back": "Emperor Augustus; 7,000 men in battalions of 1,000.",
+        "section_id": "early-firefighting",
+        "figure_id": ""
+      },
+      {
+        "front": "Why did Jamestown nearly fail in 1608?",
+        "back": "A conflagration: highly combustible materials and closely spaced structures.",
+        "section_id": "early-firefighting",
+        "figure_id": ""
+      },
+      {
+        "front": "What three measures did Peter Stuyvesant implement in 1647?",
+        "back": "Banned wood or plaster chimneys, appointed four fire wardens, and created the rattle watch.",
+        "section_id": "early-firefighting",
+        "figure_id": ""
+      },
+      {
+        "front": "What did London change after the Great Fire of 1666?",
+        "back": "Wider streets, green spaces, building setbacks, noncombustible materials, and fire insurance companies.",
+        "section_id": "early-firefighting",
+        "figure_id": ""
+      },
+      {
+        "front": "Which city had the first publicly funded, paid fire department in America, and when?",
+        "back": "Boston, 1679.",
+        "section_id": "early-firefighting",
+        "figure_id": ""
+      },
+      {
+        "front": "Who organized the Union Volunteer Fire Company, and when?",
+        "back": "Benjamin Franklin, Philadelphia, 1736.",
+        "section_id": "early-firefighting",
+        "figure_id": ""
+      },
+      {
+        "front": "Which insurance-brigade limitation made them different from a public service?",
+        "back": "They only fought fires at the properties their company insured.",
+        "section_id": "early-firefighting",
+        "figure_id": ""
+      },
+      {
+        "front": "First city with a fully paid fire department?",
+        "back": "Cincinnati, 1853.",
+        "section_id": "volunteer-to-modern",
+        "figure_id": ""
+      },
+      {
+        "front": "What pushed large cities to replace volunteer companies with paid departments?",
+        "back": "Fighting and rowdiness among competing companies, plus the steamer needing fewer people.",
+        "section_id": "volunteer-to-modern",
+        "figure_id": ""
+      },
+      {
+        "front": "Why does the traditional fire helmet have a long back brim?",
+        "back": "To keep embers and hot water from going down the firefighter's neck.",
+        "section_id": "volunteer-to-modern",
+        "figure_id": ""
+      },
+      {
+        "front": "When was the modern SCBA invented, and what did it enable?",
+        "back": "Around 1945; it enhanced the ability to perform interior attack.",
+        "section_id": "volunteer-to-modern",
+        "figure_id": ""
+      },
+      {
+        "front": "What was the weakness of canister gas masks?",
+        "back": "They filtered smoke particles but not toxic gases or low oxygen.",
+        "section_id": "volunteer-to-modern",
+        "figure_id": ""
+      },
+      {
+        "front": "Name three reasons Native Americans set fires.",
+        "back": "To herd buffalo, renew vegetation, and clear undergrowth from the forest floor.",
+        "section_id": "wildland-history",
+        "figure_id": ""
+      },
+      {
+        "front": "Deadliest wildland fire in U.S. history?",
+        "back": "Peshtigo, Wisconsin, 1871: more than 1,500 killed.",
+        "section_id": "wildland-history",
+        "figure_id": ""
+      },
+      {
+        "front": "What two fires most changed national wildland fire policy?",
+        "back": "The Big Blowup (1910) and the Yellowstone fires (1988).",
+        "section_id": "wildland-history",
+        "figure_id": ""
+      },
+      {
+        "front": "What was the '10 a.m. policy'?",
+        "back": "After the Big Blowup, every wildland fire was to be out by 10 a.m. the next day.",
+        "section_id": "wildland-history",
+        "figure_id": ""
+      },
+      {
+        "front": "What did the Weeks Act (1911) do?",
+        "back": "Funded the Forest Service to cooperate with states in fire protection.",
+        "section_id": "wildland-history",
+        "figure_id": ""
+      },
+      {
+        "front": "What equipment is banned on congressionally designated wilderness land?",
+        "back": "Motorized equipment such as chainsaws, portable pumps, and bulldozers.",
+        "section_id": "wildland-history",
+        "figure_id": ""
+      },
+      {
+        "front": "What percentage of U.S. wildland fires are human-caused?",
+        "back": "As many as 90 percent.",
+        "section_id": "wildland-history",
+        "figure_id": ""
+      },
+      {
+        "front": "What was the siphona?",
+        "back": "The first known fire pump (third century BC), using two pistons and an air chamber.",
+        "section_id": "equipment",
+        "figure_id": ""
+      },
+      {
+        "front": "What are 'brakes' on a hand pumper?",
+        "back": "The long handles (up to 15 feet) volunteers used to pump water.",
+        "section_id": "equipment",
+        "figure_id": ""
+      },
+      {
+        "front": "What innovation gave birth to the interior attack?",
+        "back": "Extending a hose from the gooseneck so crews could apply water directly to the seat of the fire.",
+        "section_id": "equipment",
+        "figure_id": ""
+      },
+      {
+        "front": "What is a squirrel tail?",
+        "back": "A suction hose permanently attached to the pumper.",
+        "section_id": "equipment",
+        "figure_id": ""
+      },
+      {
+        "front": "Three advantages of the steamer?",
+        "back": "Only a three-person crew, could pump as long as there was coal, didn't need volunteers on the brakes.",
+        "section_id": "equipment",
+        "figure_id": ""
+      },
+      {
+        "front": "How did the chemical wagon create pressure?",
+        "back": "Mixing soda-water with acid produced carbon dioxide gas.",
+        "section_id": "equipment",
+        "figure_id": ""
+      },
+      {
+        "front": "Where does the name 'Maltese cross' come from?",
+        "back": "The Knights of St. John, headquartered on Malta, honored for bravery during the Crusades.",
+        "section_id": "symbols",
+        "figure_id": ""
+      },
+      {
+        "front": "Why were Dalmatians kept in firehouses?",
+        "back": "To guard horse-drawn vehicles and keep the horses calm.",
+        "section_id": "symbols",
+        "figure_id": ""
+      },
+      {
+        "front": "What did the 1904 Baltimore fire lead to?",
+        "back": "Standardized hose threads for firefighting equipment.",
+        "section_id": "fire-losses",
+        "figure_id": ""
+      },
+      {
+        "front": "When was the first National Fire Prevention Week, and who proclaimed it?",
+        "back": "October 4–10, 1925, by President Calvin Coolidge.",
+        "section_id": "fire-losses",
+        "figure_id": ""
+      },
+      {
+        "front": "Three common denominators of historic conflagrations?",
+        "back": "Combustible construction, narrow streets, ineffective building codes.",
+        "section_id": "fire-losses",
+        "figure_id": ""
+      },
+      {
+        "front": "What causes Santa Ana winds?",
+        "back": "High pressure over the Great Basin and low pressure off the Southern California coast.",
+        "section_id": "fire-losses",
+        "figure_id": ""
+      },
+      {
+        "front": "Leading cause of home fires and injuries?",
+        "back": "Cooking.",
+        "section_id": "us-fire-problem",
+        "figure_id": ""
+      },
+      {
+        "front": "Leading cause of fire deaths?",
+        "back": "Careless smoking.",
+        "section_id": "us-fire-problem",
+        "figure_id": ""
+      },
+      {
+        "front": "Leading cause of deaths, injuries, and dollar loss in commercial properties?",
+        "back": "Arson.",
+        "section_id": "us-fire-problem",
+        "figure_id": ""
+      },
+      {
+        "front": "What is the U.S. fire death rate?",
+        "back": "13.1 per million population.",
+        "section_id": "us-fire-problem",
+        "figure_id": ""
+      },
+      {
+        "front": "By how much do residential sprinklers cut the home fire death rate?",
+        "back": "74 percent.",
+        "section_id": "us-fire-problem",
+        "figure_id": ""
+      },
+      {
+        "front": "What is the main purpose of the fire service?",
+        "back": "To manage community risk.",
+        "section_id": "purpose-and-scope",
+        "figure_id": ""
+      },
+      {
+        "front": "Define acceptable risk.",
+        "back": "Risk whose probability is so small, consequences so slight, or benefits so great that people are willing to accept it.",
+        "section_id": "purpose-and-scope",
+        "figure_id": ""
+      },
+      {
+        "front": "What are the three categories of fire department risk?",
+        "back": "Community, organizational, and operational risk.",
+        "section_id": "purpose-and-scope",
+        "figure_id": ""
+      },
+      {
+        "front": "What are the four goals of fire protection?",
+        "back": "Prevent fire from starting; prevent loss of life; confine fire to its origin; extinguish it.",
+        "section_id": "planning-and-risk",
+        "figure_id": ""
+      },
+      {
+        "front": "Policy vs. procedure?",
+        "back": "A policy is a general guideline; a procedure is a specific instruction for a recurring task.",
+        "section_id": "planning-and-risk",
+        "figure_id": ""
+      },
+      {
+        "front": "NFPA 1710 vs. NFPA 1720?",
+        "back": "1710 covers career fire departments; 1720 covers volunteer departments.",
+        "section_id": "planning-and-risk",
+        "figure_id": ""
+      },
+      {
+        "front": "What are the three risk control measures?",
+        "back": "Administrative, engineering, and personnel protection.",
+        "section_id": "planning-and-risk",
+        "figure_id": ""
+      },
+      {
+        "front": "What are the four steps of community risk reduction?",
+        "back": "Preparation, mitigation, response, recovery.",
+        "section_id": "planning-and-risk",
+        "figure_id": ""
+      },
+      {
+        "front": "What name better describes the modern fire department?",
+        "back": "Emergency services agency.",
+        "section_id": "future",
+        "figure_id": ""
+      }
     ],
     "quiz": [
-      { "question": "Which city established the first publicly funded, paid fire department in America?", "choices": ["Philadelphia", "New Amsterdam", "Boston", "Cincinnati"], "answer_index": 2, "explanation": "Boston did so in 1679. Cincinnati (1853) was the first fully paid department.", "section_id": "early-firefighting" },
-      { "question": "Who conceived the idea of the volunteer fire company in use today?", "choices": ["Benjamin Franklin", "Peter Stuyvesant", "George Washington", "Paul Revere"], "answer_index": 0, "explanation": "Franklin organized the Union Volunteer Fire Company in Philadelphia in 1736.", "section_id": "early-firefighting" },
-      { "question": "What is the main purpose of the fire service according to the chapter?", "choices": ["Fire suppression", "Emergency medical response", "Managing community risk", "Code enforcement"], "answer_index": 2, "explanation": "The chapter states the main purpose is to manage community risk.", "section_id": "purpose-and-scope" },
-      { "question": "The 1904 Baltimore conflagration eventually led to:", "choices": ["The first Fire Prevention Week", "Standardized hose threads", "The Weeks Act", "NFPA 1500"], "answer_index": 1, "explanation": "Out-of-town crews' hoses didn't fit Baltimore's hydrants.", "section_id": "fire-losses" },
-      { "question": "What is the leading cause of fire deaths in the United States?", "choices": ["Cooking", "Heating equipment", "Arson", "Careless smoking"], "answer_index": 3, "explanation": "Cooking leads home fires and injuries, but careless smoking leads fire deaths.", "section_id": "us-fire-problem" },
-      { "question": "The greatest loss-of-life wildland fire in U.S. history occurred in:", "choices": ["Peshtigo, Wisconsin, 1871", "Idaho and Montana, 1910", "Yellowstone, 1988", "Paradise, California, 2018"], "answer_index": 0, "explanation": "The Peshtigo fire killed more than 1,500 people.", "section_id": "wildland-history" },
-      { "question": "Which is NOT one of the four steps of community risk reduction?", "choices": ["Mitigation", "Prevention", "Response", "Recovery"], "answer_index": 1, "explanation": "The four steps are preparation, mitigation, response, and recovery.", "section_id": "planning-and-risk" },
-      { "question": "Which NFPA standard addresses staffing and deployment for volunteer fire departments?", "choices": ["NFPA 1500", "NFPA 1710", "NFPA 1720", "NFPA 1910"], "answer_index": 2, "explanation": "1720 covers volunteer departments; 1710 covers career departments.", "section_id": "planning-and-risk" },
-      { "question": "Standard operating procedures and training requirements are examples of which control measure?", "choices": ["Engineering", "Administrative", "Personnel protection", "Operational"], "answer_index": 1, "explanation": "Administrative controls are guidelines, policies, and procedures that limit losses.", "section_id": "planning-and-risk" },
-      { "question": "Why did steamers contribute to the end of volunteer departments in large cities?", "choices": ["They were too expensive to operate", "They required only a small crew to run", "They could not be pulled by horses", "They needed a bucket brigade to fill"], "answer_index": 1, "explanation": "A three-person crew could run a steamer, so cities could afford small paid departments.", "section_id": "equipment" },
-      { "question": "The Maltese cross originated with:", "choices": ["Roman Vigiles", "The Knights of St. John", "London's insurance brigades", "Colonial fire wardens"], "answer_index": 1, "explanation": "The Knights of St. John were headquartered on Malta.", "section_id": "symbols" },
-      { "question": "After the Big Blowup of 1910, federal policy required wildland fires to be:", "choices": ["Allowed to burn if lightning-caused", "Managed based on cost per acre", "Put out by 10 a.m. the next day", "Left to state agencies"], "answer_index": 2, "explanation": "The policy was to suppress all fires by 10 a.m. the following day.", "section_id": "wildland-history" },
-      { "question": "Which of these is a common denominator of historic conflagrations?", "choices": ["Wide streets", "Noncombustible materials", "Ineffective building codes", "Too many fire hydrants"], "answer_index": 2, "explanation": "The three are combustible construction, narrow streets, and ineffective building codes.", "section_id": "fire-losses" },
-      { "question": "About what share of civilian fire deaths occur in the home?", "choices": ["26%", "50%", "74%", "82%"], "answer_index": 3, "explanation": "82% of civilian fire fatalities occur in the home.", "section_id": "us-fire-problem" }
-    ]
+      {
+        "question": "Which city established the first publicly funded, paid fire department in America?",
+        "choices": [
+          "Philadelphia",
+          "New Amsterdam",
+          "Boston",
+          "Cincinnati"
+        ],
+        "answer_index": 2,
+        "explanation": "Boston did so in 1679. Cincinnati (1853) was the first fully paid department.",
+        "section_id": "early-firefighting"
+      },
+      {
+        "question": "Who conceived the idea of the volunteer fire company in use today?",
+        "choices": [
+          "Benjamin Franklin",
+          "Peter Stuyvesant",
+          "George Washington",
+          "Paul Revere"
+        ],
+        "answer_index": 0,
+        "explanation": "Franklin organized the Union Volunteer Fire Company in Philadelphia in 1736.",
+        "section_id": "early-firefighting"
+      },
+      {
+        "question": "What is the main purpose of the fire service according to the chapter?",
+        "choices": [
+          "Fire suppression",
+          "Emergency medical response",
+          "Managing community risk",
+          "Code enforcement"
+        ],
+        "answer_index": 2,
+        "explanation": "The chapter states the main purpose is to manage community risk.",
+        "section_id": "purpose-and-scope"
+      },
+      {
+        "question": "The 1904 Baltimore conflagration eventually led to:",
+        "choices": [
+          "The first Fire Prevention Week",
+          "Standardized hose threads",
+          "The Weeks Act",
+          "NFPA 1500"
+        ],
+        "answer_index": 1,
+        "explanation": "Out-of-town crews' hoses didn't fit Baltimore's hydrants.",
+        "section_id": "fire-losses"
+      },
+      {
+        "question": "What is the leading cause of fire deaths in the United States?",
+        "choices": [
+          "Cooking",
+          "Heating equipment",
+          "Arson",
+          "Careless smoking"
+        ],
+        "answer_index": 3,
+        "explanation": "Cooking leads home fires and injuries, but careless smoking leads fire deaths.",
+        "section_id": "us-fire-problem"
+      },
+      {
+        "question": "The greatest loss-of-life wildland fire in U.S. history occurred in:",
+        "choices": [
+          "Peshtigo, Wisconsin, 1871",
+          "Idaho and Montana, 1910",
+          "Yellowstone, 1988",
+          "Paradise, California, 2018"
+        ],
+        "answer_index": 0,
+        "explanation": "The Peshtigo fire killed more than 1,500 people.",
+        "section_id": "wildland-history"
+      },
+      {
+        "question": "Which is NOT one of the four steps of community risk reduction?",
+        "choices": [
+          "Mitigation",
+          "Prevention",
+          "Response",
+          "Recovery"
+        ],
+        "answer_index": 1,
+        "explanation": "The four steps are preparation, mitigation, response, and recovery.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "question": "Which NFPA standard addresses staffing and deployment for volunteer fire departments?",
+        "choices": [
+          "NFPA 1500",
+          "NFPA 1710",
+          "NFPA 1720",
+          "NFPA 1910"
+        ],
+        "answer_index": 2,
+        "explanation": "1720 covers volunteer departments; 1710 covers career departments.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "question": "Standard operating procedures and training requirements are examples of which control measure?",
+        "choices": [
+          "Engineering",
+          "Administrative",
+          "Personnel protection",
+          "Operational"
+        ],
+        "answer_index": 1,
+        "explanation": "Administrative controls are guidelines, policies, and procedures that limit losses.",
+        "section_id": "planning-and-risk"
+      },
+      {
+        "question": "Why did steamers contribute to the end of volunteer departments in large cities?",
+        "choices": [
+          "They were too expensive to operate",
+          "They required only a small crew to run",
+          "They could not be pulled by horses",
+          "They needed a bucket brigade to fill"
+        ],
+        "answer_index": 1,
+        "explanation": "A three-person crew could run a steamer, so cities could afford small paid departments.",
+        "section_id": "equipment"
+      },
+      {
+        "question": "The Maltese cross originated with:",
+        "choices": [
+          "Roman Vigiles",
+          "The Knights of St. John",
+          "London's insurance brigades",
+          "Colonial fire wardens"
+        ],
+        "answer_index": 1,
+        "explanation": "The Knights of St. John were headquartered on Malta.",
+        "section_id": "symbols"
+      },
+      {
+        "question": "After the Big Blowup of 1910, federal policy required wildland fires to be:",
+        "choices": [
+          "Allowed to burn if lightning-caused",
+          "Managed based on cost per acre",
+          "Put out by 10 a.m. the next day",
+          "Left to state agencies"
+        ],
+        "answer_index": 2,
+        "explanation": "The policy was to suppress all fires by 10 a.m. the following day.",
+        "section_id": "wildland-history"
+      },
+      {
+        "question": "Which of these is a common denominator of historic conflagrations?",
+        "choices": [
+          "Wide streets",
+          "Noncombustible materials",
+          "Ineffective building codes",
+          "Too many fire hydrants"
+        ],
+        "answer_index": 2,
+        "explanation": "The three are combustible construction, narrow streets, and ineffective building codes.",
+        "section_id": "fire-losses"
+      },
+      {
+        "question": "About what share of civilian fire deaths occur in the home?",
+        "choices": [
+          "26%",
+          "50%",
+          "74%",
+          "82%"
+        ],
+        "answer_index": 3,
+        "explanation": "82% of civilian fire fatalities occur in the home.",
+        "section_id": "us-fire-problem"
+      }
+    ],
+    "figures": []
   }
 }

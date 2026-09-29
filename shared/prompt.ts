@@ -10,6 +10,8 @@ How to write:
 - Flashcards: one fact per card, fronts phrased as a question or cue, backs as short as possible. Cover every section.
 - Quiz: exactly 4 choices per question, one clearly correct answer, plausible distractors drawn from the same material. Vary which position holds the answer.
 - section_id fields must match an id in "sections".
+- Figures: students struggle to picture things described only in words, so point to the visuals the material actually contains (diagrams, symbols, placards, photos, labelled drawings, charts). Give the exact file name and 1-based page, and a tight crop box. Only list figures you can see in the material; never invent one. When there are several things a student must tell apart by sight, crop each separately and add picture flashcards for them.
+- image_query: for physical things a student should recognize in real life, give search words that would find real photos; leave it empty for abstract ideas.
 - No emoji. No motivational filler.`;
 
 export type Detail = "concise" | "standard" | "thorough";

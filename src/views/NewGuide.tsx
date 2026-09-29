@@ -5,6 +5,7 @@ import { Segmented } from "../components/Popover";
 import { generateGuide, getStatus, type GenerateProgress, type Status } from "../lib/api";
 import { usePrefs } from "../lib/prefs";
 import { navigate } from "../lib/router";
+import { renderFigures } from "../lib/figures";
 import { saveGuide } from "../lib/store";
 
 const ACCEPT = ".pdf,.docx,.pptx,.txt,.md,.csv,.rtf,.html,.png,.jpg,.jpeg,.webp,.gif";
@@ -71,7 +72,9 @@ export function NewGuide() {
     try {
       const guide = await job.promise;
       const names = [...files.map((f) => f.name), ...(text.trim() ? ["Pasted notes"] : [])];
-      const stored = await saveGuide(guide, names, context);
+      setProgress((p) => (p ? { ...p, stage: "finishing" } : p));
+      const figureImages = await renderFigures(guide.figures, files);
+      const stored = await saveGuide(guide, names, context, figureImages);
       navigate({ name: "guide", id: stored.id, tab: "guide" });
     } catch (e) {
       setProgress(null);

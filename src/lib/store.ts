@@ -26,7 +26,7 @@ interface Backend {
   putProgress(id: string, p: Progress): Promise<void>;
 }
 
-type SampleFile = Pick<StoredGuide, "id" | "sourceFiles" | "context" | "guide">;
+type SampleFile = Pick<StoredGuide, "id" | "sourceFiles" | "context" | "guide" | "figureImages">;
 const sample = (file: SampleFile, day: number): StoredGuide => ({
   ...file,
   createdAt: Date.UTC(2026, 8, day),
@@ -90,7 +90,8 @@ async function claudeBackend(): Promise<Backend | null> {
       const snap = await guides.doc(id).get();
       return snap.exists ? (snap.data() as unknown as StoredGuide) : undefined;
     },
-    put: (g) => guides.doc(g.id).set(g as unknown as Record<string, unknown>),
+    // Store documents are capped at 256 KiB, so figure images (data URLs) stay out of them.
+    put: (g) => guides.doc(g.id).set({ ...g, figureImages: {} } as unknown as Record<string, unknown>),
     remove: async (id) => {
       await guides.doc(id).delete();
       await progress.doc(id).delete();
@@ -122,7 +123,12 @@ export async function getGuide(id: string): Promise<StoredGuide | undefined> {
   return (await store()).get(id);
 }
 
-export async function saveGuide(guide: Guide, sourceFiles: string[], context: string): Promise<StoredGuide> {
+export async function saveGuide(
+  guide: Guide,
+  sourceFiles: string[],
+  context: string,
+  figureImages?: Record<string, string>,
+): Promise<StoredGuide> {
   const now = Date.now();
   const stored: StoredGuide = {
     id: `${now.toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
@@ -131,6 +137,7 @@ export async function saveGuide(guide: Guide, sourceFiles: string[], context: st
     sourceFiles,
     context,
     guide,
+    figureImages,
   };
   await (await store()).put(stored);
   return stored;

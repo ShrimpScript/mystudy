@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Guide, StoredGuide } from "../../shared/guide";
+import { FigureView, SeeIt } from "../components/Figure";
 import { Icon } from "../components/Icon";
 import { narrator, useNarrator, type Segment } from "../lib/narrator";
 import { href } from "../lib/router";
@@ -87,6 +88,15 @@ export function GuideReader({ stored, anchor }: { stored: StoredGuide; anchor?: 
   }, [g.sections]);
 
   const cardsFor = (id: string) => g.flashcards.filter((c) => c.section_id === id).length;
+  const images = stored.figureImages ?? {};
+  // Section figures are the ones meant for reading; picture-card crops are shown on the cards.
+  const cardOnly = new Set(g.flashcards.map((c) => c.figure_id).filter(Boolean));
+  const seeItFor = (id: string) =>
+    g.key_terms
+      .filter((t) => t.section_id === id && t.image_query)
+      .map((t) => ({ label: t.term.replace(/\s*\(.*\)$/, ""), query: t.image_query! }));
+  const figuresFor = (id: string) =>
+    (g.figures ?? []).filter((f) => f.section_id === id && images[f.id] && !cardOnly.has(f.id));
   const sectionIndex = Object.fromEntries(g.sections.map((s, i) => [s.id, i]));
 
   return (
@@ -174,6 +184,13 @@ export function GuideReader({ stored, anchor }: { stored: StoredGuide; anchor?: 
                   {p}
                 </p>
               ))}
+              {figuresFor(s.id).length > 0 && (
+                <div className="section-figures">
+                  {figuresFor(s.id).map((f) => (
+                    <FigureView key={f.id} fig={f} src={images[f.id]} />
+                  ))}
+                </div>
+              )}
               {s.key_points.length > 0 && (
                 <ul className="points" data-read={`${s.id}:points`}>
                   {s.key_points.map((k, j) => (
@@ -181,6 +198,7 @@ export function GuideReader({ stored, anchor }: { stored: StoredGuide; anchor?: 
                   ))}
                 </ul>
               )}
+              <SeeIt items={seeItFor(s.id)} />
               <div className="section-actions">
                 <button className="btn-text" onClick={() => narrator.playFrom(`${s.id}:`)}>
                   <Icon name="play" size={14} /> Listen from here

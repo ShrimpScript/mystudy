@@ -10,6 +10,8 @@ interface Card {
   front: string;
   back: string;
   section_id: string;
+  /** Picture shown on the front, for "what is this?" cards. */
+  image?: string;
 }
 
 type Scope = "all" | "review" | "section";
@@ -28,11 +30,18 @@ export function Flashcards({ stored, sectionFilter }: { stored: StoredGuide; sec
   }, [stored.id]);
 
   const allCards = useMemo<Card[]>(() => {
-    const cards = g.flashcards.map((c, i) => ({ ...c, key: `c${i}` }));
+    const images = stored.figureImages ?? {};
+    const cards: Card[] = g.flashcards.map((c, i) => ({
+      key: `c${i}`,
+      front: c.front,
+      back: c.back,
+      section_id: c.section_id,
+      image: c.figure_id ? images[c.figure_id] : undefined,
+    }));
     if (includeTerms)
       g.key_terms.forEach((t, i) => cards.push({ key: `t${i}`, front: t.term, back: t.definition, section_id: t.section_id }));
     return cards;
-  }, [g, includeTerms]);
+  }, [g, includeTerms, stored.figureImages]);
 
   const deck = useMemo(() => {
     if (!progress) return [];
@@ -200,7 +209,7 @@ function Session({
       </p>
 
       <button
-        className={`flashcard ${flipped ? "is-flipped" : ""}`}
+        className={`flashcard ${flipped ? "is-flipped" : ""} ${card.image ? "has-image" : ""}`}
         onClick={() => {
           if (swiped.current) swiped.current = false;
           else setFlipped((f) => !f);
@@ -218,12 +227,14 @@ function Session({
         }}
         aria-label={flipped ? `Answer: ${card.back}. Tap to show the question.` : `Question: ${card.front}. Tap to reveal the answer.`}
       >
-        <span className="flashcard-face flashcard-front">
-          <span className="label">Question</span>
+        <span className={`flashcard-face flashcard-front ${card.image ? "has-image" : ""}`}>
+          <span className="label">{card.image ? "Identify" : "Question"}</span>
+          {card.image && <img className="flashcard-image" src={card.image} alt="" draggable={false} />}
           <span className="flashcard-text">{card.front}</span>
         </span>
-        <span className="flashcard-face flashcard-back">
+        <span className={`flashcard-face flashcard-back ${card.image ? "has-image" : ""}`}>
           <span className="label">Answer</span>
+          {card.image && <img className="flashcard-image small" src={card.image} alt="" draggable={false} />}
           <span className="flashcard-text">{card.back}</span>
           <span className="flashcard-cue">{card.front}</span>
         </span>

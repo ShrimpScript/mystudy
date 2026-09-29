@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import type { StoredGuide } from "../../shared/guide";
+import { FigureView, RealPhotos } from "../components/Figure";
 import { Icon } from "../components/Icon";
 import { href } from "../lib/router";
 
@@ -16,8 +17,10 @@ export function Terms({ stored }: { stored: StoredGuide }) {
   const numbers = g.numbers_to_know.filter((n) => match(n.value, n.meaning));
   const lists = g.lists_to_memorize.filter((l) => match(l.title, ...l.items));
   const timeline = g.timeline.filter((t) => match(t.when, t.event));
+  const images = stored.figureImages ?? {};
+  const visuals = (g.figures ?? []).filter((f) => images[f.id] && match(f.caption));
   const sectionHref = (id: string) => href({ name: "guide", id: stored.id, tab: "guide", anchor: id });
-  const nothing = !terms.length && !numbers.length && !lists.length && !timeline.length;
+  const nothing = !terms.length && !numbers.length && !lists.length && !timeline.length && !visuals.length;
 
   return (
     <div className="page page-wide terms">
@@ -35,6 +38,17 @@ export function Terms({ stored }: { stored: StoredGuide }) {
 
       {nothing && <p className="empty">Nothing matches “{q}”.</p>}
 
+      {visuals.length > 0 && (
+        <section className="visuals">
+          <h2 className="label">Visuals · {visuals.length}</h2>
+          <div className="visual-grid">
+            {visuals.map((f) => (
+              <FigureView key={f.id} fig={f} src={images[f.id]} compact />
+            ))}
+          </div>
+        </section>
+      )}
+
       <div className="terms-grid">
         {terms.length > 0 && (
           <section className="terms-col">
@@ -48,6 +62,7 @@ export function Terms({ stored }: { stored: StoredGuide }) {
                     <a className="ref mono" href={sectionHref(t.section_id)} aria-label={`Read about ${t.term} in the guide`}>
                       ↗
                     </a>
+                    {t.image_query && <RealPhotos query={t.image_query} label="Photos" />}
                   </dd>
                 </div>
               ))}

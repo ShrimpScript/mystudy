@@ -14,6 +14,27 @@ export interface Guide {
   exam_focus: ExamPoint[];
   flashcards: Flashcard[];
   quiz: QuizQuestion[];
+  /** Visuals from the source material. Optional: guides made before figures existed lack it. */
+  figures?: Figure[];
+}
+
+/**
+ * A picture from the uploaded material: a page (or part of one) of a PDF, or
+ * an uploaded image. The app renders and crops it in the browser after
+ * generation and stores the result alongside the guide.
+ */
+export interface Figure {
+  id: string;
+  /** File name as uploaded. */
+  source_file: string;
+  /** 1-based page within that file (1 for images). */
+  page: number;
+  /** Region of the page as fractions of its width and height (0–1). Whole page: 0,0,1,1. */
+  crop: { x: number; y: number; w: number; h: number };
+  caption: string;
+  section_id: string;
+  /** Search words for real-world photos of the subject, or "" when photos wouldn't help. */
+  image_query: string;
 }
 
 export interface Section {
@@ -29,6 +50,8 @@ export interface Term {
   term: string;
   definition: string;
   section_id: string;
+  /** Search words for real-world photos of the term, or "" when it isn't a visual thing. */
+  image_query?: string;
 }
 
 export interface NumberFact {
@@ -59,6 +82,8 @@ export interface Flashcard {
   front: string;
   back: string;
   section_id: string;
+  /** A figure shown on the front ("What is this?"), or "". */
+  figure_id?: string;
 }
 
 export interface QuizQuestion {
@@ -78,6 +103,8 @@ export interface StoredGuide {
   context: string;
   guide: Guide;
   sample?: boolean;
+  /** Rendered figure images by figure id: data: URLs, or relative URLs for built-in guides. */
+  figureImages?: Record<string, string>;
 }
 
 const str = { type: "string" } as const;
@@ -111,7 +138,16 @@ export const guideJsonSchema = obj({
   },
   key_terms: {
     type: "array",
-    items: obj({ term: str, definition: { ...str, description: "One or two sentences, plain language." }, section_id: str }),
+    items: obj({
+      term: str,
+      definition: { ...str, description: "One or two sentences, plain language." },
+      section_id: str,
+      image_query: {
+        ...str,
+        description:
+          "If the term names something physical a student should recognize on sight (equipment, a vehicle, a sign, a symbol, an organism, a landmark, an artwork), 2–6 search words for finding real photos of it, specific enough to avoid look-alikes (e.g. 'MC-331 propane tank trailer'). Otherwise \"\".",
+      },
+    }),
   },
   numbers_to_know: {
     type: "array",
@@ -140,8 +176,35 @@ export const guideJsonSchema = obj({
   },
   flashcards: {
     type: "array",
-    description: "20–40 active-recall cards covering the whole material. Fronts are questions or cues, backs are short answers.",
-    items: obj({ front: str, back: str, section_id: str }),
+    description:
+      "20–40 active-recall cards covering the whole material. Fronts are questions or cues, backs are short answers. When figures show things to identify by sight, include picture cards: set figure_id and make the front a question like 'Which tank truck is this?' that the picture answers.",
+    items: obj({
+      front: str,
+      back: str,
+      section_id: str,
+      figure_id: { ...str, description: "The id of a figure to show on the front, or \"\"." },
+    }),
+  },
+  figures: {
+    type: "array",
+    description:
+      "Visuals in the uploaded material that help a student recognize or understand something: diagrams, photos, symbols, labels, charts, labelled drawings. Up to 24. Skip decorative clip art, logos and page headers. For a figure used on a picture flashcard, crop to the picture only, leaving out any text that gives the answer; make a separate figure for each item a student must tell apart.",
+    items: obj({
+      id: { ...str, description: "Short kebab-case slug, unique, e.g. 'tank-truck-shapes'." },
+      source_file: { ...str, description: "The file name exactly as given in the material." },
+      page: { type: "integer", description: "1-based page number within that file; 1 for an image file." },
+      crop: {
+        ...obj({ x: { type: "number" }, y: { type: "number" }, w: { type: "number" }, h: { type: "number" } }),
+        description:
+          "The figure's region as fractions of the page (x and w of its width, y and h of its height, origin top-left). Keep a small margin. Use 0,0,1,1 for a whole page or image.",
+      },
+      caption: { ...str, description: "What the figure shows and what to notice, in one or two sentences." },
+      section_id: str,
+      image_query: {
+        ...str,
+        description: "Search words for real-world photos of what the figure depicts, if seeing the real thing would help; otherwise \"\".",
+      },
+    }),
   },
   quiz: {
     type: "array",
@@ -161,13 +224,18 @@ export function normalizeGuide(g: Guide): Guide {
   const ids = new Set(g.sections.map((s) => s.id));
   const fallbackId = g.sections[0]?.id ?? "";
   const fixId = <T extends { section_id: string }>(x: T) => (ids.has(x.section_id) ? x : { ...x, section_id: fallbackId });
+  const figures = (g.figures ?? []).filter((f) => f.id && f.page >= 1).map(fixId);
+  const figureIds = new Set(figures.map((f) => f.id));
   return {
     ...g,
     key_terms: g.key_terms.map(fixId),
     numbers_to_know: g.numbers_to_know.map(fixId),
     lists_to_memorize: g.lists_to_memorize.map(fixId),
     exam_focus: g.exam_focus.map(fixId),
-    flashcards: g.flashcards.filter((c) => c.front.trim() && c.back.trim()).map(fixId),
+    figures,
+    flashcards: g.flashcards
+      .filter((c) => c.front.trim() && c.back.trim())
+      .map((c) => fixId({ ...c, figure_id: c.figure_id && figureIds.has(c.figure_id) ? c.figure_id : "" })),
     quiz: g.quiz
       .filter((q) => q.choices.length >= 2 && q.answer_index >= 0 && q.answer_index < q.choices.length)
       .map(fixId),
