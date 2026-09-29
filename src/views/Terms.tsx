@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import type { StoredGuide } from "../../shared/guide";
+import { DiagramView } from "../components/Diagram";
 import { FigureView, RealPhotos } from "../components/Figure";
 import { Icon } from "../components/Icon";
 import { href } from "../lib/router";
@@ -19,8 +20,11 @@ export function Terms({ stored }: { stored: StoredGuide }) {
   const timeline = g.timeline.filter((t) => match(t.when, t.event));
   const images = stored.figureImages ?? {};
   const visuals = (g.figures ?? []).filter((f) => images[f.id] && match(f.caption));
+  const diagrams = (g.diagrams ?? []).filter((d) =>
+    match(d.title, d.caption, ...d.nodes.map((n) => n.label), ...d.rows.map((r) => r.label)),
+  );
   const sectionHref = (id: string) => href({ name: "guide", id: stored.id, tab: "guide", anchor: id });
-  const nothing = !terms.length && !numbers.length && !lists.length && !timeline.length && !visuals.length;
+  const nothing = !terms.length && !numbers.length && !lists.length && !timeline.length && !visuals.length && !diagrams.length;
 
   return (
     <div className="page page-wide terms">
@@ -44,6 +48,17 @@ export function Terms({ stored }: { stored: StoredGuide }) {
           <div className="visual-grid">
             {visuals.map((f) => (
               <FigureView key={f.id} fig={f} src={images[f.id]} compact />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {diagrams.length > 0 && (
+        <section className="diagrams">
+          <h2 className="label">Diagrams · {diagrams.length}</h2>
+          <div className="diagram-grid">
+            {diagrams.map((d) => (
+              <DiagramView key={d.id} d={d} />
             ))}
           </div>
         </section>

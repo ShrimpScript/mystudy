@@ -16,6 +16,37 @@ export interface Guide {
   quiz: QuizQuestion[];
   /** Visuals from the source material. Optional: guides made before figures existed lack it. */
   figures?: Figure[];
+  /** Diagrams drawn by the app from structure in the material. Optional for older guides. */
+  diagrams?: Diagram[];
+}
+
+export type DiagramKind = "process" | "cycle" | "spectrum" | "comparison" | "hierarchy";
+
+/**
+ * A diagram the app draws itself from structured facts: no generated imagery.
+ * - process: ordered steps (nodes)
+ * - cycle: steps that repeat, last leads back to first (nodes)
+ * - spectrum: items ranked along one scale from low_label to high_label (nodes, in order)
+ * - comparison: a table of items (rows) against attributes (columns)
+ * - hierarchy: a tree; each node names its parent's index, -1 for top level (nodes)
+ */
+export interface Diagram {
+  id: string;
+  kind: DiagramKind;
+  title: string;
+  caption: string;
+  section_id: string;
+  nodes: DiagramNode[];
+  columns: string[];
+  rows: { label: string; cells: string[] }[];
+  low_label: string;
+  high_label: string;
+}
+
+export interface DiagramNode {
+  label: string;
+  detail: string;
+  parent: number;
 }
 
 /**
@@ -206,6 +237,35 @@ export const guideJsonSchema = obj({
       },
     }),
   },
+  diagrams: {
+    type: "array",
+    description:
+      "0–8 diagrams that make structure in the material visible: a sequence of steps (process), a repeating cycle (cycle), items ranked on one scale (spectrum), several items compared on the same attributes (comparison), or categories and sub-categories (hierarchy). Only draw structure the material actually states; use its wording; never add facts. Skip a diagram if a plain list says it as well.",
+    items: obj({
+      id: { ...str, description: "Short kebab-case slug, unique." },
+      kind: { type: "string", enum: ["process", "cycle", "spectrum", "comparison", "hierarchy"] },
+      title: str,
+      caption: { ...str, description: "One sentence on what the diagram shows or how to read it." },
+      section_id: str,
+      nodes: {
+        type: "array",
+        description: "process/cycle/spectrum/hierarchy: the items in order (2–9). Empty for comparison.",
+        items: obj({
+          label: { ...str, description: "1–5 words." },
+          detail: { ...str, description: "Optional short detail (under 15 words), or \"\"." },
+          parent: { type: "integer", description: "hierarchy only: index of the parent node, -1 for top level. -1 otherwise." },
+        }),
+      },
+      columns: { ...strList, description: "comparison only: attribute names (2–5). Empty otherwise." },
+      rows: {
+        type: "array",
+        description: "comparison only: one row per item, cells in column order. Empty otherwise.",
+        items: obj({ label: str, cells: strList }),
+      },
+      low_label: { ...str, description: "spectrum only: what the start of the scale means (e.g. 'Least protective'). \"\" otherwise." },
+      high_label: { ...str, description: "spectrum only: what the end of the scale means. \"\" otherwise." },
+    }),
+  },
   quiz: {
     type: "array",
     description: "10–15 multiple-choice questions with exactly 4 choices each.",
@@ -233,6 +293,7 @@ export function normalizeGuide(g: Guide): Guide {
     lists_to_memorize: g.lists_to_memorize.map(fixId),
     exam_focus: g.exam_focus.map(fixId),
     figures,
+    diagrams: (g.diagrams ?? []).map(fixId).filter(validDiagram),
     flashcards: g.flashcards
       .filter((c) => c.front.trim() && c.back.trim())
       .map((c) => fixId({ ...c, figure_id: c.figure_id && figureIds.has(c.figure_id) ? c.figure_id : "" })),
@@ -240,4 +301,11 @@ export function normalizeGuide(g: Guide): Guide {
       .filter((q) => q.choices.length >= 2 && q.answer_index >= 0 && q.answer_index < q.choices.length)
       .map(fixId),
   };
+}
+
+function validDiagram(d: Diagram): boolean {
+  if (!d.id || !d.title) return false;
+  if (d.kind === "comparison") return d.columns.length > 0 && d.rows.length > 0;
+  if (d.kind === "hierarchy") return d.nodes.length > 1 && d.nodes.every((n, i) => n.parent < i);
+  return d.nodes.length > 1;
 }

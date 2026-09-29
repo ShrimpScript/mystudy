@@ -11,7 +11,7 @@
     "big_picture": [
       "Any responder can run into hazmat, and the first call often won't say so: it may come in as a traffic accident, medical aid, fire, or person down.",
       "Recognition leads to safety, and safety leads to lives preserved. If you don't know it's there, you can't protect yourself.",
-      "Use the standard clues in order of safety: occupancy and location, container shapes, markings and colors, placards and labels, shipping papers and SDS, and your senses only as a last resort.",
+      "Know the standard clues: occupancy and location, container shapes, markings and colors, placards and labels, shipping papers and SDS, and your senses, which are only a last resort.",
       "Clues are warnings, not absolutes. Placards and papers can be missing, wrong, or unreadable, so cross-check sources.",
       "First operational thought is safety: go slow, keep your distance, and approach upwind, upgrade, and upstream."
     ],
@@ -483,7 +483,7 @@
           "Shipping papers & SDS",
           "Senses (last resort)"
         ],
-        "memory_aid": "Ordered from safest (far away) to least safe (close enough to smell).",
+        "memory_aid": "Senses come last for a reason: using them means you're already close enough to be exposed.",
         "section_id": "recognition-clues"
       },
       {
@@ -1658,6 +1658,499 @@
         "caption": "Floating roof tank: open top with a roof that rides on the liquid.",
         "section_id": "other-containers",
         "image_query": "floating roof tank"
+      }
+    ],
+    "diagrams": [
+      {
+        "id": "clue-order",
+        "kind": "process",
+        "title": "The standard recognition clues",
+        "caption": "The chapter's list of clues, in its order. Senses are the last resort.",
+        "section_id": "recognition-clues",
+        "nodes": [
+          {
+            "label": "Occupancy / location",
+            "detail": "Who's there and what they make, store or ship",
+            "parent": -1
+          },
+          {
+            "label": "Container shapes",
+            "detail": "e.g. a compressed gas cylinder",
+            "parent": -1
+          },
+          {
+            "label": "Markings & colors",
+            "detail": "e.g. a package label",
+            "parent": -1
+          },
+          {
+            "label": "Placards & labels",
+            "detail": "e.g. orange placard = explosive",
+            "parent": -1
+          },
+          {
+            "label": "Shipping papers & SDS",
+            "detail": "e.g. a train's consist",
+            "parent": -1
+          },
+          {
+            "label": "Senses",
+            "detail": "Sight, hearing, smell: last resort",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "cargo-tanks",
+        "kind": "comparison",
+        "title": "DOT cargo tank trucks at a glance",
+        "caption": "Read across a row: the cross-section shape tells you what the truck is built to carry.",
+        "section_id": "cargo-tank-trucks",
+        "nodes": [],
+        "columns": [
+          "Shape",
+          "Usually carries",
+          "Notes"
+        ],
+        "rows": [
+          {
+            "label": "DOT 406 / MC 306",
+            "cells": [
+              "Elliptical",
+              "Petroleum liquids (gasoline, diesel)",
+              "Usually aluminum; melts rather than explodes in a fire"
+            ]
+          },
+          {
+            "label": "DOT 407 / MC 307",
+            "cells": [
+              "Horseshoe (insulated round tank)",
+              "Liquids with low vapor pressure",
+              "Outer covering usually aluminum"
+            ]
+          },
+          {
+            "label": "DOT 412 / MC 312",
+            "cells": [
+              "Circular with external ribs",
+              "Often corrosives",
+              "May also carry petroleum products"
+            ]
+          },
+          {
+            "label": "MC 331",
+            "cells": [
+              "Circular with spherical ends",
+              "Compressed gases",
+              "Usually steel; tube trailer is a version"
+            ]
+          },
+          {
+            "label": "MC 338",
+            "cells": [
+              "Insulated cylinder",
+              "Cryogenic liquids (liquefied gases)",
+              "External insulation"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "rail-cars",
+        "kind": "comparison",
+        "title": "General service vs pressure rail tank cars",
+        "caption": "Look at the top of the car: exposed fittings suggest general service; one protective housing suggests pressure.",
+        "section_id": "other-containers",
+        "nodes": [],
+        "columns": [
+          "General service (low / non-pressure)",
+          "Pressure"
+        ],
+        "rows": [
+          {
+            "label": "Shape",
+            "cells": [
+              "Rounded ends",
+              "Rounded ends"
+            ]
+          },
+          {
+            "label": "Fittings",
+            "cells": [
+              "On top, normally without protective housing",
+              "On top, normally inside a protective housing"
+            ]
+          },
+          {
+            "label": "Compartments",
+            "cells": [
+              "May have several",
+              "Not compartmentalized"
+            ]
+          },
+          {
+            "label": "Thermal protection",
+            "cells": [
+              "—",
+              "May have insulation, a jacket or white paint"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "radiological",
+        "kind": "spectrum",
+        "title": "Radiological packaging",
+        "caption": "Each type is built to survive more than the one before it.",
+        "section_id": "other-containers",
+        "nodes": [
+          {
+            "label": "Excepted",
+            "detail": "Normal transport",
+            "parent": -1
+          },
+          {
+            "label": "Industrial",
+            "detail": "Adds drop & stacking tests",
+            "parent": -1
+          },
+          {
+            "label": "Type A",
+            "detail": "Minor accidents; low-level material",
+            "parent": -1
+          },
+          {
+            "label": "Type B",
+            "detail": "Severe accidents; high activity",
+            "parent": -1
+          },
+          {
+            "label": "Type C",
+            "detail": "Aircraft; not domestic",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "Least protective",
+        "high_label": "Most protective"
+      },
+      {
+        "id": "placard-label",
+        "kind": "comparison",
+        "title": "Placards vs labels",
+        "caption": "Same diamond shape and color code; different size and where they go.",
+        "section_id": "placards-labels",
+        "nodes": [],
+        "columns": [
+          "Goes on",
+          "Minimum size",
+          "Identifies the hazard by"
+        ],
+        "rows": [
+          {
+            "label": "Placard",
+            "cells": [
+              "Shipping containers: trailers, railcars, intermodal and bulk containers",
+              "10.8 in per side",
+              "Background color, symbol, class number at bottom"
+            ]
+          },
+          {
+            "label": "Label",
+            "cells": [
+              "Packages: drums, bags, boxes, bottles, cylinders",
+              "3.9 in per side",
+              "Background color, symbol, class number at bottom"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "placard-colors",
+        "kind": "comparison",
+        "title": "Placard colors, symbols and examples",
+        "caption": "From the chapter's placard list. Learn to read the color first, then the symbol, then the number.",
+        "section_id": "placards-labels",
+        "nodes": [],
+        "columns": [
+          "Color / symbol",
+          "Example"
+        ],
+        "rows": [
+          {
+            "label": "1.1–1.3 Explosives",
+            "cells": [
+              "Orange / bursting ball",
+              "Trinitrotoluene"
+            ]
+          },
+          {
+            "label": "1.4–1.6 Explosives",
+            "cells": [
+              "Orange / division number",
+              "—"
+            ]
+          },
+          {
+            "label": "2.1 Flammable gas",
+            "cells": [
+              "Red / flame",
+              "Propane"
+            ]
+          },
+          {
+            "label": "2.2 Non-flammable gas",
+            "cells": [
+              "Green / cylinder",
+              "Carbon dioxide"
+            ]
+          },
+          {
+            "label": "2.3 Poison gas",
+            "cells": [
+              "White / skull & crossbones",
+              "Chlorine"
+            ]
+          },
+          {
+            "label": "3 Flammable liquid",
+            "cells": [
+              "Red / flame",
+              "Gasoline"
+            ]
+          },
+          {
+            "label": "4.1 Flammable solid",
+            "cells": [
+              "Red & white stripes / flame",
+              "Fusee"
+            ]
+          },
+          {
+            "label": "4.2 Spontaneously combustible",
+            "cells": [
+              "White over red / flame",
+              "White phosphorus"
+            ]
+          },
+          {
+            "label": "4.3 Dangerous when wet",
+            "cells": [
+              "Blue / flame",
+              "Calcium carbide"
+            ]
+          },
+          {
+            "label": "5.1 Oxidizer",
+            "cells": [
+              "Yellow / flaming “O”",
+              "Hydrogen peroxide"
+            ]
+          },
+          {
+            "label": "5.2 Organic peroxide",
+            "cells": [
+              "Red over yellow / flame",
+              "MEKP"
+            ]
+          },
+          {
+            "label": "6.1 Poison",
+            "cells": [
+              "White / skull & crossbones",
+              "Arsenic"
+            ]
+          },
+          {
+            "label": "6.2 Infectious",
+            "cells": [
+              "No placard",
+              "Infectious substances"
+            ]
+          },
+          {
+            "label": "7 Radioactive",
+            "cells": [
+              "Yellow over white / trefoil",
+              "Thorium"
+            ]
+          },
+          {
+            "label": "8 Corrosive",
+            "cells": [
+              "White over black / test tube",
+              "Sulfuric acid"
+            ]
+          },
+          {
+            "label": "9 Miscellaneous",
+            "cells": [
+              "White & black stripes over white / no symbol",
+              "Asbestos"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "placard-when",
+        "kind": "hierarchy",
+        "title": "When are placards required?",
+        "caption": "Table 1 materials need placards in any amount; Table 2 only above the weight threshold.",
+        "section_id": "placards-labels",
+        "nodes": [
+          {
+            "label": "Placards required",
+            "detail": "",
+            "parent": -1
+          },
+          {
+            "label": "Bulk shipments",
+            "detail": "Any amount",
+            "parent": 0
+          },
+          {
+            "label": "Table 1 materials",
+            "detail": "Any amount (e.g. explosives 1.1–1.3, poison gas, dangerous when wet)",
+            "parent": 0
+          },
+          {
+            "label": "Table 2 materials",
+            "detail": "Over 1,001 lbs aggregate at one facility",
+            "parent": 0
+          },
+          {
+            "label": "Mixed Table 2 load",
+            "detail": "May use one DANGEROUS placard",
+            "parent": 3
+          },
+          {
+            "label": "2,205 lbs+ of one category",
+            "detail": "Also needs that category's placard",
+            "parent": 3
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "nfpa-hmis",
+        "kind": "comparison",
+        "title": "NFPA 704 vs HMIS",
+        "caption": "Similar colors and 0–4 ratings, different audiences.",
+        "section_id": "special-markings",
+        "nodes": [],
+        "columns": [
+          "Informs",
+          "Where you see it",
+          "Doesn't tell you"
+        ],
+        "rows": [
+          {
+            "label": "NFPA 704",
+            "cells": [
+              "Emergency responders",
+              "Fixed facilities: containers, tanks, entrances to storage areas",
+              "Material name, quantity or exact location"
+            ]
+          },
+          {
+            "label": "HMIS",
+            "cells": [
+              "Employees",
+              "Color-coded labels with numbers and symbols",
+              "—"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "signal-words",
+        "kind": "spectrum",
+        "title": "GHS signal words",
+        "caption": "GHS uses only two signal words.",
+        "section_id": "ghs",
+        "nodes": [
+          {
+            "label": "Warning",
+            "detail": "Less severe hazards",
+            "parent": -1
+          },
+          {
+            "label": "Danger",
+            "detail": "More severe hazards",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "Less severe",
+        "high_label": "More severe"
+      },
+      {
+        "id": "papers-by-mode",
+        "kind": "comparison",
+        "title": "Where to find the shipping papers",
+        "caption": "Know the document's name and where it's kept for each mode.",
+        "section_id": "shipping-papers",
+        "nodes": [],
+        "columns": [
+          "Document",
+          "Where it's kept",
+          "Reg."
+        ],
+        "rows": [
+          {
+            "label": "Truck",
+            "cells": [
+              "Bill of lading",
+              "In the cab, within the driver's reach or in the driver's door holder",
+              "49 CFR 177.817"
+            ]
+          },
+          {
+            "label": "Air",
+            "cells": [
+              "Air bill",
+              "With the pilot in command",
+              "49 CFR 175.33"
+            ]
+          },
+          {
+            "label": "Rail",
+            "cells": [
+              "Waybill and consist",
+              "With a crew member (conductor)",
+              "49 CFR 174.24"
+            ]
+          },
+          {
+            "label": "Vessel",
+            "cells": [
+              "Dangerous cargo manifest",
+              "On or near the bridge",
+              "49 CFR 176.30"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
       }
     ]
   },

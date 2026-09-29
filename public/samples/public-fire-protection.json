@@ -1227,6 +1227,283 @@
         "section_id": "us-fire-problem"
       }
     ],
-    "figures": []
+    "figures": [],
+    "diagrams": [
+      {
+        "id": "apparatus",
+        "kind": "process",
+        "title": "Pumping apparatus, in the order the chapter presents them",
+        "caption": "The main improvements in pumping apparatus the chapter describes.",
+        "section_id": "equipment",
+        "nodes": [
+          {
+            "label": "Hand pumper",
+            "detail": "Siphona principle; volunteers on the brakes",
+            "parent": -1
+          },
+          {
+            "label": "Steamer",
+            "detail": "Three-person crew; pulled by horses",
+            "parent": -1
+          },
+          {
+            "label": "Chemical wagon",
+            "detail": "Soda and acid make CO₂ pressure",
+            "parent": -1
+          },
+          {
+            "label": "Motorized engine",
+            "detail": "Same motor drives truck and pump",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "wildland-policy",
+        "kind": "comparison",
+        "title": "Two fires that changed wildland policy",
+        "caption": "The first led to suppressing every fire; the second showed what letting fires burn can mean.",
+        "section_id": "wildland-history",
+        "nodes": [],
+        "columns": [
+          "Big Blowup (1910)",
+          "Yellowstone (1988)"
+        ],
+        "rows": [
+          {
+            "label": "Where",
+            "cells": [
+              "Idaho panhandle and northwestern Montana",
+              "Yellowstone National Park"
+            ]
+          },
+          {
+            "label": "Size",
+            "cells": [
+              "Over 3 million acres in two days",
+              "About 800,000 acres in the park, 400,000 outside"
+            ]
+          },
+          {
+            "label": "Policy at the time",
+            "cells": [
+              "—",
+              "Let-burn (lightning-caused fires)"
+            ]
+          },
+          {
+            "label": "Aftermath",
+            "cells": [
+              "Weeks Act (1911); every fire out by 10 a.m. next day",
+              "Park survived and thrived; fuels reduced"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "risk-categories",
+        "kind": "hierarchy",
+        "title": "What fire departments manage",
+        "caption": "The main purpose is managing community risk, across three categories of risk.",
+        "section_id": "purpose-and-scope",
+        "nodes": [
+          {
+            "label": "Managing risk",
+            "detail": "Financial, liability and safety risks",
+            "parent": -1
+          },
+          {
+            "label": "Community risk",
+            "detail": "Risk to the community",
+            "parent": 0
+          },
+          {
+            "label": "Organizational risk",
+            "detail": "Risk to the department",
+            "parent": 0
+          },
+          {
+            "label": "Operational risk",
+            "detail": "Risk during emergency operations",
+            "parent": 0
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "planning-cycle",
+        "kind": "cycle",
+        "title": "Fire defense planning",
+        "caption": "“Planning is a never-ending cycle of setting goals, determining objectives, and evaluating results.”",
+        "section_id": "planning-and-risk",
+        "nodes": [
+          {
+            "label": "Set goals",
+            "detail": "What level of protection is wanted",
+            "parent": -1
+          },
+          {
+            "label": "Set objectives",
+            "detail": "Clear, measurable steps",
+            "parent": -1
+          },
+          {
+            "label": "Study statistics",
+            "detail": "Know where you are now",
+            "parent": -1
+          },
+          {
+            "label": "Establish policies",
+            "detail": "General guidelines",
+            "parent": -1
+          },
+          {
+            "label": "Provide personnel",
+            "detail": "Up to 90% of the budget",
+            "parent": -1
+          },
+          {
+            "label": "Establish procedures",
+            "detail": "Specific recurring tasks",
+            "parent": -1
+          },
+          {
+            "label": "Provide facilities & equipment",
+            "detail": "",
+            "parent": -1
+          },
+          {
+            "label": "Secure funding",
+            "detail": "Through the governing body",
+            "parent": -1
+          },
+          {
+            "label": "Evaluate results",
+            "detail": "",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "risk-matrix",
+        "kind": "comparison",
+        "title": "Reading risk: probability and consequence",
+        "caption": "Plan hardest for situations that are high in both.",
+        "section_id": "planning-and-risk",
+        "nodes": [],
+        "columns": [
+          "Probability",
+          "Consequence"
+        ],
+        "rows": [
+          {
+            "label": "Helicopter crash",
+            "cells": [
+              "Low",
+              "High"
+            ]
+          },
+          {
+            "label": "Burning your fingers",
+            "cells": [
+              "High",
+              "Low"
+            ]
+          },
+          {
+            "label": "What to really watch for",
+            "cells": [
+              "High",
+              "High"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "control-measures",
+        "kind": "comparison",
+        "title": "The three risk control measures",
+        "caption": "Ways to change the probability or consequences of a harmful event.",
+        "section_id": "planning-and-risk",
+        "nodes": [],
+        "columns": [
+          "What it is",
+          "Examples"
+        ],
+        "rows": [
+          {
+            "label": "Administrative",
+            "cells": [
+              "Guidelines, policies and procedures that limit losses",
+              "SOPs, training requirements, safe work practices, standards"
+            ]
+          },
+          {
+            "label": "Engineering",
+            "cells": [
+              "Engineered systems that remove or limit hazards",
+              "Equipment design, traffic engineering, mechanical ventilation"
+            ]
+          },
+          {
+            "label": "Personnel protection",
+            "cells": [
+              "Equipment and clothing that protect the worker",
+              "Protective equipment, clothing and devices"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "crr-steps",
+        "kind": "process",
+        "title": "Community risk reduction",
+        "caption": "The four steps, in order.",
+        "section_id": "planning-and-risk",
+        "nodes": [
+          {
+            "label": "Preparation",
+            "detail": "Assess which risks are faced",
+            "parent": -1
+          },
+          {
+            "label": "Mitigation",
+            "detail": "Reduce the threats: training, code changes",
+            "parent": -1
+          },
+          {
+            "label": "Response",
+            "detail": "Apply people, training and equipment",
+            "parent": -1
+          },
+          {
+            "label": "Recovery",
+            "detail": "Return things to normal",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "",
+        "high_label": ""
+      }
+    ]
   }
 }

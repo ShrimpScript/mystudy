@@ -891,3 +891,134 @@ mark {
 }
 .chip:hover { color: var(--ink); border-color: var(--ink-3); }
 .chip.is-on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+/* ---- Diagrams (drawn from structure in the guide) --------------------------- */
+
+.diagram {
+  container-type: inline-size;
+  margin: 1.8em 0 1.6em;
+  padding: 18px 20px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--surface);
+  font: 400 15px/1.45 var(--sans);
+  color: var(--ink);
+}
+.diagram-head { display: grid; gap: 2px; margin-bottom: 16px; }
+.diagram-title { font: 600 18px/1.3 var(--serif); letter-spacing: -0.005em; text-wrap: balance; }
+.diagram figcaption { margin-top: 14px; font-size: 13.5px; color: var(--ink-2); }
+.flow-label { font-weight: 600; font-size: 14.5px; line-height: 1.3; }
+.flow-detail { display: block; font-size: 13px; line-height: 1.4; color: var(--ink-2); margin-top: 2px; }
+
+/* Process and cycle: numbered stations on a rail. Vertical by default. */
+.flow-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.flow-step { position: relative; display: grid; grid-template-columns: 28px 1fr; align-content: start; gap: 12px; padding-bottom: 16px; }
+.flow-step:last-child { padding-bottom: 0; }
+.flow-step::before { /* rail */
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 28px;
+  bottom: 0;
+  width: 2px;
+  background: var(--rule-strong);
+}
+.flow-step:last-child::before { display: none; }
+.flow-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 1;
+}
+.flow-text { padding-top: 3px; min-width: 0; }
+
+.flow-return { display: grid; grid-template-columns: 28px 1fr; gap: 12px; margin-top: 10px; align-items: center; }
+.flow-return-rail {
+  justify-self: center;
+  width: 14px;
+  height: 22px;
+  border: 2px solid var(--accent);
+  border-right: 0;
+  border-radius: 10px 0 0 10px;
+  position: relative;
+}
+.flow-return-rail::after { /* arrowhead pointing up, back to step 1 */
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  border: 5px solid transparent;
+  border-bottom-color: var(--accent);
+  transform: translateY(-2px);
+}
+.flow-return-text { font-size: 13px; color: var(--ink-2); }
+
+@container (min-width: 540px) {
+  .flow-fits .flow-steps { grid-auto-flow: column; grid-auto-columns: 1fr; gap: 12px; }
+  .flow-fits .flow-step { grid-template-columns: 1fr; gap: 10px; padding-bottom: 0; }
+  .flow-fits .flow-step::before { left: 34px; right: -12px; top: 13px; bottom: auto; width: auto; height: 2px; }
+  .flow-fits .flow-text { padding-top: 0; }
+  .flow-fits .flow-return { grid-template-columns: 1fr; margin-top: 14px; }
+  .flow-fits .flow-return-rail {
+    justify-self: stretch;
+    width: auto;
+    height: 14px;
+    border: 2px solid var(--accent);
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    margin: 0 calc(100% / var(--cols, 5) / 2) 0 13px;
+  }
+  .flow-fits .flow-return-rail::after { top: -8px; left: -7px; right: auto; }
+}
+
+/* Spectrum: one scale, items placed in order along it. */
+.spectrum-ends { display: flex; justify-content: space-between; gap: 12px; font: 500 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); }
+.spectrum-bar { height: 8px; border-radius: 4px; margin: 8px 0 0; background: linear-gradient(90deg, var(--rule-strong), var(--accent)); }
+.spectrum-items { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 10px; }
+.spectrum-items li { display: grid; justify-items: center; align-content: start; text-align: center; gap: 4px; min-width: 0; }
+.spectrum-tick { width: 2px; height: 12px; background: var(--ink-3); }
+.spectrum-items .flow-label { font-size: 13.5px; overflow-wrap: anywhere; }
+.spectrum-foot { display: none; font: 500 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); }
+@container (max-width: 520px) {
+  .spectrum { display: grid; grid-template-columns: 8px 1fr; column-gap: 14px; }
+  .spectrum-ends { grid-column: 1 / -1; margin-bottom: 8px; }
+  .spectrum-ends span:last-child { display: none; }
+  .spectrum-bar { margin: 0; width: 8px; height: auto; background: linear-gradient(180deg, var(--rule-strong), var(--accent)); }
+  .spectrum-items { grid-template-columns: 1fr; gap: 12px; }
+  .spectrum-items li { justify-items: start; text-align: left; gap: 0; }
+  .spectrum-tick { display: none; }
+  .spectrum-foot { display: block; grid-column: 1 / -1; margin-top: 8px; }
+}
+
+/* Comparison: a real table; scrolls sideways inside its own box when narrow. */
+.compare-scroll { overflow-x: auto; margin: 0 -4px; padding: 0 4px; }
+.compare { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 13.5px; }
+.compare th, .compare td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-top: 1px solid var(--rule); }
+.compare thead th { border-top: 0; font: 500 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); padding-bottom: 6px; }
+.compare tbody th { font-weight: 600; white-space: nowrap; padding-right: 16px; }
+.compare td { color: var(--ink); }
+
+/* Hierarchy: cards joined by tree lines. */
+.tree, .tree-branch { list-style: none; margin: 0; padding: 0; }
+.tree { display: grid; gap: 14px; }
+.tree-branch { margin: 8px 0 0 12px; padding-left: 16px; border-left: 2px solid var(--rule-strong); display: grid; gap: 8px; }
+.tree-node { position: relative; }
+.tree-node::before { content: ""; position: absolute; left: -16px; top: 16px; width: 12px; height: 2px; background: var(--rule-strong); }
+.tree-card { display: inline-block; max-width: 100%; padding: 6px 10px; border: 1px solid var(--rule-strong); border-radius: 3px; background: var(--bg); }
+.tree-root > .tree-card { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+
+.diagrams { margin-bottom: 48px; }
+.diagram-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 0 24px; align-items: start; }
+.diagram-grid .diagram { margin: 14px 0 0; }
+
+.photos .segmented { justify-self: start; }
+/* Drawings are usually transparent SVG renders: show them whole, on white. */
+.photo-grid.is-drawing .photo { background: #fff; }
+.photo-grid.is-drawing .photo img { object-fit: contain; padding: 6px; }

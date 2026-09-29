@@ -1,4 +1,4 @@
-// Real-world reference photos from Wikimedia Commons (freely licensed, and its
+// Real-world reference photos and diagrams from Wikimedia Commons (freely licensed, and its
 // API allows requests straight from a browser). Results are found by search,
 // so they're shown as references with credit, never as part of the source.
 
@@ -25,13 +25,16 @@ export function imageSearchUrl(query: string) {
   return `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(query)}`;
 }
 
-async function fetchPhotos(query: string, limit: number): Promise<Photo[]> {
+/** "photo" finds photographs; "drawing" finds diagrams, symbols and technical drawings (SVG). */
+export type PhotoKind = "photo" | "drawing";
+
+async function fetchPhotos(query: string, limit: number, kind: PhotoKind): Promise<Photo[]> {
   const params = new URLSearchParams({
     action: "query",
     format: "json",
     origin: "*",
     generator: "search",
-    gsrsearch: `${query} filetype:bitmap`,
+    gsrsearch: `${query} filetype:${kind === "drawing" ? "drawing" : "bitmap"}`,
     gsrnamespace: "6",
     gsrlimit: String(limit + 2),
     prop: "imageinfo",
@@ -62,8 +65,8 @@ async function fetchPhotos(query: string, limit: number): Promise<Photo[]> {
 }
 
 /** Up to `limit` photos for a query. Cached for the session and in this browser. Rejects when offline or blocked. */
-export function searchPhotos(query: string, limit = 4): Promise<Photo[]> {
-  const key = `${query.trim().toLowerCase()}|${limit}`;
+export function searchPhotos(query: string, limit = 4, kind: PhotoKind = "photo"): Promise<Photo[]> {
+  const key = `${query.trim().toLowerCase()}|${limit}|${kind}`;
   if (!cache.has(key)) {
     cache.set(
       key,
@@ -74,7 +77,7 @@ export function searchPhotos(query: string, limit = 4): Promise<Photo[]> {
         } catch {
           /* storage unavailable */
         }
-        const photos = await fetchPhotos(query, limit);
+        const photos = await fetchPhotos(query, limit, kind);
         try {
           localStorage.setItem(CACHE_PREFIX + key, JSON.stringify(photos));
         } catch {

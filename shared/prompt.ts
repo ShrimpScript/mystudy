@@ -11,6 +11,7 @@ How to write:
 - Quiz: exactly 4 choices per question, one clearly correct answer, plausible distractors drawn from the same material. Vary which position holds the answer.
 - section_id fields must match an id in "sections".
 - Figures: students struggle to picture things described only in words, so point to the visuals the material actually contains (diagrams, symbols, placards, photos, labelled drawings, charts). Give the exact file name and 1-based page, and a tight crop box. Only list figures you can see in the material; never invent one. When there are several things a student must tell apart by sight, crop each separately and add picture flashcards for them.
+- Diagrams: when the material has real structure (ordered steps, a planning cycle, ranked categories, several things compared on the same attributes, classes and subclasses), describe it in "diagrams" and the app will draw it. Every label must come from the material. Prefer the structures an exam would test.
 - image_query: for physical things a student should recognize in real life, give search words that would find real photos; leave it empty for abstract ideas.
 - No emoji. No motivational filler.`;
 

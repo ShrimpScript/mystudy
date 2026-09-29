@@ -31,7 +31,14 @@ const FACTS_SHAPE = `{
   "key_terms": [{ "term": string, "definition": string, "section_id": string }],
   "numbers_to_know": [{ "value": string, "meaning": string, "section_id": string }],   // dates, statistics; [] if none
   "lists_to_memorize": [{ "title": string, "items": string[], "memory_aid": string, "section_id": string }],  // memory_aid "" if none helps
-  "timeline": [{ "when": string, "event": string }]   // [] unless the material is historical
+  "timeline": [{ "when": string, "event": string }],   // [] unless the material is historical
+  "diagrams": [{          // 0–8; only structure the material states, in its own words
+    "id": string, "section_id": string, "title": string, "caption": string,
+    "kind": "process" | "cycle" | "spectrum" | "comparison" | "hierarchy",
+    "nodes": [{ "label": string, "detail": string, "parent": number }],  // not for comparison; parent = index of parent node or -1 (hierarchy only)
+    "columns": string[], "rows": [{ "label": string, "cells": string[] }],  // comparison only, else []
+    "low_label": string, "high_label": string   // spectrum only, else ""
+  }]
 }`;
 
 const PRACTICE_SHAPE = `{
@@ -163,6 +170,15 @@ export function generateLocal(
       numbers_to_know: arr(facts.numbers_to_know),
       lists_to_memorize: arr(facts.lists_to_memorize).map((l) => ({ ...l, items: arr(l.items), memory_aid: str(l.memory_aid) })),
       timeline: arr(facts.timeline),
+      diagrams: arr(facts.diagrams).map((dg) => ({
+        ...dg,
+        caption: str(dg.caption),
+        nodes: arr(dg.nodes).map((n) => ({ label: str(n.label), detail: str(n.detail), parent: Number(n.parent ?? -1) })),
+        columns: arr(dg.columns).map(String),
+        rows: arr(dg.rows).map((r) => ({ label: str(r.label), cells: arr(r.cells).map(String) })),
+        low_label: str(dg.low_label),
+        high_label: str(dg.high_label),
+      })),
       flashcards: arr(practice.flashcards).map((c) => ({ ...c, front: str(c.front), back: str(c.back) })),
       quiz: arr(practice.quiz).map((q) => ({ ...q, choices: arr(q.choices).map(String), answer_index: Number(q.answer_index) })),
     });

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Guide, StoredGuide } from "../../shared/guide";
+import { DiagramView } from "../components/Diagram";
 import { FigureView, SeeIt } from "../components/Figure";
 import { Icon } from "../components/Icon";
 import { narrator, useNarrator, type Segment } from "../lib/narrator";
@@ -191,6 +192,11 @@ export function GuideReader({ stored, anchor }: { stored: StoredGuide; anchor?: 
                   ))}
                 </div>
               )}
+              {(g.diagrams ?? [])
+                .filter((d) => d.section_id === s.id)
+                .map((d) => (
+                  <DiagramView key={d.id} d={d} />
+                ))}
               {s.key_points.length > 0 && (
                 <ul className="points" data-read={`${s.id}:points`}>
                   {s.key_points.map((k, j) => (

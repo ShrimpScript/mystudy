@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import type { Figure } from "../../shared/guide";
-import { imageSearchUrl, searchPhotos, type Photo } from "../lib/photos";
+import { imageSearchUrl, searchPhotos, type Photo, type PhotoKind } from "../lib/photos";
 import { Icon } from "./Icon";
+import { Segmented } from "./Popover";
 
 /** A figure from the source material: tap to enlarge, optionally with real-world photos. */
 export function FigureView({ fig, src, compact = false }: { fig: Figure; src: string; compact?: boolean }) {
@@ -51,28 +52,18 @@ export function Lightbox({ src, caption, onClose }: { src: string; caption: stri
   );
 }
 
-type PhotoState = { status: "idle" } | { status: "loading" } | { status: "done"; photos: Photo[] } | { status: "error" };
+type PhotoState = { status: "loading" } | { status: "done"; photos: Photo[] } | { status: "error" };
 
-/** "See real photos": searches Wikimedia Commons on demand and credits each photo. */
+/** "See real photos": searches Wikimedia Commons on demand and credits each result. */
 export function RealPhotos({ query, label = "See real photos" }: { query: string; label?: string }) {
-  const [state, setState] = useState<PhotoState>({ status: "idle" });
-  const [enlarged, setEnlarged] = useState<Photo | null>(null);
-
-  const load = () => {
-    setState({ status: "loading" });
-    searchPhotos(query)
-      .then((photos) => setState({ status: "done", photos }))
-      .catch(() => setState({ status: "error" }));
-  };
-
-  if (state.status === "idle")
+  const [open, setOpen] = useState(false);
+  if (!open)
     return (
-      <button className="btn-text photos-toggle" onClick={load}>
+      <button className="btn-text photos-toggle" onClick={() => setOpen(true)}>
         <Icon name="search" size={14} /> {label}
       </button>
     );
-
-  return <PhotoResults query={query} state={state} enlarged={enlarged} setEnlarged={setEnlarged} />;
+  return <PhotoPanel query={query} />;
 }
 
 /** A row of chips ("Steamer", "Pike pole"); tapping one shows real photos of it. */
@@ -95,49 +86,49 @@ export function SeeIt({ items }: { items: { label: string; query: string }[] }) 
           </button>
         ))}
       </div>
-      {current && <AutoPhotos key={current.query} query={current.query} />}
+      {current && <PhotoPanel key={current.query} query={current.query} />}
     </div>
   );
 }
 
-/** RealPhotos that starts loading straight away (the chip tap was the request). */
-function AutoPhotos({ query }: { query: string }) {
+/** Photos or diagrams for one query from Wikimedia Commons, with credits and a web fallback. */
+function PhotoPanel({ query }: { query: string }) {
+  const [kind, setKind] = useState<PhotoKind>("photo");
   const [state, setState] = useState<PhotoState>({ status: "loading" });
   const [enlarged, setEnlarged] = useState<Photo | null>(null);
+
   useEffect(() => {
     let live = true;
-    searchPhotos(query)
+    setState({ status: "loading" });
+    searchPhotos(query, 4, kind)
       .then((photos) => live && setState({ status: "done", photos }))
       .catch(() => live && setState({ status: "error" }));
     return () => {
       live = false;
     };
-  }, [query]);
-  return <PhotoResults query={query} state={state} enlarged={enlarged} setEnlarged={setEnlarged} />;
-}
+  }, [query, kind]);
 
-function PhotoResults({
-  query,
-  state,
-  enlarged,
-  setEnlarged,
-}: {
-  query: string;
-  state: PhotoState;
-  enlarged: Photo | null;
-  setEnlarged: (p: Photo | null) => void;
-}) {
+  const noun = kind === "photo" ? "photos" : "diagrams";
   return (
     <div className="photos" aria-live="polite">
-      {state.status === "loading" && <p className="hint">Finding photos…</p>}
+      <Segmented<PhotoKind>
+        name="Kind of image"
+        value={kind}
+        onChange={setKind}
+        options={[
+          { value: "photo", label: "Photos" },
+          { value: "drawing", label: "Diagrams & symbols" },
+        ]}
+      />
+      {state.status === "loading" && <p className="hint">Finding {noun}…</p>}
       {state.status === "error" && <p className="hint">Couldn’t reach Wikimedia Commons from here.</p>}
-      {state.status === "done" && state.photos.length === 0 && <p className="hint">No matching photos on Wikimedia Commons.</p>}
+      {state.status === "done" && state.photos.length === 0 && <p className="hint">No matching {noun} on Wikimedia Commons.</p>}
       {state.status === "done" && state.photos.length > 0 && (
         <>
-          <ul className="photo-grid">
+          <ul className={`photo-grid ${kind === "drawing" ? "is-drawing" : ""}`}>
             {state.photos.map((p) => (
               <li key={p.page}>
-                <button className="photo" onClick={() => setEnlarged(p)} aria-label={`Enlarge photo: ${p.title}`}>
+                <button className="photo" onClick={() => setEnlarged(p)} aria-label={`Enlarge: ${p.title}`}>
                   <img src={p.thumb} alt={p.title} loading="lazy" />
                 </button>
                 <a className="photo-credit" href={p.page} target="_blank" rel="noreferrer">
