@@ -11,10 +11,11 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "engines": {
-    "node": ">=22"
+    "node": "22.x"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.129.0",
+    "@vercel/blob": "^2.8.0",
     "express": "^5.2.1",
     "idb-keyval": "^6.3.0",
     "jszip": "^3.10.2",

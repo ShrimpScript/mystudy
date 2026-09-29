@@ -28,6 +28,19 @@ Try the UI without a key: `MOCK_GENERATION=1 npm run dev` replays the sample gui
 
 ## Deploy (use it from anywhere)
 
+### Vercel
+
+1. Push this repo to GitHub. In Vercel choose **Add New → Project** and import it. The settings come from `vercel.json`, so leave the defaults.
+2. Under **Settings → Environment Variables**, add `ANTHROPIC_API_KEY` and `APP_PASSCODE`.
+3. Under **Storage**, create a **Blob** store, choose **Private**, and connect it to the project. This adds `BLOB_READ_WRITE_TOKEN` automatically. Skip it and uploads are capped at 4 MB, because Vercel functions reject larger request bodies. With it, files go straight from your browser to the store (up to 30 MB). The server reads each file once and deletes it immediately.
+4. Redeploy so the new variables take effect.
+
+Vercel’s free plan stops a function after 5 minutes, which is enough for a typical chapter at the default effort (`medium`). For very long material use **Concise** depth or split the upload. On Pro you can raise `maxDuration` in `vercel.json` to 800.
+
+If you made a public Blob store instead, set `BLOB_ACCESS=public`.
+
+### Render
+
 **Render** (free tier works): push this repo, then in Render choose **New → Blueprint** and select it. `render.yaml` sets everything up; you’ll be asked for `ANTHROPIC_API_KEY` and `APP_PASSCODE`.
 
 **Anything that runs Docker** (Fly.io, Railway, a VPS): `docker build -t margin . && docker run -p 8787:8787 -e ANTHROPIC_API_KEY=… margin`.
@@ -43,7 +56,9 @@ On a phone, use **Share → Add to Home Screen** to open it like an app.
 | `ANTHROPIC_API_KEY` | — | Required for generating guides |
 | `APP_PASSCODE` | empty | Require a passcode to generate |
 | `CLAUDE_MODEL` | `claude-opus-5-5` | Model used for generation |
-| `CLAUDE_EFFORT` | `high` | `low` / `medium` / `high` / `xhigh` / `max` — higher is more careful and slower |
+| `CLAUDE_EFFORT` | `medium` | `low` / `medium` / `high` / `xhigh` / `max` — higher is more careful and slower |
+| `BLOB_READ_WRITE_TOKEN` | unset | Set by Vercel when a Blob store is connected; enables large uploads |
+| `BLOB_ACCESS` | `private` | `public` if your Blob store is public |
 | `PORT` | `8787` | Server port |
 | `MOCK_GENERATION` | unset | `1` replays the sample instead of calling the API |
 

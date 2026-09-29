@@ -7,7 +7,7 @@ import { navigate } from "../lib/router";
 import { saveGuide } from "../lib/store";
 
 const ACCEPT = ".pdf,.docx,.pptx,.txt,.md,.csv,.rtf,.html,.png,.jpg,.jpeg,.webp,.gif";
-const MAX_BYTES = 30 * 1024 * 1024;
+const DEFAULT_MAX_BYTES = 30 * 1024 * 1024;
 
 type Detail = "concise" | "standard" | "thorough";
 
@@ -36,8 +36,9 @@ export function NewGuide() {
     getStatus().then(setStatus);
   }, []);
 
+  const maxBytes = status?.maxUploadBytes ?? DEFAULT_MAX_BYTES;
   const total = files.reduce((n, f) => n + f.size, 0);
-  const tooBig = total > MAX_BYTES;
+  const tooBig = total > maxBytes;
   const canSubmit = (files.length > 0 || text.trim().length > 0) && !tooBig && !progress;
 
   const addFiles = (list: FileList | null) => {
@@ -51,7 +52,18 @@ export function NewGuide() {
     setError("");
     setStarted(Date.now());
     setProgress({ stage: "uploading", uploaded: 0, chars: 0, sections: 0, flashcards: 0, quiz: 0 });
-    const job = generateGuide({ files, text, context, detail, passcode: prefs.passcode }, setProgress);
+    const job = generateGuide(
+      {
+        files,
+        text,
+        context,
+        detail,
+        passcode: prefs.passcode,
+        uploadMode: status?.uploadMode ?? "direct",
+        blobAccess: status?.blobAccess ?? "private",
+      },
+      setProgress,
+    );
     cancelRef.current = job.cancel;
     try {
       const guide = await job.promise;
@@ -107,7 +119,9 @@ export function NewGuide() {
             </button>{" "}
             <span className="only-wide">or drop them here</span>
           </p>
-          <p className="hint">PDF, Word, PowerPoint, images of notes, or text · up to 10 files, 30 MB total</p>
+          <p className="hint">
+            PDF, Word, PowerPoint, images of notes, or text · up to 10 files, {formatBytes(maxBytes)} total
+          </p>
           <input
             ref={inputRef}
             type="file"
@@ -137,7 +151,11 @@ export function NewGuide() {
                 </button>
               </li>
             ))}
-            {tooBig && <li className="error-inline">That’s {formatBytes(total)}. The limit is 30 MB per guide.</li>}
+            {tooBig && (
+              <li className="error-inline">
+                That’s {formatBytes(total)}. The limit on this server is {formatBytes(maxBytes)} per guide.
+              </li>
+            )}
           </ul>
         )}
 
