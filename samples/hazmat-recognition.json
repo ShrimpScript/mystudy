@@ -1,0 +1,2190 @@
+{
+  "id": "sample-hazmat-recognition",
+  "sourceFiles": [
+    "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf"
+  ],
+  "context": "Hazmat First Responder Operations (CSTI), Chapter C.",
+  "guide": {
+    "title": "Chapter C — Hazardous Materials Recognition and Safety",
+    "course": "Hazmat First Responder Operations",
+    "overview": "This chapter teaches first responders how to recognize that hazardous materials are involved in an incident, often before anyone says so. It walks through the standard recognition clues: the location, container shapes, markings and colors, placards and labels, shipping papers and safety data sheets, and finally your senses as a last resort. It then covers the main marking systems you will see in the field, from DOT placards and NFPA 704 diamonds to GHS pictograms. It closes with the chapter's core rule: your first operational thought is always safety.",
+    "big_picture": [
+      "Any responder can run into hazmat, and the first call often won't say so: it may come in as a traffic accident, medical aid, fire, or person down.",
+      "Recognition leads to safety, and safety leads to lives preserved. If you don't know it's there, you can't protect yourself.",
+      "Know the standard clues: occupancy and location, container shapes, markings and colors, placards and labels, shipping papers and SDS, and your senses, which are only a last resort.",
+      "Clues are warnings, not absolutes. Placards and papers can be missing, wrong, or unreadable, so cross-check sources.",
+      "First operational thought is safety: go slow, keep your distance, and approach upwind, upgrade, and upstream."
+    ],
+    "sections": [
+      {
+        "id": "recognizing-incidents",
+        "heading": "Recognizing Hazmat Incidents",
+        "source_ref": "pp. C-2 to C-3",
+        "simplified": "Any responder can encounter hazardous materials, not just hazmat teams. A federal study cited in the chapter, ATSDR HSEES 2009, found that of the responders injured in hazmat incidents, 58 percent were firefighters, 31 percent were law enforcement, and 11 percent were other responders, including EMS.\n\nThe chapter's logic is simple: if you don't know it's there, you can't protect yourself. Recognition leads to safety, and safety leads to lives preserved. The catch is that the first report often won't mention hazardous materials at all. It may come in as a traffic accident, a medical aid call, a fire, a person down, or an investigation.",
+        "key_points": [
+          "Any responder can encounter hazardous materials.",
+          "Injuries to responders in hazmat incidents (ATSDR HSEES 2009): 58% firefighters, 31% law enforcement, 11% other responders including EMS.",
+          "If you don't know it's there, you can't protect yourself.",
+          "Recognition leads to safety; safety leads to lives preserved.",
+          "Initial reports may not indicate hazmat: traffic accident, medical aid, fire, person down, investigation."
+        ],
+        "remember": [
+          "Firefighters are 58% of responders injured in hazmat incidents; law enforcement 31%; other responders 11%.",
+          "Initial reports may not indicate the presence of hazardous materials."
+        ]
+      },
+      {
+        "id": "recognition-clues",
+        "heading": "Basic Recognition Clues",
+        "source_ref": "pp. C-4 to C-5",
+        "simplified": "The chapter lists the standard clues that hazardous materials may be present. Start with the occupancy or location: who is there, and what they make, sell, store, or transport. Then look at container shapes, markings and colors, and placards and labels. Shipping papers and safety data sheets, or SDSs, tell you what is on board, such as the consist on a train. Your senses, meaning sight, hearing, and smell, are a last resort. Other clues include the responsible party, witnesses, and a business plan.\n\nClues are clues, not absolutes. They are a warning, a note of caution, and an indication of things to come, but not always all the answers you need.",
+        "key_points": [
+          "Occupancy/location: e.g. a plating shop or highway. Hazmat can be anywhere, but know the common locations.",
+          "Container shapes: e.g. a compressed gas cylinder.",
+          "Markings and colors: e.g. a package label.",
+          "Placards and labels: e.g. an orange placard means explosive.",
+          "Shipping papers and SDS: e.g. the 'consist' for a railroad incident.",
+          "Senses (sight, hearing, smell) are the last resort.",
+          "Other clues: responsible party, witnesses, business plan."
+        ],
+        "remember": [
+          "Using your senses, especially smell, is a last resort.",
+          "Clues are clues, not absolutes: a warning, but not always all the answers you need."
+        ]
+      },
+      {
+        "id": "warning-signs",
+        "heading": "Outward Warning Signs",
+        "source_ref": "pp. C-6 to C-7",
+        "simplified": "Some warning signs mean something is already wrong. In general settings, watch for people running from or collapsed in the area, and evidence of a leak such as fire, smoke, visible vapors, unusual colors or odors, or a sheen on water. As Michael Callan puts it, clouds are bad, and clouds with color are worse. Other signs include an activated pressure relief valve, recent fumigation like a tented building, dead animals or insects or discolored plants, people with symptoms of exposure, damaged or discolored containers, and anything that just doesn't look right.\n\nAt industrial facilities, add alarms from monitoring systems, an activated emergency decontamination shower, a change in paint color on piping, signs warning of unspecified hazards, and unknown liquid in a containment system. The rule: if you see any warning sign, assume hazardous materials are there, and keep looking for clues until you confirm they are absent. The chapter's case studies show how often responders were hurt because they didn't recognize the hazard, such as police chasing a burglar out of a house tented for termites.",
+        "key_points": [
+          "People running from, or collapsed in, the area.",
+          "Evidence of a leak: fire, smoke, visible vapors, unusual colors or odors, sheen on water.",
+          "\"Clouds are bad. Clouds with color are worse.\" — Michael Callan.",
+          "Activated pressure relief valve; recent fumigation (tented building).",
+          "Dead animals or insects, discolored vegetation; people reporting exposure symptoms.",
+          "Damaged, deteriorated, or discolored containers, valves, piping, or containment.",
+          "Industrial signs: monitoring alarms, activated decon shower, pipe paint color change, unknown liquid in containment."
+        ],
+        "remember": [
+          "If you see any warning sign, assume hazardous materials are there until you confirm their absence.",
+          "Clouds are bad; clouds with color are worse."
+        ]
+      },
+      {
+        "id": "locations",
+        "heading": "Locations and Occupancies",
+        "source_ref": "p. C-8",
+        "simplified": "Some places obviously hold hazardous materials: a petroleum refinery has flammable liquids, a welding supply business has compressed gases, a garden supply business has pesticides, and an auto parts store has flammable liquids.\n\nOthers are less obvious. A swimming pool supply business stores acids and chlorine. A hardware store has flammable liquids. A refrigerated warehouse may use anhydrous ammonia. A soft drink distributor may have compressed or cryogenic gases.",
+        "key_points": [
+          "Obvious: petroleum refinery (flammable liquids), welding supply (compressed gases), garden supply (pesticides), auto parts store (flammable liquids).",
+          "Not so obvious: swimming pool supply (acids and chlorine), hardware store (flammable liquids), refrigerated warehouse (anhydrous ammonia), soft drink distributor (compressed and/or cryogenic gases)."
+        ],
+        "remember": [
+          "Refrigerated warehouse → anhydrous ammonia.",
+          "Swimming pool supply → acids and chlorine; soft drink distributor → compressed or cryogenic gases."
+        ]
+      },
+      {
+        "id": "cargo-tank-trucks",
+        "heading": "Containers: DOT Cargo Tank Trucks",
+        "source_ref": "pp. C-8 to C-9, C-36",
+        "simplified": "A container is shaped the way it is for a reason. The physical properties of the cargo often decide both the shape of the container and what it is made of, so the shape itself is a clue.\n\nThe chapter covers five DOT specification tank trucks. The 406, formerly MC 306, has an elliptical cross section and carries liquids, usually gasoline or diesel; it is usually aluminum, which melts in a fire so the tank won't explode. The 407, formerly MC 307, has a horseshoe-shaped cross section from insulation around a round tank and carries liquids with low vapor pressure. The 412, formerly MC 312, is round with external ribs for strength and often carries corrosives. The MC 331 is round with spherical ends, usually steel, and carries compressed gases; the tube trailer is a version of it. The MC 338 is a cylinder covered in insulation and carries cryogenic liquids, meaning liquefied gases.",
+        "key_points": [
+          "Physical properties of the cargo often determine the shape and material of the container.",
+          "DOT 406 / MC 306: elliptical; liquids such as gasoline and diesel; usually aluminum (49 CFR 178.346).",
+          "DOT 407 / MC 307: horseshoe-shaped from external insulation; low vapor pressure liquids (49 CFR 178.347).",
+          "DOT 412 / MC 312: circular with external ribs; often corrosives (49 CFR 178.348).",
+          "MC 331: circular with spherical ends, usually steel; compressed gases (49 CFR 178.337).",
+          "MC 338: cylindrical and insulated; cryogenic liquids (49 CFR 178.338)."
+        ],
+        "remember": [
+          "406 = elliptical, petroleum. 407 = horseshoe. 412 = ribs, corrosives. 331 = compressed gas. 338 = cryogenic.",
+          "A 406/306 is aluminum so it melts rather than explodes if the cargo burns."
+        ]
+      },
+      {
+        "id": "other-containers",
+        "heading": "Containers: Radiological, Tanks, Railcars and Intermodal",
+        "source_ref": "pp. C-10 to C-17",
+        "simplified": "Radiological packages come in five levels. Excepted packaging survives normal transport and holds very small amounts. Industrial packaging also passes at least the drop and stacking tests for Type A. Type A carries limited, low-level amounts and survives normal handling and minor accidents. Type B is a heavy cask for large, high-activity amounts and must survive severe accidents. Type C is for high-activity material on aircraft and is not allowed for domestic shipments.\n\nOther containers include carboys for liquids, Dewar flasks for cryogenic gases like liquid nitrogen, intermediate bulk containers or totes, marine portable tanks of 110 gallons or more, and compressed gas cylinders. There is no standard color code for cylinders, so you can't rely on color to identify the contents.\n\nFor fixed tanks and railcars, look at shape and fittings. Pressure tanks are often bullet-shaped or spherical and painted white or silver to reflect heat. On rail, pressure cars keep their fittings under one protective housing on top, while general service cars often show fittings and may have multiple compartments. Intermodal containers move by more than one mode; IM-101 works up to 100 psi and IM-102 up to 25 psi, while tube modules run 3,000 to 5,000 psi.",
+        "key_points": [
+          "Radiological packaging, least to most protective: Excepted, Industrial, Type A, Type B, Type C.",
+          "Type B: survives severe accidents. Type C: aircraft, high activity; not allowed domestically (49 CFR 173, 10 CFR 71).",
+          "Compressed gas cylinders have no standard color coding.",
+          "Cryogenic tanks: thick insulation; internal pressure can exceed 300 psi.",
+          "Low-pressure dome-roof tanks: usually under 15 psi. High-pressure tanks: bullet-shaped or spherical, often white or silver.",
+          "Above-ground tanks normally have secondary containment (dikes, curbs, pits) and may be partly covered with earth.",
+          "Pressure railcar: fittings in a protective housing on top, not compartmentalized. General service car: fittings often exposed, may have multiple compartments.",
+          "Intermodal: IM-101 up to 100 psi, IM-102 up to 25 psi, IMO Type 7 cryogenic, DOT 51/IMO Type 5 at 100–500 psi, tube modules 3,000–5,000 psi.",
+          "Intermodal containers are usually 20 or 40 feet long, 8 feet wide, 8.5 feet high; many are 53 feet."
+        ],
+        "remember": [
+          "Type B radiological packages must survive severe accidents; Type C is for aircraft only.",
+          "You can't rely on cylinder color to identify contents.",
+          "Pressure railcars hide fittings under a single protective housing."
+        ]
+      },
+      {
+        "id": "placards-labels",
+        "heading": "DOT Placards and Labels",
+        "source_ref": "pp. C-18 to C-23, C-37 to C-39",
+        "simplified": "The DOT system gives a visible warning that hazmat is present and general information about what type. Placards go on shipping containers like trailers, railcars, and intermodal containers; they are diamonds at least 10.8 inches on each side. Labels go on packages like drums, bags, boxes, and cylinders; they are diamonds at least 3.9 inches on each side. On both, the background color, symbol, and number at the bottom tell you the hazard class. Transport vehicles must be marked with the ID number and placard on each side and each end, and the four-digit ID number can appear on an orange panel or on the placard.\n\nPlacards are required for any bulk shipment, for Table 1 materials in any amount, and for Table 2 materials over 1,001 pounds aggregate gross weight loaded at one facility. A mixed load of Table 2 materials may use a single DANGEROUS placard instead, but once 2,205 pounds or more of one category is loaded at one facility, that category's own placard is required too.\n\nKnow the nine classes: 1 explosives, 2 gases, 3 flammable liquids, 4 flammable solids, 5 oxidizers and organic peroxides, 6 poisons, 7 radioactive, 8 corrosives, and 9 miscellaneous. Under OSHA, 29 CFR 1910.1201, employers who receive placarded shipments must leave the placards and labels on until the hazard is removed.",
+        "key_points": [
+          "Purpose: a visible warning that hazmat is present, plus general information about the type.",
+          "Placards: on vehicles and bulk containers; at least 10.8 inches per side. Labels: on packages; at least 3.9 inches per side.",
+          "Background color, symbol, and class number at the bottom identify the hazard class.",
+          "Mark each side and each end; ID number on an orange panel or on the placard.",
+          "Placards required: bulk shipments, Table 1 in any amount, Table 2 over 1,001 lbs at one facility.",
+          "DANGEROUS placard: mixed Table 2 loads; a single category of 2,205 lbs or more still needs its own placard.",
+          "Table 1 includes Explosives 1.1–1.3, Poison Gas 2.3, Dangerous When Wet 4.3, Poison Inhalation Hazard, and Radioactive (Yellow III).",
+          "Special placards: DANGEROUS, OXYGEN, INHALATION HAZARD (classes 2 and 6).",
+          "Other DOT markings: orange panel, stenciled railcars, pipeline markers, FUMIGANT, HOT, MARINE POLLUTANT, orientation arrows, ORM-D."
+        ],
+        "remember": [
+          "Placard ≥ 10.8 in per side (vehicles); label ≥ 3.9 in per side (packages).",
+          "Table 1 = placard in any amount; Table 2 = placard over 1,001 lbs.",
+          "\"Placards and labels are a method of communication for you!\" — John Falat, CHP."
+        ]
+      },
+      {
+        "id": "special-markings",
+        "heading": "Special Markings",
+        "source_ref": "pp. C-24 to C-27, C-40 to C-46",
+        "simplified": "NFPA 704 is the diamond you see on fixed facilities. It covers health, flammability, instability, and related hazards from short-term exposure, and it is required by the California Fire Code on industrial, commercial, and institutional facilities. Its colored quadrants are rated 0 to 4. Its limits: it doesn't tell you the quantity, the exact location, or the name of the material.\n\nOther markings you'll see: the biohazard symbol, required by OSHA on regulated waste and on refrigerators and freezers holding blood or other infectious material, with the words BIOHAZARD or BIOHAZARDOUS WASTE; PCB labels required by EPA; and industrial pipe markings under ANSI/ASME A13.1, where color shows the hazard, such as orange for toxic and corrosive fluids and yellow for flammable fluids. Military sites use DOD fire division symbols. Buried pipelines have markers at road and rail crossings stating WARNING, CAUTION, or DANGER, the product, and the operator's phone number, but markers aren't required in dense downtown areas. HMIS is similar to NFPA 704 but meant for employees, not responders. Pesticide labels use the signal words Poison, Danger, Warning, and Caution.",
+        "key_points": [
+          "NFPA 704: diamond with color-coded quadrants rated 0–4; required by the California Fire Code.",
+          "NFPA 704 limits: no quantity, no specific location, no material name.",
+          "Biohazard labels required by OSHA; signs on entrances list the agent and a responsible person (CCR 5193).",
+          "Industrial pipe colors (ANSI/ASME A13.1): red fire quenching, orange toxic and corrosive, yellow flammable, brown combustible, green water, blue compressed air.",
+          "Pipeline markers (49 CFR 195.410): at road and rail crossings; not required offshore, at waterways, or in heavily developed urban areas.",
+          "HMIS informs employees; NFPA 704 informs responders.",
+          "DOD fire divisions 1–6; e.g. Division 1 is mass explosion (octagon), Division 3 is mass fire (inverted triangle).",
+          "Pesticide signal words: Poison (pesticides only), Danger, Warning, Caution."
+        ],
+        "remember": [
+          "NFPA 704 doesn't identify the material, its quantity, or its location.",
+          "HMIS is for employees; NFPA 704 is for responders.",
+          "Pipeline markers are not required in heavily developed urban areas."
+        ]
+      },
+      {
+        "id": "ghs",
+        "heading": "Global Harmonization System (GHS)",
+        "source_ref": "pp. C-28 to C-29, C-47 to C-48",
+        "simplified": "GHS is the international system for classifying, marking, and communicating the hazards of materials. It communicates through label elements and safety data sheets. A GHS label has a signal word, a hazard statement, precautionary statements, and a pictogram.\n\nThere are only two signal words: Danger for more severe hazards and Warning for less severe ones. Hazard statements are standardized phrases tied to a hazard class and category, like \"Fatal if swallowed.\" Pictograms are a symbol inside a red-bordered diamond, such as the exclamation point for irritants and narcotic effects, the flame for flammables, the gas cylinder for gases under pressure, the corrosion symbol, the skull and crossbones for acute toxicity, and the health hazard symbol for carcinogens.",
+        "key_points": [
+          "International system for classifying, marking, and communicating hazards.",
+          "Communicates via label elements (signal words, hazard statements, precautionary statements, pictograms) and SDSs.",
+          "Signal words: Danger (more severe), Warning (less severe).",
+          "Hazard statements are standardized, assigned to a class and category, e.g. \"Fatal if swallowed.\"",
+          "Pictograms: health hazard, exclamation point, flammable, gas cylinder, corrosive, explosive, oxidizer, environmental hazard, toxic (skull and crossbones)."
+        ],
+        "remember": [
+          "GHS has two signal words: Danger (more severe) and Warning (less severe).",
+          "Skull and crossbones = acute toxicity; exclamation point = irritant, narcotic effects, harmful."
+        ]
+      },
+      {
+        "id": "shipping-papers",
+        "heading": "Shipping Papers and SDSs",
+        "source_ref": "pp. C-30 to C-31",
+        "simplified": "Shipping papers are the preferred source for identifying hazmat. Each mode has its own name and location. On a truck it's the bill of lading, in the cab near the driver's seat or with the driver. On an aircraft it's the air bill, with the pilot. On a train it's the waybill and consist, with the conductor. On a vessel it's the dangerous cargo manifest, on the bridge.\n\nShipping papers list the proper shipping name, hazard class or division, UN identification number, packing group, and quantity. Hazmat must stand out if non-hazardous items are listed too. But shipping papers may not always be accurate, complete, or readable, especially after an accident. A safety data sheet, or SDS, is kept in the workplace for each hazardous chemical and gives the chemical name, company, hazards, response information, and chemical and physical properties.",
+        "key_points": [
+          "Shipping papers are the preferred hazmat identification source.",
+          "Truck: bill of lading, in cab near driver (49 CFR 177.817).",
+          "Air: air bill, with the pilot (49 CFR 175.33).",
+          "Rail: waybill and consist, with a crew member/conductor (49 CFR 174.24).",
+          "Vessel: dangerous cargo manifest, on or near the bridge (49 CFR 176.30).",
+          "Contents: proper shipping name, hazard class, UN number, packing group, quantity.",
+          "SDS: required in the workplace for each hazardous chemical used."
+        ],
+        "remember": [
+          "Truck = bill of lading; air = air bill; rail = waybill/consist; vessel = dangerous cargo manifest.",
+          "Shipping papers may not be accurate, complete, or readable, especially after an accident."
+        ]
+      },
+      {
+        "id": "safety",
+        "heading": "First Operational Thought Is Safety",
+        "source_ref": "pp. C-32 to C-35",
+        "simplified": "Think safety first, last, and always. A hazmat event is not the time to hurry: a quick response instead of a slow one can kill or injure you and others. Watch out for a negative safety attitude, like \"I've been handling this stuff for years\" or \"Nothing bad has happened to us yet.\"\n\nExperienced responders use recognized procedures with vigilance and discipline, watch for secondary and tertiary hazards, treat every hazmat event with respect, cross-reference three or more sources before planning, have backup plans for safety equipment failures, and set up decon early. On scene, keep a mental safe approach: keep your distance, approach upwind, upgrade, and upstream, and be a responder, not an indicator.\n\nThere are six ways hazardous materials can kill you: toxicity, radioactivity, asphyxiation, explosion, flammability, and corrosion.",
+        "key_points": [
+          "Think safety first, last, and always.",
+          "Go slow: a quick hazmat response can kill or injure you and others.",
+          "Avoid a negative safety attitude (\"I've been handling this stuff for years\").",
+          "Cross-reference three or more sources before action planning.",
+          "Set up and use decon procedures early; have backup plans for failed safety devices.",
+          "Mental safe approach: keep your distance; approach upwind, upgrade, and upstream.",
+          "Be a \"responder,\" not an \"indicator.\""
+        ],
+        "remember": [
+          "First Operational Thought = Safety.",
+          "Approach upwind, upgrade, and upstream.",
+          "Six ways hazmat can kill: toxicity, radioactivity, asphyxiation, explosion, flammability, corrosion."
+        ]
+      }
+    ],
+    "key_terms": [
+      {
+        "term": "Consist",
+        "definition": "A train's list of cars and their contents, carried with the waybill by the conductor or crew.",
+        "section_id": "shipping-papers",
+        "image_query": ""
+      },
+      {
+        "term": "Bill of lading",
+        "definition": "The shipping paper for trucks, kept in the cab within the driver's reach.",
+        "section_id": "shipping-papers",
+        "image_query": ""
+      },
+      {
+        "term": "Air bill",
+        "definition": "The shipping paper for aircraft, kept with the pilot.",
+        "section_id": "shipping-papers",
+        "image_query": ""
+      },
+      {
+        "term": "Dangerous cargo manifest",
+        "definition": "The shipping paper for vessels, kept on or near the bridge.",
+        "section_id": "shipping-papers",
+        "image_query": ""
+      },
+      {
+        "term": "SDS (Safety Data Sheet)",
+        "definition": "A document employers must keep in the workplace for each hazardous chemical, with its name, hazards, response information, and properties.",
+        "section_id": "shipping-papers",
+        "image_query": ""
+      },
+      {
+        "term": "Placard",
+        "definition": "A diamond at least 10.8 inches per side displayed on transport vehicles and bulk containers to show the hazard class.",
+        "section_id": "placards-labels",
+        "image_query": "hazmat placard truck"
+      },
+      {
+        "term": "Label",
+        "definition": "A diamond at least 3.9 inches per side placed on packages such as drums, bags, boxes, and cylinders.",
+        "section_id": "placards-labels",
+        "image_query": "hazmat label drum"
+      },
+      {
+        "term": "Orange panel",
+        "definition": "A rectangular orange panel that can display the four-digit UN identification number.",
+        "section_id": "placards-labels",
+        "image_query": "UN number orange panel"
+      },
+      {
+        "term": "Table 1 materials",
+        "definition": "The most dangerous DOT categories, which must be placarded in any amount.",
+        "section_id": "placards-labels",
+        "image_query": ""
+      },
+      {
+        "term": "Table 2 materials",
+        "definition": "DOT categories that must be placarded when over 1,001 pounds aggregate gross weight is loaded at one facility.",
+        "section_id": "placards-labels",
+        "image_query": ""
+      },
+      {
+        "term": "DANGEROUS placard",
+        "definition": "A placard that may be used for a mixed load of two or more Table 2 categories instead of separate placards.",
+        "section_id": "placards-labels",
+        "image_query": "dangerous placard truck"
+      },
+      {
+        "term": "Subsidiary hazard",
+        "definition": "A secondary hazard a material has besides its main class; it may or may not be shown by a placard.",
+        "section_id": "placards-labels",
+        "image_query": ""
+      },
+      {
+        "term": "Intermodal container",
+        "definition": "A container designed to move by more than one mode of transportation, such as truck, rail, and ship.",
+        "section_id": "other-containers",
+        "image_query": "ISO tank container"
+      },
+      {
+        "term": "Carboy",
+        "definition": "A rigid container for liquids, often used in labs, holding about 5–15 gallons.",
+        "section_id": "other-containers",
+        "image_query": "carboy container"
+      },
+      {
+        "term": "Dewar flask",
+        "definition": "A double-walled, vacuum-insulated bottle for cryogenic gases such as liquid nitrogen.",
+        "section_id": "other-containers",
+        "image_query": "Dewar flask liquid nitrogen"
+      },
+      {
+        "term": "Intermediate bulk container (IBC)",
+        "definition": "A stackable, forklift-movable container for fluids and bulk materials; flexible IBCs are called totes.",
+        "section_id": "other-containers",
+        "image_query": "IBC tote container"
+      },
+      {
+        "term": "Tube module",
+        "definition": "An intermodal unit of multiple high-pressure cylinders (3,000–5,000 psi) carrying gases like oxygen or hydrogen.",
+        "section_id": "other-containers",
+        "image_query": "tube trailer compressed gas"
+      },
+      {
+        "term": "Cryogenic",
+        "definition": "Extremely cold liquefied gases, carried in heavily insulated containers such as the MC 338.",
+        "section_id": "cargo-tank-trucks",
+        "image_query": "cryogenic tank trailer"
+      },
+      {
+        "term": "Secondary containment",
+        "definition": "Dikes, curbs, or pits around above-ground tanks to hold a leak.",
+        "section_id": "other-containers",
+        "image_query": "tank secondary containment dike"
+      },
+      {
+        "term": "NFPA 704",
+        "definition": "The color-coded diamond on fixed facilities rating health, flammability, and instability hazards from 0 to 4.",
+        "section_id": "special-markings",
+        "image_query": "NFPA 704 sign"
+      },
+      {
+        "term": "HMIS",
+        "definition": "Hazardous Materials Identification System: a color-coded label system similar to NFPA 704 but meant to inform employees.",
+        "section_id": "special-markings",
+        "image_query": "HMIS label"
+      },
+      {
+        "term": "GHS",
+        "definition": "Global Harmonization System: the international system for classifying and communicating chemical hazards through labels and SDSs.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "term": "Signal word",
+        "definition": "A single word showing hazard severity: in GHS, Danger (more severe) or Warning (less severe).",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "term": "Hazard statement",
+        "definition": "A standardized GHS phrase describing the nature of a hazard, such as \"Fatal if swallowed.\"",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "term": "Pictogram",
+        "definition": "A GHS hazard symbol inside a red-bordered diamond.",
+        "section_id": "ghs",
+        "image_query": "GHS pictograms"
+      },
+      {
+        "term": "ORM-D",
+        "definition": "A marking for packages of materials such as consumer commodities that present a limited hazard.",
+        "section_id": "placards-labels",
+        "image_query": ""
+      },
+      {
+        "term": "Stenciled railcar",
+        "definition": "A tank car marked on each side with the proper shipping name of certain materials, such as anhydrous ammonia (49 CFR 172.330).",
+        "section_id": "special-markings",
+        "image_query": "anhydrous ammonia tank car"
+      },
+      {
+        "term": "Mental Safe Approach Tactic",
+        "definition": "Keep your distance and approach upwind, upgrade, and upstream.",
+        "section_id": "safety",
+        "image_query": ""
+      }
+    ],
+    "numbers_to_know": [
+      {
+        "value": "58% / 31% / 11%",
+        "meaning": "Share of responders injured in hazmat incidents who were firefighters / law enforcement / other (ATSDR HSEES 2009)",
+        "section_id": "recognizing-incidents"
+      },
+      {
+        "value": "10.8 in",
+        "meaning": "Minimum size of each side of a placard",
+        "section_id": "placards-labels"
+      },
+      {
+        "value": "3.9 in",
+        "meaning": "Minimum size of each side of a label",
+        "section_id": "placards-labels"
+      },
+      {
+        "value": "1,001 lbs",
+        "meaning": "Table 2 aggregate weight at which placards are required",
+        "section_id": "placards-labels"
+      },
+      {
+        "value": "2,205 lbs",
+        "meaning": "One category loaded at one facility: must use its own placard even with DANGEROUS",
+        "section_id": "placards-labels"
+      },
+      {
+        "value": "0–4",
+        "meaning": "NFPA 704 hazard rating scale",
+        "section_id": "special-markings"
+      },
+      {
+        "value": "> 300 psi",
+        "meaning": "Possible internal pressure in a cryogenic liquid tank",
+        "section_id": "other-containers"
+      },
+      {
+        "value": "< 15 psi",
+        "meaning": "Typical internal pressure of low-pressure dome-roof tanks",
+        "section_id": "other-containers"
+      },
+      {
+        "value": "100 / 25 psi",
+        "meaning": "Maximum working pressure of IM-101 / IM-102 intermodal tanks",
+        "section_id": "other-containers"
+      },
+      {
+        "value": "3,000–5,000 psi",
+        "meaning": "Pressure in tube module cylinders",
+        "section_id": "other-containers"
+      },
+      {
+        "value": "100–500 psi",
+        "meaning": "DOT Spec 51 / IMO Type 5 pressurized intermodal tank",
+        "section_id": "other-containers"
+      },
+      {
+        "value": "110 gal",
+        "meaning": "Minimum capacity of a marine portable tank",
+        "section_id": "other-containers"
+      },
+      {
+        "value": "20 / 40 / 53 ft",
+        "meaning": "Common intermodal container lengths",
+        "section_id": "other-containers"
+      },
+      {
+        "value": "3+",
+        "meaning": "Number of sources to cross-reference before action planning",
+        "section_id": "safety"
+      },
+      {
+        "value": "6",
+        "meaning": "Ways hazardous materials can kill you",
+        "section_id": "safety"
+      }
+    ],
+    "lists_to_memorize": [
+      {
+        "title": "Standard recognition clues",
+        "items": [
+          "Occupancy/location",
+          "Container shapes",
+          "Markings & colors",
+          "Placards & labels",
+          "Shipping papers & SDS",
+          "Senses (last resort)"
+        ],
+        "memory_aid": "Senses come last for a reason: using them means you're already close enough to be exposed.",
+        "section_id": "recognition-clues"
+      },
+      {
+        "title": "Six ways hazmat can kill you",
+        "items": [
+          "Toxicity",
+          "Radioactivity",
+          "Asphyxiation",
+          "Explosion",
+          "Flammability (fire)",
+          "Corrosion"
+        ],
+        "memory_aid": "TRAEFC: \"The Rookie Always Expects Fire Calls.\"",
+        "section_id": "safety"
+      },
+      {
+        "title": "Mental safe approach",
+        "items": [
+          "Upwind",
+          "Upgrade (uphill)",
+          "Upstream"
+        ],
+        "memory_aid": "The three U's — stay up and away.",
+        "section_id": "safety"
+      },
+      {
+        "title": "Shipping papers by mode",
+        "items": [
+          "Truck: bill of lading (cab, near driver)",
+          "Air: air bill (with pilot)",
+          "Rail: waybill and consist (with conductor)",
+          "Vessel: dangerous cargo manifest (on bridge)"
+        ],
+        "memory_aid": "",
+        "section_id": "shipping-papers"
+      },
+      {
+        "title": "DOT hazard classes",
+        "items": [
+          "1 Explosives",
+          "2 Gases",
+          "3 Flammable liquids",
+          "4 Flammable solids",
+          "5 Oxidizers & organic peroxides",
+          "6 Poisons/toxics",
+          "7 Radioactive",
+          "8 Corrosives",
+          "9 Miscellaneous"
+        ],
+        "memory_aid": "",
+        "section_id": "placards-labels"
+      },
+      {
+        "title": "DOT cargo tank trucks",
+        "items": [
+          "406/306: elliptical, petroleum liquids",
+          "407/307: horseshoe, low vapor pressure liquids",
+          "412/312: ribbed, corrosives",
+          "MC 331: spherical ends, compressed gases",
+          "MC 338: insulated, cryogenic liquids"
+        ],
+        "memory_aid": "",
+        "section_id": "cargo-tank-trucks"
+      },
+      {
+        "title": "Radiological packaging (least to most protective)",
+        "items": [
+          "Excepted",
+          "Industrial",
+          "Type A",
+          "Type B",
+          "Type C"
+        ],
+        "memory_aid": "",
+        "section_id": "other-containers"
+      },
+      {
+        "title": "GHS label elements",
+        "items": [
+          "Signal word",
+          "Hazard statement",
+          "Precautionary statement",
+          "Pictogram"
+        ],
+        "memory_aid": "",
+        "section_id": "ghs"
+      },
+      {
+        "title": "Industrial pipe colors (ANSI/ASME A13.1)",
+        "items": [
+          "Red: fire quenching fluids",
+          "Orange: toxic & corrosive",
+          "Yellow: flammable",
+          "Brown: combustible",
+          "Green: water",
+          "Blue: compressed air"
+        ],
+        "memory_aid": "",
+        "section_id": "special-markings"
+      },
+      {
+        "title": "How a hazmat call may first be reported",
+        "items": [
+          "Traffic accident",
+          "Medical aid",
+          "Fire",
+          "Person down",
+          "Investigation"
+        ],
+        "memory_aid": "",
+        "section_id": "recognizing-incidents"
+      }
+    ],
+    "timeline": [],
+    "exam_focus": [
+      {
+        "point": "The standard recognition clues, and that senses are the last resort.",
+        "why": "The chapter's organizing framework, shown twice.",
+        "section_id": "recognition-clues"
+      },
+      {
+        "point": "Six ways hazmat can kill you.",
+        "why": "A classic enumerated list with its own summary page.",
+        "section_id": "safety"
+      },
+      {
+        "point": "Upwind, upgrade, upstream.",
+        "why": "The core of the Mental Safe Approach Tactic.",
+        "section_id": "safety"
+      },
+      {
+        "point": "Shipping paper name and location for each mode of transport.",
+        "why": "Paired facts that are easy to test and mix up.",
+        "section_id": "shipping-papers"
+      },
+      {
+        "point": "Placards vs. labels: where they go and minimum sizes.",
+        "why": "Direct comparison with specific numbers.",
+        "section_id": "placards-labels"
+      },
+      {
+        "point": "When placards are required: bulk, Table 1 any amount, Table 2 over 1,001 lbs.",
+        "why": "Regulatory thresholds are frequent test items.",
+        "section_id": "placards-labels"
+      },
+      {
+        "point": "Cargo tank truck shapes and what each carries.",
+        "why": "Recognition by shape is a core skill; the chapter gives a diagram page.",
+        "section_id": "cargo-tank-trucks"
+      },
+      {
+        "point": "NFPA 704 limitations: no quantity, location, or material name.",
+        "why": "Stated explicitly as the system's limitations.",
+        "section_id": "special-markings"
+      },
+      {
+        "point": "GHS signal words Danger vs. Warning.",
+        "why": "Only two exist, and severity order is testable.",
+        "section_id": "ghs"
+      },
+      {
+        "point": "Firefighters are 58% of responders injured in hazmat incidents.",
+        "why": "The chapter opens with this statistic.",
+        "section_id": "recognizing-incidents"
+      }
+    ],
+    "flashcards": [
+      {
+        "front": "Which responders make up most hazmat incident injuries?",
+        "back": "Firefighters, 58% (law enforcement 31%, other responders 11%).",
+        "section_id": "recognizing-incidents",
+        "figure_id": ""
+      },
+      {
+        "front": "Name four ways a hazmat call may first be reported.",
+        "back": "Traffic accident, medical aid, fire, person down (or investigation).",
+        "section_id": "recognizing-incidents",
+        "figure_id": ""
+      },
+      {
+        "front": "Complete: Recognition leads to ___; ___ leads to lives preserved.",
+        "back": "Safety; safety.",
+        "section_id": "recognizing-incidents",
+        "figure_id": ""
+      },
+      {
+        "front": "List the standard hazmat recognition clues.",
+        "back": "Occupancy/location, container shapes, markings & colors, placards & labels, shipping papers & SDS, senses.",
+        "section_id": "recognition-clues",
+        "figure_id": ""
+      },
+      {
+        "front": "Which recognition clue is the last resort?",
+        "back": "Your senses (sight, hearing, smell).",
+        "section_id": "recognition-clues",
+        "figure_id": ""
+      },
+      {
+        "front": "Clues are clues, not absolutes. What are they?",
+        "back": "A warning, a note of caution, an indication of things to come, but not always all the answers you need.",
+        "section_id": "recognition-clues",
+        "figure_id": ""
+      },
+      {
+        "front": "\"Clouds are bad...\"",
+        "back": "\"...Clouds with color are worse.\" (Michael Callan)",
+        "section_id": "warning-signs",
+        "figure_id": ""
+      },
+      {
+        "front": "If you see any hazmat warning sign, what do you assume?",
+        "back": "That hazardous materials are there, until you confirm their absence.",
+        "section_id": "warning-signs",
+        "figure_id": ""
+      },
+      {
+        "front": "Name three industrial-facility warning signs.",
+        "back": "Monitoring alarm, activated decon shower, pipe paint color change, unknown liquid in containment, signs of unspecified hazards.",
+        "section_id": "warning-signs",
+        "figure_id": ""
+      },
+      {
+        "front": "What hazmat might a refrigerated warehouse have?",
+        "back": "Anhydrous ammonia.",
+        "section_id": "locations",
+        "figure_id": ""
+      },
+      {
+        "front": "What hazmat might a swimming pool supply business have?",
+        "back": "Acids and chlorine.",
+        "section_id": "locations",
+        "figure_id": ""
+      },
+      {
+        "front": "What hazmat might a soft drink distributor have?",
+        "back": "Compressed and/or cryogenic gases.",
+        "section_id": "locations",
+        "figure_id": ""
+      },
+      {
+        "front": "What often determines a container's shape and material?",
+        "back": "The physical properties of the cargo.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": ""
+      },
+      {
+        "front": "DOT 406 / MC 306: shape and cargo?",
+        "back": "Elliptical cross section; liquids, usually gasoline or diesel. Usually aluminum.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": ""
+      },
+      {
+        "front": "DOT 407 / MC 307: shape and cargo?",
+        "back": "Horseshoe-shaped (insulated round tank); liquids with low vapor pressure.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": ""
+      },
+      {
+        "front": "DOT 412 / MC 312: shape and cargo?",
+        "back": "Circular with external ribs; often corrosives.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": ""
+      },
+      {
+        "front": "MC 331: shape and cargo?",
+        "back": "Circular with spherical ends, usually steel; compressed gases.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": ""
+      },
+      {
+        "front": "MC 338: shape and cargo?",
+        "back": "Insulated cylinder; cryogenic liquids (liquefied gases).",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": ""
+      },
+      {
+        "front": "Why is a 406/306 tank usually aluminum?",
+        "back": "It melts if the cargo catches fire, so the tank won't explode.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": ""
+      },
+      {
+        "front": "Which radiological package must survive severe accidents?",
+        "back": "Type B.",
+        "section_id": "other-containers",
+        "figure_id": ""
+      },
+      {
+        "front": "What is a Type C radiological package for?",
+        "back": "High-activity material by aircraft; not allowed for domestic shipments.",
+        "section_id": "other-containers",
+        "figure_id": ""
+      },
+      {
+        "front": "Can you identify a gas cylinder's contents by color?",
+        "back": "No. There is no standard color coding.",
+        "section_id": "other-containers",
+        "figure_id": ""
+      },
+      {
+        "front": "What is a Dewar flask used for?",
+        "back": "Carrying cryogenic gases such as liquid nitrogen.",
+        "section_id": "other-containers",
+        "figure_id": ""
+      },
+      {
+        "front": "How do you tell a pressure railcar from a general service car?",
+        "back": "Pressure cars keep all fittings under one protective housing on top; general service cars often show fittings and may have compartments.",
+        "section_id": "other-containers",
+        "figure_id": ""
+      },
+      {
+        "front": "Max working pressure: IM-101 vs IM-102?",
+        "back": "IM-101 up to 100 psi; IM-102 up to 25 psi.",
+        "section_id": "other-containers",
+        "figure_id": ""
+      },
+      {
+        "front": "Why are pressure tanks often white or silver?",
+        "back": "To reflect solar heat.",
+        "section_id": "other-containers",
+        "figure_id": ""
+      },
+      {
+        "front": "Placard vs. label: where does each go?",
+        "back": "Placards on shipping containers and vehicles; labels on packages.",
+        "section_id": "placards-labels",
+        "figure_id": ""
+      },
+      {
+        "front": "Minimum size of a placard? Of a label?",
+        "back": "Placard 10.8 inches per side; label 3.9 inches per side.",
+        "section_id": "placards-labels",
+        "figure_id": ""
+      },
+      {
+        "front": "When are placards required?",
+        "back": "Bulk shipments, Table 1 materials in any amount, Table 2 over 1,001 lbs at one facility.",
+        "section_id": "placards-labels",
+        "figure_id": ""
+      },
+      {
+        "front": "When may a DANGEROUS placard be used?",
+        "back": "For two or more Table 2 categories that would need different placards.",
+        "section_id": "placards-labels",
+        "figure_id": ""
+      },
+      {
+        "front": "Placard colors: orange, red, green, yellow, white?",
+        "back": "Orange explosives; red flammable; green non-flammable gas; yellow oxidizer; white poison.",
+        "section_id": "placards-labels",
+        "figure_id": ""
+      },
+      {
+        "front": "Where can the 4-digit UN ID number appear?",
+        "back": "On an orange panel or on the placard.",
+        "section_id": "placards-labels",
+        "figure_id": ""
+      },
+      {
+        "front": "What does 29 CFR 1910.1201 require?",
+        "back": "Employers must keep DOT placards and labels on until the hazard is removed.",
+        "section_id": "placards-labels",
+        "figure_id": ""
+      },
+      {
+        "front": "NFPA 704 rates what, on what scale?",
+        "back": "Health, flammability, and instability hazards, 0 to 4.",
+        "section_id": "special-markings",
+        "figure_id": ""
+      },
+      {
+        "front": "Three things NFPA 704 doesn't tell you?",
+        "back": "Quantity, specific location, and the material's identity.",
+        "section_id": "special-markings",
+        "figure_id": ""
+      },
+      {
+        "front": "HMIS vs. NFPA 704: who is each for?",
+        "back": "HMIS informs employees; NFPA 704 informs responders.",
+        "section_id": "special-markings",
+        "figure_id": ""
+      },
+      {
+        "front": "Pipe marking colors: orange and yellow?",
+        "back": "Orange = toxic & corrosive; yellow = flammable.",
+        "section_id": "special-markings",
+        "figure_id": ""
+      },
+      {
+        "front": "Where are pipeline markers NOT required?",
+        "back": "Offshore, at waterway crossings, and in heavily developed urban areas.",
+        "section_id": "special-markings",
+        "figure_id": ""
+      },
+      {
+        "front": "GHS signal words and their meaning?",
+        "back": "Danger (more severe) and Warning (less severe).",
+        "section_id": "ghs",
+        "figure_id": ""
+      },
+      {
+        "front": "What are the GHS label elements?",
+        "back": "Signal word, hazard statement, precautionary statement, pictogram.",
+        "section_id": "ghs",
+        "figure_id": ""
+      },
+      {
+        "front": "Truck shipping paper and its location?",
+        "back": "Bill of lading, in the cab near the driver or with the driver.",
+        "section_id": "shipping-papers",
+        "figure_id": ""
+      },
+      {
+        "front": "Rail shipping papers and who has them?",
+        "back": "Waybill and consist, with the conductor/crew.",
+        "section_id": "shipping-papers",
+        "figure_id": ""
+      },
+      {
+        "front": "Vessel shipping paper and location?",
+        "back": "Dangerous cargo manifest, on the bridge.",
+        "section_id": "shipping-papers",
+        "figure_id": ""
+      },
+      {
+        "front": "What is the preferred hazmat identification source?",
+        "back": "Shipping papers (though they may be wrong or unreadable after an accident).",
+        "section_id": "shipping-papers",
+        "figure_id": ""
+      },
+      {
+        "front": "What is the first operational thought?",
+        "back": "Safety.",
+        "section_id": "safety",
+        "figure_id": ""
+      },
+      {
+        "front": "Mental safe approach: which three directions?",
+        "back": "Upwind, upgrade, upstream.",
+        "section_id": "safety",
+        "figure_id": ""
+      },
+      {
+        "front": "Six ways hazmat can kill you?",
+        "back": "Toxicity, radioactivity, asphyxiation, explosion, flammability, corrosion.",
+        "section_id": "safety",
+        "figure_id": ""
+      },
+      {
+        "front": "How many sources should you cross-reference before action planning?",
+        "back": "Three or more.",
+        "section_id": "safety",
+        "figure_id": ""
+      },
+      {
+        "front": "Which cargo tank truck is this? (rear view)",
+        "back": "DOT 406 / MC 306: elliptical; gasoline and diesel.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": "truck-406"
+      },
+      {
+        "front": "Which cargo tank truck is this? (rear view)",
+        "back": "DOT 407 / MC 307: horseshoe-shaped; low vapor pressure liquids.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": "truck-407"
+      },
+      {
+        "front": "Which cargo tank truck is this?",
+        "back": "DOT 412 / MC 312: external ribs; often corrosives.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": "truck-412"
+      },
+      {
+        "front": "Which cargo tank truck is this?",
+        "back": "MC 331: rounded ends, steel; compressed gases.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": "truck-331"
+      },
+      {
+        "front": "Which cargo tank truck is this?",
+        "back": "MC 338: insulated; cryogenic liquids.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": "truck-338"
+      },
+      {
+        "front": "What is this trailer?",
+        "back": "MC 331 tube trailer: high-pressure gas cylinders.",
+        "section_id": "cargo-tank-trucks",
+        "figure_id": "tube-trailer"
+      },
+      {
+        "front": "What kind of storage tank is this?",
+        "back": "Spherical pressurized tank (high pressure).",
+        "section_id": "other-containers",
+        "figure_id": "tank-spherical"
+      },
+      {
+        "front": "What kind of storage tank is this?",
+        "back": "Cryogenic tank: thick insulation; can exceed 300 psi.",
+        "section_id": "other-containers",
+        "figure_id": "tank-cryogenic"
+      },
+      {
+        "front": "What kind of storage tank is this?",
+        "back": "Floating roof tank (non-pressure).",
+        "section_id": "other-containers",
+        "figure_id": "tank-floating"
+      },
+      {
+        "front": "Which GHS pictogram is this, and what hazards does it cover?",
+        "back": "Health hazard: carcinogen, mutagen, reproductive toxicity, respiratory sensitizer, target organ and aspiration toxicity.",
+        "section_id": "ghs",
+        "figure_id": "ghs-health"
+      },
+      {
+        "front": "Which GHS pictogram is this, and what does it cover?",
+        "back": "Exclamation point: irritant, skin sensitizer, harmful (acute toxicity), narcotic effects, respiratory tract irritant.",
+        "section_id": "ghs",
+        "figure_id": "ghs-exclamation"
+      },
+      {
+        "front": "Which GHS pictogram is this?",
+        "back": "Flame: flammables, pyrophorics, self-heating, emits flammable gas, self-reactives, organic peroxides.",
+        "section_id": "ghs",
+        "figure_id": "ghs-flame"
+      },
+      {
+        "front": "Which GHS pictogram is this?",
+        "back": "Gas cylinder: gases under pressure.",
+        "section_id": "ghs",
+        "figure_id": "ghs-cylinder"
+      },
+      {
+        "front": "Which GHS pictogram is this?",
+        "back": "Corrosion: skin burns, eye damage, corrosive to metals.",
+        "section_id": "ghs",
+        "figure_id": "ghs-corrosive"
+      },
+      {
+        "front": "Which GHS pictogram is this?",
+        "back": "Environmental hazard: aquatic toxicity (non-mandatory).",
+        "section_id": "ghs",
+        "figure_id": "ghs-environment"
+      },
+      {
+        "front": "Which GHS pictogram is this?",
+        "back": "Skull and crossbones: acute toxicity (fatal or toxic).",
+        "section_id": "ghs",
+        "figure_id": "ghs-skull"
+      },
+      {
+        "front": "What marking system is this, and what does it NOT tell you?",
+        "back": "NFPA 704: rates health, flammability, instability 0–4. Doesn't give the material, quantity, or location.",
+        "section_id": "special-markings",
+        "figure_id": "nfpa-704"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "According to ATSDR HSEES 2009, which group accounts for the largest share of responders injured in hazmat incidents?",
+        "choices": [
+          "Law enforcement",
+          "Firefighters",
+          "EMS",
+          "Public works"
+        ],
+        "answer_index": 1,
+        "explanation": "Firefighters were 58%; law enforcement 31%; other responders, including EMS, 11%.",
+        "section_id": "recognizing-incidents"
+      },
+      {
+        "question": "Which recognition clue should be used only as a last resort?",
+        "choices": [
+          "Container shapes",
+          "Placards and labels",
+          "Senses",
+          "Occupancy/location"
+        ],
+        "answer_index": 2,
+        "explanation": "Using sight, hearing, and especially smell means you're close enough to be exposed.",
+        "section_id": "recognition-clues"
+      },
+      {
+        "question": "A tank truck with an elliptical cross section most likely carries:",
+        "choices": [
+          "Compressed gases",
+          "Corrosives",
+          "Cryogenic liquids",
+          "Gasoline or diesel"
+        ],
+        "answer_index": 3,
+        "explanation": "The DOT 406/MC 306 is elliptical and usually carries petroleum products.",
+        "section_id": "cargo-tank-trucks"
+      },
+      {
+        "question": "Which cargo tank has external ribs and often carries corrosives?",
+        "choices": [
+          "DOT 406/MC 306",
+          "DOT 407/MC 307",
+          "DOT 412/MC 312",
+          "MC 338"
+        ],
+        "answer_index": 2,
+        "explanation": "The 412/312 is circular with external ribs for strength.",
+        "section_id": "cargo-tank-trucks"
+      },
+      {
+        "question": "The MC 338 is designed to carry:",
+        "choices": [
+          "Cryogenic liquids",
+          "Low vapor pressure liquids",
+          "Compressed gases",
+          "Corrosives"
+        ],
+        "answer_index": 0,
+        "explanation": "The MC 338 is an insulated cylinder for liquefied gases.",
+        "section_id": "cargo-tank-trucks"
+      },
+      {
+        "question": "What is the minimum size of each side of a DOT placard?",
+        "choices": [
+          "3.9 inches",
+          "8.5 inches",
+          "10.8 inches",
+          "12 inches"
+        ],
+        "answer_index": 2,
+        "explanation": "Placards are at least 10.8 inches per side; labels at least 3.9 inches.",
+        "section_id": "placards-labels"
+      },
+      {
+        "question": "Table 2 materials require placards when the aggregate gross weight loaded at one facility exceeds:",
+        "choices": [
+          "454 lbs",
+          "1,001 lbs",
+          "2,205 lbs",
+          "5,000 lbs"
+        ],
+        "answer_index": 1,
+        "explanation": "Table 2 requires placards over 1,001 lbs; Table 1 requires them in any amount.",
+        "section_id": "placards-labels"
+      },
+      {
+        "question": "Where are rail shipping papers kept?",
+        "choices": [
+          "In the locomotive cab window",
+          "With the conductor or crew",
+          "On the last car",
+          "At the railyard office only"
+        ],
+        "answer_index": 1,
+        "explanation": "The waybill and consist are carried by the conductor/crew.",
+        "section_id": "shipping-papers"
+      },
+      {
+        "question": "The shipping paper for a vessel is the:",
+        "choices": [
+          "Bill of lading",
+          "Air bill",
+          "Consist",
+          "Dangerous cargo manifest"
+        ],
+        "answer_index": 3,
+        "explanation": "It is kept on or near the vessel's bridge.",
+        "section_id": "shipping-papers"
+      },
+      {
+        "question": "Which is NOT a limitation of NFPA 704?",
+        "choices": [
+          "It doesn't indicate quantity",
+          "It doesn't identify the material",
+          "It doesn't rate health hazards",
+          "It doesn't show specific location"
+        ],
+        "answer_index": 2,
+        "explanation": "NFPA 704 does rate health, flammability, and instability.",
+        "section_id": "special-markings"
+      },
+      {
+        "question": "Which GHS signal word indicates the more severe hazard?",
+        "choices": [
+          "Caution",
+          "Warning",
+          "Danger",
+          "Poison"
+        ],
+        "answer_index": 2,
+        "explanation": "GHS uses only Danger (more severe) and Warning (less severe).",
+        "section_id": "ghs"
+      },
+      {
+        "question": "The Mental Safe Approach Tactic tells you to approach:",
+        "choices": [
+          "Downwind, downhill, downstream",
+          "Upwind, upgrade, upstream",
+          "Crosswind at any grade",
+          "From the direction of the reporting party"
+        ],
+        "answer_index": 1,
+        "explanation": "Part of the Mental Safe Approach Tactic, along with keeping your distance.",
+        "section_id": "safety"
+      },
+      {
+        "question": "Which is NOT one of the six ways hazardous materials can kill you?",
+        "choices": [
+          "Asphyxiation",
+          "Corrosion",
+          "Radioactivity",
+          "Dehydration"
+        ],
+        "answer_index": 3,
+        "explanation": "The six: toxicity, radioactivity, asphyxiation, explosion, flammability, corrosion.",
+        "section_id": "safety"
+      },
+      {
+        "question": "A refrigerated warehouse is a not-so-obvious location for:",
+        "choices": [
+          "Anhydrous ammonia",
+          "Pesticides",
+          "Flammable solids",
+          "Radioactive material"
+        ],
+        "answer_index": 0,
+        "explanation": "Ammonia is used as a refrigerant.",
+        "section_id": "locations"
+      },
+      {
+        "question": "Why can't you rely on a compressed gas cylinder's color?",
+        "choices": [
+          "Paint fades quickly",
+          "There is no standard color coding",
+          "Only DOT colors are allowed",
+          "Colors are reserved for the military"
+        ],
+        "answer_index": 1,
+        "explanation": "The chapter stresses there is no standard color code for cylinders.",
+        "section_id": "other-containers"
+      }
+    ],
+    "figures": [
+      {
+        "id": "clues",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 5,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "The standard recognition clues, from safest to use (occupancy, far away) to last resort (your senses, up close).",
+        "section_id": "recognition-clues",
+        "image_query": ""
+      },
+      {
+        "id": "tank-trucks",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 36,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Common cargo tank truck shapes, seen from behind or the side. The cross-section shape is the clue to the cargo.",
+        "section_id": "cargo-tank-trucks",
+        "image_query": "hazmat tank truck"
+      },
+      {
+        "id": "storage-tanks",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 13,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Above-ground storage tank types: cone roof, cryogenic, floating roof, and horizontal and spherical pressurized tanks.",
+        "section_id": "other-containers",
+        "image_query": "chemical storage tank farm"
+      },
+      {
+        "id": "rail-cars",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 15,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Non-pressure vs pressure rail tank cars. Pressure cars keep all fittings under a single protective housing on top.",
+        "section_id": "other-containers",
+        "image_query": "pressure tank car railroad"
+      },
+      {
+        "id": "intermodal",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 17,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Intermodal tank containers inside their frames: IM-101/102, DOT Spec 51, IMO Type 7 (cryogenic) and a tube module.",
+        "section_id": "other-containers",
+        "image_query": "ISO tank container"
+      },
+      {
+        "id": "orange-panel",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 23,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "An orange panel showing the four-digit UN identification number (here 1075).",
+        "section_id": "placards-labels",
+        "image_query": "UN number orange panel truck"
+      },
+      {
+        "id": "placard-anatomy",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 38,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Parts of a placard: background color, symbol, ID number, inner border, and the class or division number at the bottom.",
+        "section_id": "placards-labels",
+        "image_query": "hazmat placard truck"
+      },
+      {
+        "id": "special-markings",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 25,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "NFPA 704 diamond, the biohazard symbol, and an EPA PCB caution label.",
+        "section_id": "special-markings",
+        "image_query": "NFPA 704 sign"
+      },
+      {
+        "id": "pipe-markings",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 27,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Industrial pipe markings (ANSI/ASME A13.1): where legends go on pipes, and the color for each type of contents.",
+        "section_id": "special-markings",
+        "image_query": "industrial pipe marking labels"
+      },
+      {
+        "id": "hmis",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 42,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "An HMIS label: health (blue), flammability (red), physical hazard (orange), and personal protection.",
+        "section_id": "special-markings",
+        "image_query": "HMIS label"
+      },
+      {
+        "id": "ghs-label",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 29,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "A complete GHS label: product identifier, pictogram, signal word, hazard and precautionary statements, supplier information.",
+        "section_id": "ghs",
+        "image_query": "GHS chemical label"
+      },
+      {
+        "id": "ghs-pictograms",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 47,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "GHS pictograms and the hazards each one covers.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "id": "six-ways",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 35,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "The six ways hazardous materials can kill you: toxicity, radioactivity, asphyxiation, explosion, fire, corrosion.",
+        "section_id": "safety",
+        "image_query": ""
+      },
+      {
+        "id": "safe-approach",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 33,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Mental safe approach: stay upwind, upgrade (uphill) and upstream of the hazard.",
+        "section_id": "safety",
+        "image_query": ""
+      },
+      {
+        "id": "truck-406",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 36,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "DOT 406 / MC 306, rear view: elliptical tank.",
+        "section_id": "cargo-tank-trucks",
+        "image_query": "DOT 406 gasoline tanker truck"
+      },
+      {
+        "id": "truck-407",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 36,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "DOT 407 / MC 307, rear view: horseshoe-shaped insulated tank.",
+        "section_id": "cargo-tank-trucks",
+        "image_query": "DOT 407 chemical tank trailer"
+      },
+      {
+        "id": "truck-412",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 36,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "DOT 412 / MC 312: circular tank with external reinforcing ribs.",
+        "section_id": "cargo-tank-trucks",
+        "image_query": "DOT 412 corrosive tank trailer"
+      },
+      {
+        "id": "truck-331",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 36,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "MC 331: round steel tank with rounded (spherical) ends.",
+        "section_id": "cargo-tank-trucks",
+        "image_query": "MC-331 propane tank trailer"
+      },
+      {
+        "id": "truck-338",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 36,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "MC 338: cylindrical tank covered with external insulation.",
+        "section_id": "cargo-tank-trucks",
+        "image_query": "MC-338 cryogenic tank trailer"
+      },
+      {
+        "id": "tube-trailer",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 36,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "MC 331 tube trailer: a bundle of long high-pressure cylinders.",
+        "section_id": "cargo-tank-trucks",
+        "image_query": "tube trailer compressed gas"
+      },
+      {
+        "id": "ghs-health",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 47,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "GHS health hazard pictogram.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "id": "ghs-exclamation",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 47,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "GHS exclamation point pictogram.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "id": "ghs-flame",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 47,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "GHS flame pictogram.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "id": "ghs-cylinder",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 47,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "GHS gas cylinder pictogram.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "id": "ghs-corrosive",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 47,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "GHS corrosion pictogram.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "id": "ghs-environment",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 48,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "GHS environmental hazard pictogram.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "id": "ghs-skull",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 48,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "GHS skull and crossbones pictogram.",
+        "section_id": "ghs",
+        "image_query": ""
+      },
+      {
+        "id": "nfpa-704",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 25,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "NFPA 704 diamond with ratings 3, 1 and 0.",
+        "section_id": "special-markings",
+        "image_query": "NFPA 704 sign"
+      },
+      {
+        "id": "tank-spherical",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 13,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Spherical pressurized storage tank.",
+        "section_id": "other-containers",
+        "image_query": "spherical pressure storage tank"
+      },
+      {
+        "id": "tank-cryogenic",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 13,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Cryogenic storage tank: tall, insulated, on legs.",
+        "section_id": "other-containers",
+        "image_query": "cryogenic liquid storage tank"
+      },
+      {
+        "id": "tank-floating",
+        "source_file": "FRO Notebook — Chapter C, Haz Mat Recognition & Safety.pdf",
+        "page": 13,
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "w": 1,
+          "h": 1
+        },
+        "caption": "Floating roof tank: open top with a roof that rides on the liquid.",
+        "section_id": "other-containers",
+        "image_query": "floating roof tank"
+      }
+    ],
+    "diagrams": [
+      {
+        "id": "clue-order",
+        "kind": "process",
+        "title": "The standard recognition clues",
+        "caption": "The chapter's list of clues, in its order. Senses are the last resort.",
+        "section_id": "recognition-clues",
+        "nodes": [
+          {
+            "label": "Occupancy / location",
+            "detail": "Who's there and what they make, store or ship",
+            "parent": -1
+          },
+          {
+            "label": "Container shapes",
+            "detail": "e.g. a compressed gas cylinder",
+            "parent": -1
+          },
+          {
+            "label": "Markings & colors",
+            "detail": "e.g. a package label",
+            "parent": -1
+          },
+          {
+            "label": "Placards & labels",
+            "detail": "e.g. orange placard = explosive",
+            "parent": -1
+          },
+          {
+            "label": "Shipping papers & SDS",
+            "detail": "e.g. a train's consist",
+            "parent": -1
+          },
+          {
+            "label": "Senses",
+            "detail": "Sight, hearing, smell: last resort",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "cargo-tanks",
+        "kind": "comparison",
+        "title": "DOT cargo tank trucks at a glance",
+        "caption": "Read across a row: the cross-section shape tells you what the truck is built to carry.",
+        "section_id": "cargo-tank-trucks",
+        "nodes": [],
+        "columns": [
+          "Shape",
+          "Usually carries",
+          "Notes"
+        ],
+        "rows": [
+          {
+            "label": "DOT 406 / MC 306",
+            "cells": [
+              "Elliptical",
+              "Petroleum liquids (gasoline, diesel)",
+              "Usually aluminum; melts rather than explodes in a fire"
+            ]
+          },
+          {
+            "label": "DOT 407 / MC 307",
+            "cells": [
+              "Horseshoe (insulated round tank)",
+              "Liquids with low vapor pressure",
+              "Outer covering usually aluminum"
+            ]
+          },
+          {
+            "label": "DOT 412 / MC 312",
+            "cells": [
+              "Circular with external ribs",
+              "Often corrosives",
+              "May also carry petroleum products"
+            ]
+          },
+          {
+            "label": "MC 331",
+            "cells": [
+              "Circular with spherical ends",
+              "Compressed gases",
+              "Usually steel; tube trailer is a version"
+            ]
+          },
+          {
+            "label": "MC 338",
+            "cells": [
+              "Insulated cylinder",
+              "Cryogenic liquids (liquefied gases)",
+              "External insulation"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "rail-cars",
+        "kind": "comparison",
+        "title": "General service vs pressure rail tank cars",
+        "caption": "Look at the top of the car: exposed fittings suggest general service; one protective housing suggests pressure.",
+        "section_id": "other-containers",
+        "nodes": [],
+        "columns": [
+          "General service (low / non-pressure)",
+          "Pressure"
+        ],
+        "rows": [
+          {
+            "label": "Shape",
+            "cells": [
+              "Rounded ends",
+              "Rounded ends"
+            ]
+          },
+          {
+            "label": "Fittings",
+            "cells": [
+              "On top, normally without protective housing",
+              "On top, normally inside a protective housing"
+            ]
+          },
+          {
+            "label": "Compartments",
+            "cells": [
+              "May have several",
+              "Not compartmentalized"
+            ]
+          },
+          {
+            "label": "Thermal protection",
+            "cells": [
+              "—",
+              "May have insulation, a jacket or white paint"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "radiological",
+        "kind": "spectrum",
+        "title": "Radiological packaging",
+        "caption": "Each type is built to survive more than the one before it.",
+        "section_id": "other-containers",
+        "nodes": [
+          {
+            "label": "Excepted",
+            "detail": "Normal transport",
+            "parent": -1
+          },
+          {
+            "label": "Industrial",
+            "detail": "Adds drop & stacking tests",
+            "parent": -1
+          },
+          {
+            "label": "Type A",
+            "detail": "Minor accidents; low-level material",
+            "parent": -1
+          },
+          {
+            "label": "Type B",
+            "detail": "Severe accidents; high activity",
+            "parent": -1
+          },
+          {
+            "label": "Type C",
+            "detail": "Aircraft; not domestic",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "Least protective",
+        "high_label": "Most protective"
+      },
+      {
+        "id": "placard-label",
+        "kind": "comparison",
+        "title": "Placards vs labels",
+        "caption": "Same diamond shape and color code; different size and where they go.",
+        "section_id": "placards-labels",
+        "nodes": [],
+        "columns": [
+          "Goes on",
+          "Minimum size",
+          "Identifies the hazard by"
+        ],
+        "rows": [
+          {
+            "label": "Placard",
+            "cells": [
+              "Shipping containers: trailers, railcars, intermodal and bulk containers",
+              "10.8 in per side",
+              "Background color, symbol, class number at bottom"
+            ]
+          },
+          {
+            "label": "Label",
+            "cells": [
+              "Packages: drums, bags, boxes, bottles, cylinders",
+              "3.9 in per side",
+              "Background color, symbol, class number at bottom"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "placard-colors",
+        "kind": "comparison",
+        "title": "Placard colors, symbols and examples",
+        "caption": "From the chapter's placard list. Learn to read the color first, then the symbol, then the number.",
+        "section_id": "placards-labels",
+        "nodes": [],
+        "columns": [
+          "Color / symbol",
+          "Example"
+        ],
+        "rows": [
+          {
+            "label": "1.1–1.3 Explosives",
+            "cells": [
+              "Orange / bursting ball",
+              "Trinitrotoluene"
+            ]
+          },
+          {
+            "label": "1.4–1.6 Explosives",
+            "cells": [
+              "Orange / division number",
+              "—"
+            ]
+          },
+          {
+            "label": "2.1 Flammable gas",
+            "cells": [
+              "Red / flame",
+              "Propane"
+            ]
+          },
+          {
+            "label": "2.2 Non-flammable gas",
+            "cells": [
+              "Green / cylinder",
+              "Carbon dioxide"
+            ]
+          },
+          {
+            "label": "2.3 Poison gas",
+            "cells": [
+              "White / skull & crossbones",
+              "Chlorine"
+            ]
+          },
+          {
+            "label": "3 Flammable liquid",
+            "cells": [
+              "Red / flame",
+              "Gasoline"
+            ]
+          },
+          {
+            "label": "4.1 Flammable solid",
+            "cells": [
+              "Red & white stripes / flame",
+              "Fusee"
+            ]
+          },
+          {
+            "label": "4.2 Spontaneously combustible",
+            "cells": [
+              "White over red / flame",
+              "White phosphorus"
+            ]
+          },
+          {
+            "label": "4.3 Dangerous when wet",
+            "cells": [
+              "Blue / flame",
+              "Calcium carbide"
+            ]
+          },
+          {
+            "label": "5.1 Oxidizer",
+            "cells": [
+              "Yellow / flaming “O”",
+              "Hydrogen peroxide"
+            ]
+          },
+          {
+            "label": "5.2 Organic peroxide",
+            "cells": [
+              "Red over yellow / flame",
+              "MEKP"
+            ]
+          },
+          {
+            "label": "6.1 Poison",
+            "cells": [
+              "White / skull & crossbones",
+              "Arsenic"
+            ]
+          },
+          {
+            "label": "6.2 Infectious",
+            "cells": [
+              "No placard",
+              "Infectious substances"
+            ]
+          },
+          {
+            "label": "7 Radioactive",
+            "cells": [
+              "Yellow over white / trefoil",
+              "Thorium"
+            ]
+          },
+          {
+            "label": "8 Corrosive",
+            "cells": [
+              "White over black / test tube",
+              "Sulfuric acid"
+            ]
+          },
+          {
+            "label": "9 Miscellaneous",
+            "cells": [
+              "White & black stripes over white / no symbol",
+              "Asbestos"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "placard-when",
+        "kind": "hierarchy",
+        "title": "When are placards required?",
+        "caption": "Table 1 materials need placards in any amount; Table 2 only above the weight threshold.",
+        "section_id": "placards-labels",
+        "nodes": [
+          {
+            "label": "Placards required",
+            "detail": "",
+            "parent": -1
+          },
+          {
+            "label": "Bulk shipments",
+            "detail": "Any amount",
+            "parent": 0
+          },
+          {
+            "label": "Table 1 materials",
+            "detail": "Any amount (e.g. explosives 1.1–1.3, poison gas, dangerous when wet)",
+            "parent": 0
+          },
+          {
+            "label": "Table 2 materials",
+            "detail": "Over 1,001 lbs aggregate at one facility",
+            "parent": 0
+          },
+          {
+            "label": "Mixed Table 2 load",
+            "detail": "May use one DANGEROUS placard",
+            "parent": 3
+          },
+          {
+            "label": "2,205 lbs+ of one category",
+            "detail": "Also needs that category's placard",
+            "parent": 3
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "nfpa-hmis",
+        "kind": "comparison",
+        "title": "NFPA 704 vs HMIS",
+        "caption": "Similar colors and 0–4 ratings, different audiences.",
+        "section_id": "special-markings",
+        "nodes": [],
+        "columns": [
+          "Informs",
+          "Where you see it",
+          "Doesn't tell you"
+        ],
+        "rows": [
+          {
+            "label": "NFPA 704",
+            "cells": [
+              "Emergency responders",
+              "Fixed facilities: containers, tanks, entrances to storage areas",
+              "Material name, quantity or exact location"
+            ]
+          },
+          {
+            "label": "HMIS",
+            "cells": [
+              "Employees",
+              "Color-coded labels with numbers and symbols",
+              "—"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      },
+      {
+        "id": "signal-words",
+        "kind": "spectrum",
+        "title": "GHS signal words",
+        "caption": "GHS uses only two signal words.",
+        "section_id": "ghs",
+        "nodes": [
+          {
+            "label": "Warning",
+            "detail": "Less severe hazards",
+            "parent": -1
+          },
+          {
+            "label": "Danger",
+            "detail": "More severe hazards",
+            "parent": -1
+          }
+        ],
+        "columns": [],
+        "rows": [],
+        "low_label": "Less severe",
+        "high_label": "More severe"
+      },
+      {
+        "id": "papers-by-mode",
+        "kind": "comparison",
+        "title": "Where to find the shipping papers",
+        "caption": "Know the document's name and where it's kept for each mode.",
+        "section_id": "shipping-papers",
+        "nodes": [],
+        "columns": [
+          "Document",
+          "Where it's kept",
+          "Reg."
+        ],
+        "rows": [
+          {
+            "label": "Truck",
+            "cells": [
+              "Bill of lading",
+              "In the cab, within the driver's reach or in the driver's door holder",
+              "49 CFR 177.817"
+            ]
+          },
+          {
+            "label": "Air",
+            "cells": [
+              "Air bill",
+              "With the pilot in command",
+              "49 CFR 175.33"
+            ]
+          },
+          {
+            "label": "Rail",
+            "cells": [
+              "Waybill and consist",
+              "With a crew member (conductor)",
+              "49 CFR 174.24"
+            ]
+          },
+          {
+            "label": "Vessel",
+            "cells": [
+              "Dangerous cargo manifest",
+              "On or near the bridge",
+              "49 CFR 176.30"
+            ]
+          }
+        ],
+        "low_label": "",
+        "high_label": ""
+      }
+    ]
+  },
+  "figureImages": {
+    "clues": "samples/hazmat/clues.jpg",
+    "tank-trucks": "samples/hazmat/tank-trucks.jpg",
+    "storage-tanks": "samples/hazmat/storage-tanks.jpg",
+    "rail-cars": "samples/hazmat/rail-cars.jpg",
+    "intermodal": "samples/hazmat/intermodal.jpg",
+    "orange-panel": "samples/hazmat/orange-panel.jpg",
+    "placard-anatomy": "samples/hazmat/placard-anatomy.jpg",
+    "special-markings": "samples/hazmat/special-markings.jpg",
+    "pipe-markings": "samples/hazmat/pipe-markings.jpg",
+    "hmis": "samples/hazmat/hmis.jpg",
+    "ghs-label": "samples/hazmat/ghs-label.jpg",
+    "ghs-pictograms": "samples/hazmat/ghs-pictograms.jpg",
+    "six-ways": "samples/hazmat/six-ways.jpg",
+    "safe-approach": "samples/hazmat/safe-approach.jpg",
+    "truck-406": "samples/hazmat/truck-406.jpg",
+    "truck-407": "samples/hazmat/truck-407.jpg",
+    "truck-412": "samples/hazmat/truck-412.jpg",
+    "truck-331": "samples/hazmat/truck-331.jpg",
+    "truck-338": "samples/hazmat/truck-338.jpg",
+    "tube-trailer": "samples/hazmat/tube-trailer.jpg",
+    "ghs-health": "samples/hazmat/ghs-health.jpg",
+    "ghs-exclamation": "samples/hazmat/ghs-exclamation.jpg",
+    "ghs-flame": "samples/hazmat/ghs-flame.jpg",
+    "ghs-cylinder": "samples/hazmat/ghs-cylinder.jpg",
+    "ghs-corrosive": "samples/hazmat/ghs-corrosive.jpg",
+    "ghs-environment": "samples/hazmat/ghs-environment.jpg",
+    "ghs-skull": "samples/hazmat/ghs-skull.jpg",
+    "nfpa-704": "samples/hazmat/nfpa-704.jpg",
+    "tank-spherical": "samples/hazmat/tank-spherical.jpg",
+    "tank-cryogenic": "samples/hazmat/tank-cryogenic.jpg",
+    "tank-floating": "samples/hazmat/tank-floating.jpg"
+  }
+}
