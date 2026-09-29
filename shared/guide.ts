@@ -155,3 +155,21 @@ export const guideJsonSchema = obj({
     }),
   },
 });
+
+/** Defensive cleanup so the UI never has to guess. */
+export function normalizeGuide(g: Guide): Guide {
+  const ids = new Set(g.sections.map((s) => s.id));
+  const fallbackId = g.sections[0]?.id ?? "";
+  const fixId = <T extends { section_id: string }>(x: T) => (ids.has(x.section_id) ? x : { ...x, section_id: fallbackId });
+  return {
+    ...g,
+    key_terms: g.key_terms.map(fixId),
+    numbers_to_know: g.numbers_to_know.map(fixId),
+    lists_to_memorize: g.lists_to_memorize.map(fixId),
+    exam_focus: g.exam_focus.map(fixId),
+    flashcards: g.flashcards.filter((c) => c.front.trim() && c.back.trim()).map(fixId),
+    quiz: g.quiz
+      .filter((q) => q.choices.length >= 2 && q.answer_index >= 0 && q.answer_index < q.choices.length)
+      .map(fixId),
+  };
+}

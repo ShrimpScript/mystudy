@@ -1,6 +1,10 @@
 import type { Guide } from "../../shared/guide";
+import { generateLocal } from "./generate-local";
+import { capability, IS_ARTIFACT } from "./runtime";
 
 export interface Status {
+  /** "claude": runs on claude.ai with the viewer's account; "server": the Node server. */
+  kind: "claude" | "server";
   ready: boolean;
   passcodeRequired: boolean;
   model: string;
@@ -12,9 +16,22 @@ export interface Status {
 }
 
 export async function getStatus(): Promise<Status | null> {
+  if (IS_ARTIFACT) {
+    const sample = await capability("sample");
+    return {
+      kind: "claude",
+      ready: Boolean(sample),
+      passcodeRequired: false,
+      model: "claude",
+      mock: false,
+      uploadMode: "direct",
+      blobAccess: "private",
+      maxUploadBytes: 50 * 1024 * 1024,
+    };
+  }
   try {
     const res = await fetch("/api/status");
-    return res.ok ? await res.json() : null;
+    return res.ok ? { kind: "server", ...(await res.json()) } : null;
   } catch {
     return null;
   }
@@ -51,6 +68,7 @@ export function generateGuide(
   req: GenerateRequest,
   onProgress: (p: GenerateProgress) => void,
 ): { promise: Promise<Guide>; cancel: () => void } {
+  if (IS_ARTIFACT) return generateLocal(req, onProgress);
   const xhr = new XMLHttpRequest();
   const uploads = new AbortController();
   let cancelled = false;

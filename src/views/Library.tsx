@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import type { StoredGuide } from "../../shared/guide";
 import { Icon } from "../components/Icon";
 import { href } from "../lib/router";
+import { IS_ARTIFACT } from "../lib/runtime";
 import { deleteGuide, getProgress, listGuides, type Progress } from "../lib/store";
 
 const dateFmt = new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", year: "numeric" });
 
-export function Library({ ready }: { ready: boolean }) {
+export function Library() {
   const [guides, setGuides] = useState<StoredGuide[] | null>(null);
   const [progress, setProgress] = useState<Record<string, Progress>>({});
+  const [confirming, setConfirming] = useState<string | null>(null);
 
   const load = async () => {
     const list = await listGuides();
@@ -18,11 +20,11 @@ export function Library({ ready }: { ready: boolean }) {
   };
 
   useEffect(() => {
-    if (ready) load();
-  }, [ready]);
+    load();
+  }, []);
 
   const remove = async (g: StoredGuide) => {
-    if (!confirm(`Delete “${g.guide.title}”? This removes it and its study progress from this device.`)) return;
+    setConfirming(null);
     await deleteGuide(g.id);
     load();
   };
@@ -42,7 +44,7 @@ export function Library({ ready }: { ready: boolean }) {
       </div>
 
       {guides === null ? null : guides.length === 0 ? (
-        <p className="empty">Nothing here yet. Your guides are saved on this device.</p>
+        <p className="empty">Nothing here yet.</p>
       ) : (
         <ol className="shelf">
           {guides.map((g) => {
@@ -62,15 +64,35 @@ export function Library({ ready }: { ready: boolean }) {
                     {p?.quizLast && ` · quiz ${p.quizLast.score}/${p.quizLast.total}`}
                   </span>
                 </a>
-                <button className="btn-icon shelf-delete" onClick={() => remove(g)} aria-label={`Delete ${g.guide.title}`}>
-                  <Icon name="trash" size={16} />
-                </button>
+                {!g.sample &&
+                  (confirming === g.id ? (
+                    <span className="shelf-confirm">
+                      <button className="btn btn-danger" onClick={() => remove(g)}>
+                        Delete
+                      </button>
+                      <button className="btn btn-quiet" onClick={() => setConfirming(null)}>
+                        Keep
+                      </button>
+                    </span>
+                  ) : (
+                    <button
+                      className="btn-icon shelf-delete"
+                      onClick={() => setConfirming(g.id)}
+                      aria-label={`Delete ${g.guide.title}`}
+                    >
+                      <Icon name="trash" size={16} />
+                    </button>
+                  ))}
               </li>
             );
           })}
         </ol>
       )}
-      <p className="footnote">Guides and progress are stored in this browser only. Uploaded files are sent to Claude to write the guide and are not kept.</p>
+      <p className="footnote">
+        {IS_ARTIFACT
+          ? "Your guides and progress are saved privately to your claude.ai account. Files you upload are read in your browser and sent to Claude to write the guide; the files themselves aren’t stored."
+          : "Guides and progress are stored in this browser only. Uploaded files are sent to Claude to write the guide and are not kept."}
+      </p>
     </div>
   );
 }

@@ -14,7 +14,7 @@ How to write:
 
 export type Detail = "concise" | "standard" | "thorough";
 
-const DETAIL_GUIDANCE: Record<Detail, string> = {
+export const DETAIL_GUIDANCE: Record<Detail, string> = {
   concise: "Keep it tight: fewer, broader sections; 20 flashcards; 10 quiz questions.",
   standard: "Balanced depth: follow the material's natural structure; about 30 flashcards; 12 quiz questions.",
   thorough: "Be exhaustive: keep every testable detail; up to 40 flashcards; 15 quiz questions.",

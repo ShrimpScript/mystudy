@@ -5,9 +5,9 @@ import express from "express";
 import multer from "multer";
 import { createHash, timingSafeEqual } from "node:crypto";
 import sample from "../public/samples/public-fire-protection.json" with { type: "json" };
-import { guideJsonSchema, type Guide } from "../shared/guide.js";
+import { guideJsonSchema, normalizeGuide, type Guide } from "../shared/guide.js";
 import { toContentBlocks, UnsupportedFileError, type UploadedFile } from "./extract.js";
-import { SYSTEM_PROMPT, userInstructions, type Detail } from "./prompt.js";
+import { SYSTEM_PROMPT, userInstructions, type Detail } from "../shared/prompt.js";
 
 type Effort = "low" | "medium" | "high" | "xhigh" | "max";
 
@@ -231,7 +231,7 @@ export function createApp() {
       .filter((b): b is Anthropic.Beta.BetaTextBlock => b.type === "text")
       .map((b) => b.text)
       .join("");
-    return normalize(JSON.parse(json) as Guide);
+    return normalizeGuide(JSON.parse(json) as Guide);
   }
 
   app.use((err: unknown, _req: express.Request, res: express.Response, next: express.NextFunction) => {
@@ -271,24 +271,6 @@ function count(haystack: string, needle: string) {
   let n = 0;
   for (let i = haystack.indexOf(needle); i !== -1; i = haystack.indexOf(needle, i + needle.length)) n++;
   return n;
-}
-
-/** Defensive cleanup so the UI never has to guess. */
-function normalize(g: Guide): Guide {
-  const ids = new Set(g.sections.map((s) => s.id));
-  const fallbackId = g.sections[0]?.id ?? "";
-  const fixId = <T extends { section_id: string }>(x: T) => (ids.has(x.section_id) ? x : { ...x, section_id: fallbackId });
-  return {
-    ...g,
-    key_terms: g.key_terms.map(fixId),
-    numbers_to_know: g.numbers_to_know.map(fixId),
-    lists_to_memorize: g.lists_to_memorize.map(fixId),
-    exam_focus: g.exam_focus.map(fixId),
-    flashcards: g.flashcards.filter((c) => c.front.trim() && c.back.trim()).map(fixId),
-    quiz: g.quiz
-      .filter((q) => q.choices.length >= 2 && q.answer_index >= 0 && q.answer_index < q.choices.length)
-      .map(fixId),
-  };
 }
 
 function describeError(err: unknown) {

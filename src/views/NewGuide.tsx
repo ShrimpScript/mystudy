@@ -76,9 +76,19 @@ export function NewGuide() {
     }
   };
 
-  if (progress) return <Working progress={progress} started={started} fileCount={files.length} onCancel={() => cancelRef.current()} />;
+  if (progress)
+    return (
+      <Working
+        progress={progress}
+        started={started}
+        fileCount={files.length}
+        viaClaude={status?.kind === "claude"}
+        onCancel={() => cancelRef.current()}
+      />
+    );
 
   const unavailable = status === null || (status && !status.ready);
+  const viaClaude = status?.kind === "claude";
 
   return (
     <div className="page page-narrow">
@@ -91,7 +101,9 @@ export function NewGuide() {
         <div className="notice">
           {status === null
             ? "Can’t reach the server. Start it with npm run dev, or check your deployment."
-            : "The server doesn’t have an Anthropic API key yet. Add ANTHROPIC_API_KEY to its environment and restart it. You can still explore the sample guide."}
+            : viaClaude
+              ? "Writing guides needs Claude, which isn’t available in this view. Open this page on claude.ai while signed in. You can still explore the sample guide."
+              : "The server doesn’t have an Anthropic API key yet. Add ANTHROPIC_API_KEY to its environment and restart it. You can still explore the sample guide."}
         </div>
       )}
 
@@ -236,7 +248,11 @@ export function NewGuide() {
         <button className="btn btn-primary" disabled={!canSubmit || Boolean(unavailable)} onClick={submit}>
           Create study guide
         </button>
-        <span className="hint">Usually takes one to three minutes.</span>
+        <span className="hint">
+          {viaClaude
+            ? "Takes two to four minutes and uses your Claude plan. The first time, claude.ai asks you to allow it."
+            : "Usually takes one to three minutes."}
+        </span>
       </div>
     </div>
   );
@@ -246,11 +262,13 @@ function Working({
   progress,
   started,
   fileCount,
+  viaClaude,
   onCancel,
 }: {
   progress: GenerateProgress;
   started: number;
   fileCount: number;
+  viaClaude: boolean;
   onCancel: () => void;
 }) {
   const [now, setNow] = useState(Date.now());
@@ -264,21 +282,26 @@ function Working({
   const at = order.indexOf(progress.stage);
   const state = (i: number) => (i < at ? "done" : i === at ? "active" : "todo");
 
-  const steps = [
-    {
-      title: "Uploading",
-      detail: progress.stage === "uploading" ? `${Math.round(progress.uploaded * 100)}%` : `${fileCount || 1} item${fileCount === 1 ? "" : "s"}`,
-    },
-    { title: "Reading the material", detail: at === 1 ? "Working out what matters" : "" },
-    {
-      title: "Writing the guide",
-      detail:
-        at >= 2
-          ? `${progress.sections} sections · ${progress.flashcards} cards · ${progress.quiz} questions`
-          : "",
-    },
-    { title: "Finishing up", detail: "" },
-  ];
+  const items = `${fileCount || 1} item${fileCount === 1 ? "" : "s"}`;
+  const steps = viaClaude
+    ? [
+        { title: "Reading your files", detail: at === 0 ? `${Math.round(progress.uploaded * 100)}%` : items },
+        { title: "Claude is reading the material", detail: at === 1 ? "Working out what matters" : "" },
+        { title: "Writing the guide", detail: at >= 2 ? `${progress.sections} sections` : "" },
+        {
+          title: "Making flashcards, quiz and glossary",
+          detail: at >= 3 ? `${progress.flashcards} cards · ${progress.quiz} questions` : "",
+        },
+      ]
+    : [
+        { title: "Uploading", detail: at === 0 ? `${Math.round(progress.uploaded * 100)}%` : items },
+        { title: "Reading the material", detail: at === 1 ? "Working out what matters" : "" },
+        {
+          title: "Writing the guide",
+          detail: at >= 2 ? `${progress.sections} sections · ${progress.flashcards} cards · ${progress.quiz} questions` : "",
+        },
+        { title: "Finishing up", detail: "" },
+      ];
 
   return (
     <div className="page page-narrow">

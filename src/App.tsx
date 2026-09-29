@@ -1,22 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Icon } from "./components/Icon";
 import { NarratorBar } from "./components/NarratorBar";
 import { ReaderSettings } from "./components/ReaderSettings";
 import { narrator } from "./lib/narrator";
 import { href, useRoute } from "./lib/router";
-import { seedSample } from "./lib/store";
 import { GuideView } from "./views/GuideView";
 import { Library } from "./views/Library";
 import { NewGuide } from "./views/NewGuide";
 
 export function App() {
   const route = useRoute();
-  const [seeded, setSeeded] = useState(false);
-
-  useEffect(() => {
-    seedSample().finally(() => setSeeded(true));
-  }, []);
-
   // Leaving a guide stops the narrator so audio never plays over another page.
   const guideId = route.name === "guide" ? route.id : null;
   useEffect(() => () => narrator.stop(), [guideId]);
@@ -45,9 +38,9 @@ export function App() {
         </div>
       </header>
       <main>
-        {route.name === "library" && <Library ready={seeded} />}
+        {route.name === "library" && <Library />}
         {route.name === "new" && <NewGuide />}
-        {route.name === "guide" && seeded && <GuideView id={route.id} tab={route.tab} anchor={route.anchor} />}
+        {route.name === "guide" && <GuideView id={route.id} tab={route.tab} anchor={route.anchor} />}
       </main>
       {route.name === "guide" && <NarratorBar visible={route.tab === "guide" || route.tab === "terms"} />}
     </>

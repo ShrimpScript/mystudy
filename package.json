@@ -8,7 +8,8 @@
     "dev": "concurrently -k -n api,web -c gray,blue \"tsx watch server/index.ts\" \"vite\"",
     "build": "tsc -p tsconfig.json && vite build",
     "start": "NODE_ENV=production tsx server/index.ts",
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json",
+    "build:claude": "tsc -p tsconfig.json && vite build --mode artifact && node scripts/artifact-page.mjs"
   },
   "engines": {
     "node": "22.x"
@@ -21,6 +22,7 @@
     "jszip": "^3.10.2",
     "mammoth": "^1.13.0",
     "multer": "^2.4.0",
+    "pdfjs-dist": "^4.10.38",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "tsx": "^4.23.15"
@@ -34,6 +36,7 @@
     "@vitejs/plugin-react": "^6.1.1",
     "concurrently": "^10.0.5",
     "typescript": "^7.0.2",
-    "vite": "^8.3.1"
+    "vite": "^8.3.1",
+    "vite-plugin-singlefile": "^2.3.3"
   }
 }

@@ -1,6 +1,6 @@
 import type Anthropic from "@anthropic-ai/sdk";
-import JSZip from "jszip";
 import mammoth from "mammoth";
+import { pptxText } from "../shared/pptx.js";
 
 export interface UploadedFile {
   originalname: string;
@@ -27,45 +27,6 @@ function textDocument(title: string, text: string): Block {
     title,
     source: { type: "text", media_type: "text/plain", data: text },
   };
-}
-
-async function pptxText(buffer: Buffer): Promise<string> {
-  const zip = await JSZip.loadAsync(buffer);
-  const slideNumber = (path: string) => Number(path.match(/(\d+)\.xml$/)?.[1] ?? 0);
-  const collect = (prefix: RegExp) =>
-    Object.keys(zip.files)
-      .filter((p) => prefix.test(p))
-      .sort((a, b) => slideNumber(a) - slideNumber(b));
-
-  const runs = (xml: string) =>
-    [...xml.matchAll(/<a:p>([\s\S]*?)<\/a:p>/g)]
-      .map((p) => [...p[1].matchAll(/<a:t>([^<]*)<\/a:t>/g)].map((t) => t[1]).join(""))
-      .filter((line) => line.trim())
-      .map(decodeXml)
-      .join("\n");
-
-  const notes = new Map<number, string>();
-  for (const path of collect(/^ppt\/notesSlides\/notesSlide\d+\.xml$/)) {
-    notes.set(slideNumber(path), runs(await zip.file(path)!.async("string")));
-  }
-
-  const out: string[] = [];
-  for (const path of collect(/^ppt\/slides\/slide\d+\.xml$/)) {
-    const n = slideNumber(path);
-    out.push(`--- Slide ${n} ---\n${runs(await zip.file(path)!.async("string"))}`);
-    const note = notes.get(n);
-    if (note) out.push(`[Speaker notes]\n${note}`);
-  }
-  return out.join("\n\n");
-}
-
-function decodeXml(s: string) {
-  return s
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&amp;/g, "&");
 }
 
 /** Turn one uploaded file into content blocks Claude can read. */
