@@ -12,6 +12,15 @@ export interface ExtractedMaterial {
 const TEXT_EXT = new Set(["txt", "md", "markdown", "csv", "tsv", "json", "html", "htm", "rtf", "tex"]);
 const IMAGE_EXT = new Set(["png", "jpg", "jpeg", "gif", "webp"]);
 const MIN_CHARS_PER_PAGE = 60; // below this a PDF is probably scanned
+const MIN_LETTER_SHARE = 0.6; // below this the text layer is probably garbled (broken font encoding)
+
+/** True when extracted text is mostly letters (any script), not symbol soup from a broken font map. */
+function looksReadable(text: string) {
+  const chars = text.replace(/\s+/g, "");
+  if (!chars.length) return false;
+  const letters = chars.match(/\p{L}/gu)?.length ?? 0;
+  return letters / chars.length >= MIN_LETTER_SHARE;
+}
 
 export class ExtractError extends Error {}
 
@@ -78,7 +87,7 @@ async function readPdf(file: File, out: ExtractedMaterial, maxImages: number) {
   }
 
   const chars = pages.reduce((n, p) => n + p.length, 0);
-  if (chars / Math.max(doc.numPages, 1) >= MIN_CHARS_PER_PAGE) {
+  if (chars / Math.max(doc.numPages, 1) >= MIN_CHARS_PER_PAGE && looksReadable(pages.join(""))) {
     out.documents.push({
       name: file.name,
       text: pages.map((p, i) => `--- Page ${i + 1} ---\n${p}`).join("\n\n"),
@@ -86,11 +95,12 @@ async function readPdf(file: File, out: ExtractedMaterial, maxImages: number) {
     return;
   }
 
-  // Scanned PDF: send page images instead, as many as the viewer's app allows.
+  // Scanned PDF, or one whose text layer is garbled: send page images instead,
+  // as many as the viewer's app allows.
   const room = maxImages - out.images.length;
   if (room <= 0) {
     throw new ExtractError(
-      `“${file.name}” looks like a scan with no selectable text, and this app can’t send page images here. Try a PDF with selectable text.`,
+      `“${file.name}” has no readable text layer (it’s scanned, or its text is scrambled), and this app can’t send page images here. Try exporting it again as a PDF, or paste the text.`,
     );
   }
   for (let n = 1; n <= Math.min(doc.numPages, room); n++) {

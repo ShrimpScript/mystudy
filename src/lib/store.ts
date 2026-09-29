@@ -1,6 +1,7 @@
 import { createStore, del, get, keys, set, type UseStore } from "idb-keyval";
 import type { Guide, StoredGuide } from "../../shared/guide";
-import sampleFile from "../../public/samples/public-fire-protection.json";
+import hazmatFile from "../../public/samples/hazmat-recognition.json";
+import fireFile from "../../public/samples/public-fire-protection.json";
 import { capability, IS_ARTIFACT, type CollectionRef, type Db } from "./runtime";
 
 // Guides and study progress. On claude.ai they live in the viewer's private
@@ -25,13 +26,17 @@ interface Backend {
   putProgress(id: string, p: Progress): Promise<void>;
 }
 
-/** The bundled Chapter 3 guide, always available and never stored. */
-export const SAMPLE: StoredGuide = {
-  ...(sampleFile as Pick<StoredGuide, "id" | "sourceFiles" | "context" | "guide">),
-  createdAt: Date.UTC(2026, 8, 1),
-  updatedAt: Date.UTC(2026, 8, 1),
+type SampleFile = Pick<StoredGuide, "id" | "sourceFiles" | "context" | "guide">;
+const sample = (file: SampleFile, day: number): StoredGuide => ({
+  ...file,
+  createdAt: Date.UTC(2026, 8, day),
+  updatedAt: Date.UTC(2026, 8, day),
   sample: true,
-};
+});
+
+/** Guides bundled with the app: always available, never stored, not deletable. Newest first. */
+export const SAMPLES: StoredGuide[] = [sample(hazmatFile as SampleFile, 29), sample(fireFile as SampleFile, 28)];
+const sampleIds = new Set(SAMPLES.map((g) => g.id));
 
 function memoryBackend(): Backend {
   const guides = new Map<string, StoredGuide>();
@@ -107,12 +112,13 @@ function store(): Promise<Backend> {
 // ---- Guides ------------------------------------------------------------------
 
 export async function listGuides(): Promise<StoredGuide[]> {
-  const stored = (await (await store()).list()).filter((g) => g.id !== SAMPLE.id);
-  return [...stored.sort((a, b) => b.updatedAt - a.updatedAt), SAMPLE];
+  const stored = (await (await store()).list()).filter((g) => !sampleIds.has(g.id));
+  return [...stored.sort((a, b) => b.updatedAt - a.updatedAt), ...SAMPLES];
 }
 
 export async function getGuide(id: string): Promise<StoredGuide | undefined> {
-  if (id === SAMPLE.id) return SAMPLE;
+  const builtIn = SAMPLES.find((g) => g.id === id);
+  if (builtIn) return builtIn;
   return (await store()).get(id);
 }
 
@@ -131,7 +137,7 @@ export async function saveGuide(guide: Guide, sourceFiles: string[], context: st
 }
 
 export async function deleteGuide(id: string) {
-  if (id === SAMPLE.id) return;
+  if (sampleIds.has(id)) return;
   await (await store()).remove(id);
 }
 
